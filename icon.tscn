@@ -4,5 +4,5 @@
 
 [node name="IconPlaceholder" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Name1" type="Sprite2D" parent="."]
 texture = ExtResource("1_ss43c")
