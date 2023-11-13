@@ -6,3 +6,5 @@
 
 [node name="Name2" type="Sprite2D" parent="."]
 texture = ExtResource("1_ss43c")
+
+[node name="Timer" type="Timer" parent="."]
