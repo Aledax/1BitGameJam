@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddqolw7q5dgvk"]
+
+[ext_resource type="Texture2D" uid="uid://bnj4tucges5wh" path="res://rain.png" id="1_ft502"]
+[ext_resource type="Script" path="res://rain.gd" id="2_7l4fg"]
+
+[node name="Rain" type="Sprite2D"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(320, 320)
+rotation = 0.127409
+texture = ExtResource("1_ft502")
+region_enabled = true
+region_rect = Rect2(0, 0, 906, 906)
+script = ExtResource("2_7l4fg")
+metadata/_edit_group_ = true
