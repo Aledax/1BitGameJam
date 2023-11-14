@@ -22,7 +22,9 @@ func _process(delta):
 	
 	move_and_slide()
 	for i in get_slide_collision_count():
+		
 		var collision = get_slide_collision(i)
+		
 		if collision.get_collider().has_method("collide_player"):
 			collision.get_collider().collide_player()
 

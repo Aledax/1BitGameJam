@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="tilemap" parent="." instance=ExtResource("3_igu0m")]
-position = Vector2(-191, -105)
+position = Vector2(-192, -164)
 
 [node name="AutoTileTest" parent="." instance=ExtResource("4_kun5v")]
 position = Vector2(208, -208)
@@ -42,11 +42,12 @@ scale = Vector2(2, 2)
 
 [node name="textInteractible" parent="." instance=ExtResource("5_5hshb")]
 process_mode = 3
-position = Vector2(11, -201)
+position = Vector2(10, -240)
 thisText = ["Helloooo", "Whats up?"]
 
-[node name="player" parent="." instance=ExtResource("4_abvef")]
+[node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(-131, -167)
+position = Vector2(-137, -214)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
+position = Vector2(-300, 0)

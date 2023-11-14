@@ -7,4 +7,4 @@ func _physics_process(delta):
 	prevRuntime = runtime
 	runtime += delta
 	
-	$Ocean.position.y = -runtime
+	$Ocean.position.y = -runtime * 1
