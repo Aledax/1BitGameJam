@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6a6x6pya0iny"]
 
-[ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="2_mvyh6"]
-[ext_resource type="PackedScene" uid="uid://byku54wkgnbd" path="res://scenes/textInteractible.tscn" id="3_hch4l"]
-[ext_resource type="PackedScene" uid="uid://clckcr4rfv68v" path="res://scenes/tilemap.tscn" id="4_yx0pt"]
+[ext_resource type="Texture2D" uid="uid://ckjaol77a5a4v" path="res://art/characters/icon.svg" id="1_ss43c"]
+[ext_resource type="PackedScene" uid="uid://cu2mi5ux5uif6" path="res://scenes/player.tscn" id="2_mvyh6"]
+[ext_resource type="PackedScene" uid="uid://wd1qqpikm7tp" path="res://scenes/textInteractible.tscn" id="3_hch4l"]
+[ext_resource type="PackedScene" uid="uid://x0fps0xrjrlv" path="res://scenes/tilemap.tscn" id="4_yx0pt"]
 
 [node name="IconPlaceholder" type="Node2D"]
 

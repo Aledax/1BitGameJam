@@ -24,7 +24,7 @@ func _process(delta):
 			start_dialogue()
 		elif curr_index == thisText.size() - 1 && !inAnimation:
 			hideText()
-		elif !inAnimation:
+		elif !inAnimation && showing:
 			curr_index += 1
 			showText()
 
@@ -35,6 +35,7 @@ func _on_body_exited(body):
 	player_in_collision = false
 
 func start_dialogue():
+	get_tree().paused = true
 	curr_index = 0
 	showText()
 
@@ -62,3 +63,4 @@ func hideText():
 	showing = false
 	$Sprite2D2.hide()
 	$RichTextLabel.hide()
+	get_tree().paused = false

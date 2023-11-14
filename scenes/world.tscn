@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=7 format=3 uid="uid://dumikbijboqau"]
 
-[ext_resource type="PackedScene" uid="uid://cjsrn7b5n7yc7" path="res://scenes/rain.tscn" id="1_b2hkm"]
+[ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
+[ext_resource type="PackedScene" uid="uid://x0fps0xrjrlv" path="res://scenes/tilemap.tscn" id="3_igu0m"]
+[ext_resource type="PackedScene" uid="uid://cu2mi5ux5uif6" path="res://scenes/player.tscn" id="4_abvef"]
+[ext_resource type="PackedScene" uid="uid://wd1qqpikm7tp" path="res://scenes/textInteractible.tscn" id="5_5hshb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
 shader = ExtResource("2_w2ymm")
@@ -9,10 +12,12 @@ shader = ExtResource("2_w2ymm")
 [node name="World" type="Node2D"]
 
 [node name="RainForeground" parent="." instance=ExtResource("1_b2hkm")]
+process_mode = 3
 scale = Vector2(1.2, 1.2)
 fall_speed = 1400
 
 [node name="RainBackground" parent="." instance=ExtResource("1_b2hkm")]
+process_mode = 3
 region_rect = Rect2(0, 450, 906, 906)
 fall_speed = 700
 
@@ -25,3 +30,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="tilemap" parent="." instance=ExtResource("3_igu0m")]
+position = Vector2(148, 432)
+
+[node name="textInteractible" parent="." instance=ExtResource("5_5hshb")]
+process_mode = 3
+position = Vector2(389, 356)
+thisText = ["Helloooo", "Whats up?"]
+
+[node name="player" parent="." instance=ExtResource("4_abvef")]
+process_mode = 1
+position = Vector2(283, 381)
