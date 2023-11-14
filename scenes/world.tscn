@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dumikbijboqau"]
 
-[ext_resource type="PackedScene" path="res://scenes/rain.tscn" id="1_b2hkm"]
+[ext_resource type="PackedScene" uid="uid://cjsrn7b5n7yc7" path="res://scenes/rain.tscn" id="1_b2hkm"]
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
