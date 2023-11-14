@@ -45,4 +45,4 @@ process_mode = 1
 position = Vector2(283, 381)
 
 [node name="AutoTileTest" parent="." instance=ExtResource("6_vnjve")]
-position = Vector2(368, 194)
+position = Vector2(496, 400)
