@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=11 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://cvekp8n63mivw" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://cjsrn7b5n7yc7" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="4_kun5v"]
 [ext_resource type="PackedScene" uid="uid://byku54wkgnbd" path="res://scenes/textInteractible.tscn" id="5_5hshb"]
+[ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
 shader = ExtResource("2_w2ymm")
@@ -48,6 +49,9 @@ thisText = ["Helloooo", "Whats up?"]
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
 position = Vector2(-137, -214)
+
+[node name="Npctest" parent="." instance=ExtResource("9_2rdoe")]
+position = Vector2(0, -250)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 position = Vector2(-300, 0)

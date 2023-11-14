@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var body_parent_name = "Player"
+var player_body_name = "PlayerBody"
 var interface_off_texture = load("res://art/environment/boat/interface_off.png")
 var interface_on_texture = load("res://art/environment/boat/interface_on.png")
 var interface_left_sprite
@@ -31,21 +31,21 @@ func _process(delta):
 		linear_velocity.x *= 0.95
 
 func _on_interface_left_body_entered(body):
-	if body.get_parent().name == body_parent_name:
+	if body.name == player_body_name:
 		interface_left_sprite.texture = interface_on_texture
 		left_activated = true
 
 func _on_interface_left_body_exited(body):
-	if body.get_parent().name == body_parent_name:
+	if body.name == player_body_name:
 		interface_left_sprite.texture = interface_off_texture
 		left_activated = false
 
 func _on_interface_right_body_entered(body):
-	if body.get_parent().name == body_parent_name:
+	if body.name == player_body_name:
 		interface_right_sprite.texture = interface_on_texture
 		right_activated = true
 
 func _on_interface_right_body_exited(body):
-	if body.get_parent().name == body_parent_name:
+	if body.name == player_body_name:
 		interface_right_sprite.texture = interface_off_texture
 		right_activated = false

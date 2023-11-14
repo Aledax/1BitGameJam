@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://clyvv37jglrgd"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_xky8w"]
+[ext_resource type="PackedScene" uid="uid://snv5la6sign3" path="res://scenes/character_body.tscn" id="2_j7bdf"]
+
+[node name="NPC" type="Node2D"]
+script = ExtResource("1_xky8w")
+
+[node name="CharacterBody" parent="." instance=ExtResource("2_j7bdf")]
