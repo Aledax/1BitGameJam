@@ -6,8 +6,8 @@
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 [ext_resource type="PackedScene" uid="uid://clckcr4rfv68v" path="res://scenes/tilemap.tscn" id="3_igu0m"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
-[ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="4_kun5v"]
 [ext_resource type="PackedScene" uid="uid://byku54wkgnbd" path="res://scenes/textInteractible.tscn" id="5_5hshb"]
+[ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
 [ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
@@ -37,7 +37,7 @@ grow_vertical = 2
 [node name="tilemap" parent="." instance=ExtResource("3_igu0m")]
 position = Vector2(-192, -164)
 
-[node name="AutoTileTest" parent="." instance=ExtResource("4_kun5v")]
+[node name="AutoTileTest" parent="." instance=ExtResource("6_vnjve")]
 position = Vector2(208, -208)
 scale = Vector2(2, 2)
 
@@ -55,3 +55,6 @@ position = Vector2(0, -250)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 position = Vector2(-300, 0)
+
+[node name="AutoTileTest2" parent="." instance=ExtResource("6_vnjve")]
+position = Vector2(496, 400)
