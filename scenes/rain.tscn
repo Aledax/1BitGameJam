@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddqolw7q5dgvk"]
 
-[ext_resource type="Texture2D" uid="uid://bnj4tucges5wh" path="res://rain.png" id="1_ft502"]
-[ext_resource type="Script" path="res://rain.gd" id="2_7l4fg"]
+[ext_resource type="Texture2D" uid="uid://cx3m06oslo6bb" path="res://art/environment/rain.png" id="1_ft502"]
+[ext_resource type="Script" path="res://scripts/rain.gd" id="2_7l4fg"]
 
 [node name="Rain" type="Sprite2D"]
 texture_filter = 1
