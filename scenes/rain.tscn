@@ -6,10 +6,9 @@
 [node name="Rain" type="Sprite2D"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(320, 320)
 rotation = 0.127409
 texture = ExtResource("1_ft502")
 region_enabled = true
-region_rect = Rect2(0, 0, 906, 906)
+region_rect = Rect2(0, 0, 1600, 3200)
 script = ExtResource("2_7l4fg")
 metadata/_edit_group_ = true
