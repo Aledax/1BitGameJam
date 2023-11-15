@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const player_impulse_factor = 40
+const player_impulse_factor = 8 # EXTREMELY sensitive, 8.1 allows you to push
 const boat_impulse_factor = 75
 
 func pushed_by_player(is_right):

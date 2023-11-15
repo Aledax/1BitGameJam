@@ -85,12 +85,13 @@ func _physics_process(delta):
 	for i in get_slide_collision_count():
 		
 		var collision = get_slide_collision(i)
+		var normal = collision.get_normal()
 		
 		if collision.get_collider().has_method("collide_player"):
 			collision.get_collider().collide_player()
 		
-		if collision.get_collider().has_method("pushed_by_player"):
-			collision.get_collider().pushed_by_player(-collision.get_normal() * 50)
+		if collision.get_collider().has_method("pushed_by_player") and abs(normal.x) > abs(normal.y):
+			collision.get_collider().pushed_by_player(normal.x < 0)
 	
 	# Exported variables
 	if velocity.x < 0:

@@ -9,6 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylqb8"]
 
 [node name="Boat" type="CharacterBody2D"]
+collision_layer = 16
 script = ExtResource("1_8n5wd")
 
 [node name="Base" type="Sprite2D" parent="."]

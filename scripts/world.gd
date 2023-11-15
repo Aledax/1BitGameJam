@@ -6,7 +6,7 @@ const npc_jump_event = "_npc_jump_event"
 const npc_switch_dialogue_event = "_npc_switch_dialogue_event"
 
 func _ready():
-	schedule_event("Ocean", ocean_rise_event, 1, [8])
+	schedule_event("Ocean", ocean_rise_event, 60, [5])
 	
 	schedule_event("NPCs", npc_move_event, 1, ["Npctest", -50])
 	schedule_event("NPCs", npc_jump_event, 2, ["Npctest", 0.1])

@@ -7,9 +7,8 @@
 script = ExtResource("1_lqy2d")
 
 [node name="CharacterBody" parent="." instance=ExtResource("2_g4k5o")]
-collision_mask = 11
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody"]
 position = Vector2(0, -25)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true

@@ -17,7 +17,10 @@ func _ready():
 	interface_right_sprite = get_node("InterfaceRight/Sprite2D")
 
 func _physics_process(_delta):
-	velocity.y = -position.y
+	if position.y > 0:
+		velocity.y = -position.y
+	else:
+		velocity.y = -position.y * 10
 	
 	var moving = false
 	if Input.is_action_pressed("interact"):
@@ -31,6 +34,13 @@ func _physics_process(_delta):
 		velocity.x *= 0.95
 	
 	move_and_slide()
+	for i in get_slide_collision_count():
+		
+		var collision = get_slide_collision(i)
+		var normal = collision.get_normal()
+		
+		if collision.get_collider().has_method("pushed_by_boat") and abs(normal.x) > abs(normal.y):
+			collision.get_collider().pushed_by_boat(normal.x < 0)
 
 func _on_interface_left_body_entered(body):
 	if body.get_parent().name == body_parent_name:

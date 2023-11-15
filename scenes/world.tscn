@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=12 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://cjsrn7b5n7yc7" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
 [ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
 [ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
+[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
 shader = ExtResource("2_w2ymm")
@@ -54,6 +55,10 @@ position = Vector2(155, -176)
 scale = Vector2(2, 2)
 
 [node name="SmallBox" parent="." instance=ExtResource("8_b67pu")]
+position = Vector2(-386, -120)
+
+[node name="LargeBox" parent="." instance=ExtResource("10_qv3ie")]
+position = Vector2(-170, -67)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 position = Vector2(-500, 0)
