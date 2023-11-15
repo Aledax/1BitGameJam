@@ -3,13 +3,13 @@ extends Node2D
 @export var char_name = ""
 var texts = {"default":[]}
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
+var area_2d
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _ready():
+	area_2d = $Area2D
 
 func set_texts(given_texts):
-	$Area2D.set_texts(given_texts)
+	area_2d.set_texts(given_texts)
+
+func set_dialogue(dialogue_key):
+	area_2d.set_dialogue(dialogue_key)

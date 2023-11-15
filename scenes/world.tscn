@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=10 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://cjsrn7b5n7yc7" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
 [ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
-[ext_resource type="Script" path="res://scenes/testSignalButton.gd" id="9_31flk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
 shader = ExtResource("2_w2ymm")
@@ -56,16 +55,3 @@ scale = Vector2(2, 2)
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 position = Vector2(-300, 0)
 scale = Vector2(2, 2)
-
-[node name="Button timer test" type="Node2D" parent="."]
-position = Vector2(-95, -212)
-script = ExtResource("9_31flk")
-
-[node name="Button" type="Button" parent="Button timer test"]
-offset_right = 56.0
-offset_bottom = 31.0
-text = "Click me to progress dialogue"
-
-[connection signal="dialogue_signal" from="Button timer test" to="Npctest" method="set_dialogue"]
-[connection signal="pressed" from="Button timer test/Button" to="Npctest" method="set_dialogue"]
-[connection signal="pressed" from="Button timer test/Button" to="Button timer test" method="emit_dialogue_signal"]

@@ -10,7 +10,6 @@ var player_in_collision = false
 var showing = false
 var inAnimation = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	self.char_name = get_parent().char_name
 	dialogue_key = "default"
@@ -25,14 +24,11 @@ func set_texts(given_texts):
 
 func set_dialogue(dialogue_key):
 	if texts.has(dialogue_key):
-		print("text interactible contains key: " + dialogue_key)
-		print("changing dialogue...")
 		self.dialogue_key = dialogue_key
 	else:
 		print("text interactible does not contain key: " + dialogue_key)
 		self.dialogue_key = "default"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		if player_in_collision && !showing:

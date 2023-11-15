@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyyxokoi2dp6o"]
+[gd_scene load_steps=2 format=3 uid="uid://cyyxokoi2dp6o"]
 
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="1_dxglf"]
-[ext_resource type="Script" path="res://scenes/npctest.gd" id="1_leydj"]
 
 [node name="Npctest" type="Node2D"]
-script = ExtResource("1_leydj")
 
 [node name="NPC" parent="." instance=ExtResource("1_dxglf")]
+texts = {
+"default": ["Sample Dialgoue", "BOO!"],
+"newdialoguetest": ["Hand over your wallet, bozo"]
+}

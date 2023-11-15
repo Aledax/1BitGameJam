@@ -6,7 +6,7 @@
 animations = []
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdo0g"]
-size = Vector2(6, 16)
+size = Vector2(4, 16)
 
 [node name="CharacterBody" type="CharacterBody2D"]
 process_mode = 1
