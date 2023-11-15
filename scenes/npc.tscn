@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://clyvv37jglrgd"]
+[gd_scene load_steps=4 format=3 uid="uid://clyvv37jglrgd"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_xky8w"]
 [ext_resource type="PackedScene" uid="uid://snv5la6sign3" path="res://scenes/character_body.tscn" id="2_j7bdf"]
+[ext_resource type="PackedScene" uid="uid://byku54wkgnbd" path="res://scenes/textInteractible.tscn" id="3_egtkk"]
 
 [node name="NPC" type="Node2D"]
 script = ExtResource("1_xky8w")
 
 [node name="CharacterBody" parent="." instance=ExtResource("2_j7bdf")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="textInteractible" parent="CharacterBody" instance=ExtResource("3_egtkk")]
+thisText = ["BOO", "dasfadsjkfl"]

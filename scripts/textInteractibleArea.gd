@@ -19,12 +19,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
+		print("E")
 		if player_in_collision && !showing:
 			showing = true
 			start_dialogue()
+			print("Start")
 		elif curr_index == thisText.size() - 1 && !inAnimation:
+			print("End")
 			hideText()
 		elif !inAnimation && showing:
+			print("Next")
 			curr_index += 1
 			showText()
 

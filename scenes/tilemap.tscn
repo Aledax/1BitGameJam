@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://x0fps0xrjrlv"]
+[gd_scene load_steps=5 format=3 uid="uid://clckcr4rfv68v"]
 
 [ext_resource type="Texture2D" uid="uid://x3lqfkasu2yg" path="res://art/environment/TestTileset.png" id="1_2kdm5"]
 
@@ -108,7 +108,8 @@ texture = ExtResource("1_2kdm5")
 5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_sdpe6"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_ijvda")
 pattern_0 = SubResource("TileMapPattern_5sgd3")
 

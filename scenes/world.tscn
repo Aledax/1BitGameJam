@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=10 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://cvekp8n63mivw" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://cjsrn7b5n7yc7" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -6,7 +6,6 @@
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 [ext_resource type="PackedScene" uid="uid://clckcr4rfv68v" path="res://scenes/tilemap.tscn" id="3_igu0m"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
-[ext_resource type="PackedScene" uid="uid://byku54wkgnbd" path="res://scenes/textInteractible.tscn" id="5_5hshb"]
 [ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
 [ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
 
@@ -41,20 +40,17 @@ position = Vector2(-192, -164)
 position = Vector2(208, -208)
 scale = Vector2(2, 2)
 
-[node name="textInteractible" parent="." instance=ExtResource("5_5hshb")]
-process_mode = 3
-position = Vector2(10, -240)
-thisText = ["Helloooo", "Whats up?"]
+[node name="AutoTileTest2" parent="." instance=ExtResource("6_vnjve")]
+position = Vector2(496, 400)
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
 position = Vector2(-137, -214)
+scale = Vector2(2, 2)
 
 [node name="Npctest" parent="." instance=ExtResource("9_2rdoe")]
 position = Vector2(0, -250)
+scale = Vector2(2, 2)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 position = Vector2(-300, 0)
-
-[node name="AutoTileTest2" parent="." instance=ExtResource("6_vnjve")]
-position = Vector2(496, 400)

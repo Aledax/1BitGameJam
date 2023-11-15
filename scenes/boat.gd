@@ -16,7 +16,7 @@ func _ready():
 	interface_left_sprite = get_node("InterfaceLeft/Sprite2D")
 	interface_right_sprite = get_node("InterfaceRight/Sprite2D")
 
-func _process(delta):
+func _physics_process(_delta):
 	linear_velocity.y = -position.y
 	
 	var moving = false

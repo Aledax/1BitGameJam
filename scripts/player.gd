@@ -6,7 +6,7 @@ func _ready():
 	character_body = $CharacterBody
 	character_body.initialize_frames("player")
 
-func _process(delta):
+func _physics_process(_delta):
 	
 	# Horizontal input
 	var horizontal_movement = 0
