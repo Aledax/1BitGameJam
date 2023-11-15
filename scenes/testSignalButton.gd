@@ -3,6 +3,8 @@ extends Node2D
 signal test_signal
 signal test_signal2
 
+signal dialogue_signal(dialogue_key)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_event_to_occur(10, test_signal)
@@ -23,3 +25,6 @@ func set_event_to_occur(secs, given_signal):
 		print(given_signal, " emitted!"))
 	timer.start() # emit "timeout" signal in 30 secs
 
+func emit_dialogue_signal():
+	print("emitting")
+	dialogue_signal.emit("testing")

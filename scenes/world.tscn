@@ -67,4 +67,6 @@ offset_right = 56.0
 offset_bottom = 31.0
 text = "Click me to progress dialogue"
 
+[connection signal="dialogue_signal" from="Button timer test" to="Npctest" method="set_dialogue"]
 [connection signal="pressed" from="Button timer test/Button" to="Npctest" method="set_dialogue"]
+[connection signal="pressed" from="Button timer test/Button" to="Button timer test" method="emit_dialogue_signal"]

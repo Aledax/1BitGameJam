@@ -9,5 +9,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func set_dialogue():
-	$NPC/CharacterBody/textInteractible/Area2D.set_dialogue("testing")
+func set_dialogue(dialogue_key):
+	$NPC/CharacterBody/textInteractible/Area2D.set_dialogue(dialogue_key)

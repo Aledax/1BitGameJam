@@ -25,12 +25,12 @@ func set_texts(given_texts):
 
 func set_dialogue(dialogue_key):
 	if texts.has(dialogue_key):
-		print('has key: ' + dialogue_key)
+		print("text interactible contains key: " + dialogue_key)
+		print("changing dialogue...")
 		self.dialogue_key = dialogue_key
 	else:
-		print("nope")
+		print("text interactible does not contain key: " + dialogue_key)
 		self.dialogue_key = "default"
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
