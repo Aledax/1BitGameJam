@@ -7,9 +7,16 @@ extends CharacterBody2D
 func _ready():
 	pass
 
+<<<<<<< Updated upstream
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity.x = 0
+=======
+func _physics_process(delta):
+	
+	# Horizontal input
+	var horizontal_movement = 0
+>>>>>>> Stashed changes
 	if Input.is_action_pressed("move_left"):
 		velocity.x = -speed * delta
 	if Input.is_action_pressed("move_right"):

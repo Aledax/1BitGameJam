@@ -1,11 +1,21 @@
 [gd_scene load_steps=8 format=3 uid="uid://dumikbijboqau"]
 
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
+=======
+[ext_resource type="PackedScene" path="res://scenes/ocean.tscn" id="1_515n2"]
+[ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_xhps8"]
+>>>>>>> Stashed changes
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 [ext_resource type="PackedScene" uid="uid://x0fps0xrjrlv" path="res://scenes/tilemap.tscn" id="3_igu0m"]
 [ext_resource type="PackedScene" uid="uid://cu2mi5ux5uif6" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://wd1qqpikm7tp" path="res://scenes/textInteractible.tscn" id="5_5hshb"]
 [ext_resource type="PackedScene" uid="uid://5dy404dt6haf" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" path="res://scenes/npctest.tscn" id="9_2rdoe"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
 shader = ExtResource("2_w2ymm")
@@ -37,8 +47,15 @@ position = Vector2(148, 432)
 
 [node name="textInteractible" parent="." instance=ExtResource("5_5hshb")]
 process_mode = 3
+<<<<<<< Updated upstream
 position = Vector2(389, 356)
 thisText = ["Helloooo", "Whats up?"]
+=======
+position = Vector2(10, -240)
+texts = {
+"default": PackedStringArray("Hello", "Hi hhow are you")
+}
+>>>>>>> Stashed changes
 
 [node name="player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
