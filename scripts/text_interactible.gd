@@ -1,6 +1,8 @@
 extends Area2D
 
-@export var texts = {"":[]}
+@export var char_name = ""
+
+var texts = {"":[]}
 var curr_index = 0
 var dialogue_key = ""
 
@@ -10,19 +12,25 @@ var inAnimation = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.char_name = get_parent().char_name
 	dialogue_key = "default"
 	$Sprite2D2.hide()
 	$RichTextLabel.hide()
 	player_in_collision = false
 	showing = false
 	inAnimation = false
-	texts = get_parent().texts
 	
+func set_texts(given_texts):
+	texts = given_texts
+
 func set_dialogue(dialogue_key):
 	if texts.has(dialogue_key):
+		print('has key: ' + dialogue_key)
 		self.dialogue_key = dialogue_key
 	else:
+		print("nope")
 		self.dialogue_key = "default"
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,7 +39,7 @@ func _process(delta):
 			showing = true
 			start_dialogue()
 		elif showing:
-			if curr_index >= texts[dialogue_key].size() - 1:
+			if curr_index >= texts[dialogue_key].size() - 1 && !inAnimation:
 				hideText()
 			elif !inAnimation:
 				curr_index += 1
@@ -66,9 +74,6 @@ func showText():
 		$RichTextLabel.text = temp
 		await get_tree().create_timer(0.016).timeout
 	inAnimation = false
-
-
-
 
 func hideText():
 	$RichTextLabel.text = ""

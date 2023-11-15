@@ -58,13 +58,12 @@ scale = Vector2(2, 2)
 position = Vector2(-300, 0)
 scale = Vector2(2, 2)
 
-[node name="Button timer test" type="Node2D" parent="."]
-position = Vector2(-95, -212)
+[node name="Button" type="Button" parent="."]
+offset_left = -95.0
+offset_top = -212.0
+offset_right = -39.0
+offset_bottom = -181.0
+text = "Hello"
 script = ExtResource("9_31flk")
 
-[node name="Button" type="Button" parent="Button timer test"]
-offset_right = 56.0
-offset_bottom = 31.0
-text = "Click me to progress dialogue"
-
-[connection signal="pressed" from="Button timer test/Button" to="Npctest" method="set_dialogue"]
+[connection signal="pressed" from="Button" to="Npctest" method="set_dialogue"]

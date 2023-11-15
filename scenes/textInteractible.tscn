@@ -2,90 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/parent_text.gd" id="1_67f3k"]
 [ext_resource type="Texture2D" uid="uid://ckjaol77a5a4v" path="res://art/characters/icon.svg" id="1_71q17"]
-
-[sub_resource type="GDScript" id="GDScript_wa3ia"]
-script/source = "extends Area2D
-
-@export var texts = {\"\":[]}
-var curr_index = 0
-var dialogue_key = \"\"
-
-var player_in_collision = false
-var showing = false
-var inAnimation = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	dialogue_key = \"default\"
-	$Sprite2D2.hide()
-	$RichTextLabel.hide()
-	player_in_collision = false
-	showing = false
-	inAnimation = false
-	texts = get_parent().texts
-	
-func set_dialogue(dialogue_key):
-	if texts.has(dialogue_key):
-		self.dialogue_key = dialogue_key
-	else:
-		self.dialogue_key = \"default\"
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed(\"interact\"):
-		print(\"E\")
-		if player_in_collision && !showing:
-			showing = true
-			start_dialogue()
-		elif showing:
-			print(curr_index)
-			print(texts[dialogue_key].size() - 1)
-			if curr_index >= texts[dialogue_key].size() - 1:
-				hideText()
-			elif !inAnimation:
-				curr_index += 1
-				showText()
-
-func _on_body_entered(body):
-	if body.get_parent().name == \"Player\":
-		player_in_collision = true
-
-func _on_body_exited(body):
-	if body.get_parent().name == \"Player\":
-		player_in_collision = false
-
-func start_dialogue():
-	get_tree().paused = true
-	curr_index = 0
-	showText()
-
-func showText():
-	await get_tree().create_timer(0.017).timeout
-	inAnimation = true
-	var curr_dialogue = texts[dialogue_key][curr_index]
-	$Sprite2D2.show()
-	$RichTextLabel.show()
-	var temp = \"\"
-	for char in curr_dialogue:
-		if Input.is_action_just_pressed(\"interact\"):
-			$RichTextLabel.text = curr_dialogue
-			await get_tree().create_timer(0.017).timeout
-			break
-		temp += char
-		$RichTextLabel.text = temp
-		await get_tree().create_timer(0.016).timeout
-	inAnimation = false
-
-
-
-
-func hideText():
-	$RichTextLabel.text = \"\"
-	showing = false
-	$Sprite2D2.hide()
-	$RichTextLabel.hide()
-	get_tree().paused = false
-"
+[ext_resource type="Script" path="res://scripts/text_interactible.gd" id="2_867c4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wj715"]
 size = Vector2(8, 16)
@@ -95,7 +12,7 @@ script = ExtResource("1_67f3k")
 
 [node name="Area2D" type="Area2D" parent="."]
 process_mode = 3
-script = SubResource("GDScript_wa3ia")
+script = ExtResource("2_867c4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 visible = false
