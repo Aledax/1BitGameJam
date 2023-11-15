@@ -88,6 +88,9 @@ func _physics_process(delta):
 		
 		if collision.get_collider().has_method("collide_player"):
 			collision.get_collider().collide_player()
+		
+		if collision.get_collider().has_method("pushed_by_player"):
+			collision.get_collider().pushed_by_player(-collision.get_normal() * 50)
 	
 	# Exported variables
 	if velocity.x < 0:

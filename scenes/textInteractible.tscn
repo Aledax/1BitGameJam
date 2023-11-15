@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://wd1qqpikm7tp"]
+[gd_scene load_steps=5 format=3 uid="uid://byku54wkgnbd"]
 
-[ext_resource type="Script" path="res://scripts/parent_text.gd" id="1_67f3k"]
+[ext_resource type="Script" path="res://scripts/text_interactible.gd" id="1_2wbqj"]
 [ext_resource type="Texture2D" uid="uid://ckjaol77a5a4v" path="res://art/characters/icon.svg" id="1_71q17"]
-[ext_resource type="Script" path="res://scripts/text_interactible.gd" id="2_867c4"]
+[ext_resource type="Script" path="res://scripts/parent_text.gd" id="1_tjxpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wj715"]
 size = Vector2(8, 16)
 
 [node name="textInteractible" type="Node2D"]
-script = ExtResource("1_67f3k")
+script = ExtResource("1_tjxpn")
 
 [node name="Area2D" type="Area2D" parent="."]
 process_mode = 3
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("2_867c4")
+script = ExtResource("1_2wbqj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 visible = false
