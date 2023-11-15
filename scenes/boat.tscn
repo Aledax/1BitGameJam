@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtjkqcao3olds"]
 
-[ext_resource type="Script" path="res://scenes/boat.gd" id="1_37y2r"]
+[ext_resource type="Script" path="res://scripts/boat.gd" id="1_8n5wd"]
 [ext_resource type="Texture2D" uid="uid://bdricdis1tyc1" path="res://art/environment/boat/base.png" id="1_o7wlq"]
 [ext_resource type="Texture2D" uid="uid://gdv4brhugvjk" path="res://art/environment/boat/interface_off.png" id="2_6mmft"]
 
@@ -8,19 +8,16 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylqb8"]
 
-[node name="Boat" type="RigidBody2D"]
-gravity_scale = 0.0
-lock_rotation = true
-freeze_mode = 1
-script = ExtResource("1_37y2r")
+[node name="Boat" type="CharacterBody2D"]
+script = ExtResource("1_8n5wd")
 
 [node name="Base" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
 texture = ExtResource("1_o7wlq")
 
 [node name="InterfaceLeft" type="Area2D" parent="."]
-position = Vector2(-38, -28)
-scale = Vector2(2, 2)
+position = Vector2(-19, -14)
+collision_layer = 8
+collision_mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="InterfaceLeft"]
 texture = ExtResource("2_6mmft")
@@ -30,8 +27,9 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_uo1sb")
 
 [node name="InterfaceRight" type="Area2D" parent="."]
-position = Vector2(38, -28)
-scale = Vector2(2, 2)
+position = Vector2(19, -14)
+collision_layer = 8
+collision_mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="InterfaceRight"]
 texture = ExtResource("2_6mmft")
@@ -41,7 +39,8 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_uo1sb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4.8, 1.6)
+position = Vector2(0, -4)
+scale = Vector2(2.4, 0.4)
 shape = SubResource("RectangleShape2D_ylqb8")
 
 [connection signal="body_entered" from="InterfaceLeft" to="." method="_on_interface_left_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dumikbijboqau"]
 
-[ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
+[ext_resource type="PackedScene" uid="uid://cvekp8n63mivw" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://cjsrn7b5n7yc7" path="res://scenes/rain.tscn" id="1_b2hkm"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_xhps8"]
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
@@ -25,6 +25,7 @@ scale = Vector2(0.5, 0.5)
 region_rect = Rect2(0, 100, 3200, 6400)
 
 [node name="ColorMaskLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorMask" type="ColorRect" parent="ColorMaskLayer"]
 material = SubResource("ShaderMaterial_q6ytt")

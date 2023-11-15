@@ -8,5 +8,8 @@
 script = ExtResource("1_xky8w")
 
 [node name="CharacterBody" parent="." instance=ExtResource("2_j7bdf")]
+collision_layer = 2
+collision_mask = 2
 
 [node name="textInteractible" parent="CharacterBody" instance=ExtResource("3_egtkk")]
+thisText = ["BOO", "dasfadsjkfl"]

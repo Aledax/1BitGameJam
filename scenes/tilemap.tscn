@@ -110,8 +110,8 @@ texture = ExtResource("1_2kdm5")
 5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_sdpe6"]
-physics_layer_0/collision_layer = 3
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_layer = 0
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_ijvda")
 pattern_0 = SubResource("TileMapPattern_5sgd3")
 
@@ -4611,8 +4611,8 @@ texture_region_size = Vector2i(8, 8)
 
 [sub_resource type="TileSet" id="TileSet_p5k4e"]
 tile_size = Vector2i(8, 8)
-physics_layer_0/collision_layer = 3
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.65098, 0.196078, 0.282353, 1)
@@ -4637,7 +4637,7 @@ pattern_1 = SubResource("TileMapPattern_4a2r3")
 
 [node name="tilemap" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="DeprecatedTileMap" type="TileMap" parent="."]
 visible = false
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_sdpe6")

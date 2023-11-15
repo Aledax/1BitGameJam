@@ -1,13 +1,30 @@
 extends Node2D
 
+const ocean_rise_event = "_ocean_rise_event"
+const npc_move_event = "_npc_move_event"
+const npc_jump_event = "_npc_jump_event"
+
 const rise_delay = 5
 const rise_speed = 5
 
 var runtime = 0
 var prevRuntime = 0
 
-func _physics_process(delta):
-	prevRuntime = runtime
-	runtime += delta
+func _ready():
+	schedule_event("Ocean", ocean_rise_event, 3, [5])
 	
-	$Ocean.position.y = -max(runtime - rise_delay, 0) * rise_speed
+	schedule_event("NPCs", npc_move_event, 1, ["Npctest", -50])
+	schedule_event("NPCs", npc_jump_event, 2, ["Npctest", 0.1])
+
+func schedule_event(event_group, event_name, time_start, event_args):
+	print("Event: ", event_name, " will be called in ", time_start, " seconds")
+	var timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true 
+	timer.wait_time = time_start
+	timer.process_callback = Timer.TIMER_PROCESS_PHYSICS
+	timer.timeout.connect(func():
+		var call_group_args = [event_group, event_name] + event_args
+		get_tree().callv("call_group", call_group_args)
+		print(event_name, " activated!"))
+	timer.start()

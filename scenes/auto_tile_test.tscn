@@ -8,8 +8,8 @@ tile_data = PackedInt32Array(0, 1245185, 8, 65536, 1245185, 10, 131072, 1245185,
 
 [sub_resource type="TileSet" id="TileSet_xkqbt"]
 tile_size = Vector2i(8, 8)
-physics_layer_0/collision_layer = 3
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.65098, 0.196078, 0.282353, 1)

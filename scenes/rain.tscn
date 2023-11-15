@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddqolw7q5dgvk"]
+[gd_scene load_steps=3 format=3 uid="uid://cjsrn7b5n7yc7"]
 
 [ext_resource type="Texture2D" uid="uid://cx3m06oslo6bb" path="res://art/environment/rain.png" id="1_ft502"]
 [ext_resource type="Script" path="res://scripts/rain.gd" id="2_7l4fg"]
