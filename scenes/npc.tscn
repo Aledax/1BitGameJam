@@ -7,8 +7,7 @@
 [node name="NPC" type="Node2D" groups=["NPCs"]]
 script = ExtResource("1_xky8w")
 texts = {
-"default": PackedStringArray("Before", "lalalallala!"),
-"testing": PackedStringArray("After", "YIPPEEEE!!!dddddddddddddddddddadawdsawddddddddddddsddddaaaawd")
+"default": ["Sample Dialgoue"]
 }
 
 [node name="CharacterBody" parent="." instance=ExtResource("2_j7bdf")]

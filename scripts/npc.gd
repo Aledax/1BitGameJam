@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var npc_name = "npctest"
-@export var texts = {"default":[]}
+@export var texts: Dictionary
 
 var character_body
 var text_interactible
@@ -44,3 +44,8 @@ func _npc_jump_event(npc_name, hold_time):
 	character_body.pressing_jump = true
 	just_jumped_timer = 2
 	jump_timer = hold_time
+
+func _npc_switch_dialogue_event(npc_name, dialogue_key):
+	if get_parent().name != npc_name: return
+	
+	text_interactible.set_dialogue(dialogue_key)
