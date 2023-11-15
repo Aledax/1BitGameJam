@@ -48,6 +48,16 @@ interact={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Ground"
+2d_physics/layer_2="Trigger"
+2d_physics/layer_3="NPC"
+2d_physics/layer_4="Passable "
+2d_physics/layer_5="Boat"
+2d_physics/layer_6="Boxes"
+2d_physics/layer_7="Player"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
