@@ -5,9 +5,6 @@ extends CharacterBody2D
 @export var just_pressed_jump = false
 @export var pressing_jump = false
 
-# Used by parent scripts.
-@export var is_airborne = false # true, false
-
 # The character experiences very slight acceleration and deceleration when starting
 # and stopping to move horizontally.
 const horizontal_acceleration = 1500
@@ -96,6 +93,4 @@ func _physics_process(delta):
 		horizontal_movement = 1
 	else:
 		horizontal_movement = 0
-	
-	is_airborne = (airborne_stopwatch > airborne_delay)
 
