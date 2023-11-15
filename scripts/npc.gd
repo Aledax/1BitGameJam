@@ -14,7 +14,7 @@ func _ready():
 	character_body = $CharacterBody
 	character_body.initialize_frames(npc_name)
 	text_interactible = $CharacterBody/textInteractible
-	#text_interactible.set_texts(texts)
+	text_interactible.set_texts(texts)
 
 func _physics_process(delta):
 	if (character_body.horizontal_movement == -1 and character_body.global_position.x <= target_x) or (character_body.horizontal_movement == 1 and character_body.global_position.x >= target_x):

@@ -4,14 +4,8 @@ const ocean_rise_event = "_ocean_rise_event"
 const npc_move_event = "_npc_move_event"
 const npc_jump_event = "_npc_jump_event"
 
-const rise_delay = 5
-const rise_speed = 5
-
-var runtime = 0
-var prevRuntime = 0
-
 func _ready():
-	schedule_event("Ocean", ocean_rise_event, 3, [5])
+	schedule_event("Ocean", ocean_rise_event, 60, [1])
 	
 	schedule_event("NPCs", npc_move_event, 1, ["Npctest", -50])
 	schedule_event("NPCs", npc_jump_event, 2, ["Npctest", 0.1])
