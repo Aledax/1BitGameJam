@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=14 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://cjsrn7b5n7yc7" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
 [ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
 [ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
-[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
+[ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
 shader = ExtResource("2_w2ymm")
@@ -48,11 +50,9 @@ position = Vector2(496, 400)
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
 position = Vector2(-379, -58)
-scale = Vector2(2, 2)
 
 [node name="Npctest" parent="." instance=ExtResource("9_2rdoe")]
 position = Vector2(155, -176)
-scale = Vector2(2, 2)
 
 [node name="SmallBox" parent="." instance=ExtResource("8_b67pu")]
 position = Vector2(-386, -120)
@@ -64,3 +64,10 @@ position = Vector2(-170, -67)
 z_index = 2
 position = Vector2(-500, 0)
 scale = Vector2(2, 2)
+
+[node name="Wrench" parent="." instance=ExtResource("11_dc0en")]
+position = Vector2(-359, -53)
+item_name = "Wrench"
+item_sprite = ExtResource("12_b6f7b")
+
+[connection signal="body_entered" from="Wrench" to="Player" method="_on_item_body_entered"]
