@@ -17,9 +17,11 @@ script = ExtResource("1_y0v03")
 
 [node name="CharacterSprites" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -0.9)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4lsie")
 animation = &""
 
 [node name="CharacterCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_vdo0g")

@@ -2,9 +2,13 @@ extends Node2D
 
 var character_body
 
+var current_item : Node2D = null
+var holding_item = false
+
 func _ready():
 	character_body = $CharacterBody
 	character_body.initialize_frames("player")
+	holding_item = false
 
 func _physics_process(_delta):
 	
@@ -19,3 +23,4 @@ func _physics_process(_delta):
 	# Vertical input
 	character_body.just_pressed_jump = Input.is_action_just_pressed("jump")
 	character_body.pressing_jump = Input.is_action_pressed("jump")
+	
