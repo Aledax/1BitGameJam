@@ -10,6 +10,8 @@ var player_in_collision = false
 var showing = false
 var inAnimation = false
 
+var interact_symbol
+
 func _ready():
 	self.char_name = get_parent().char_name
 	dialogue_key = "default"
@@ -18,6 +20,8 @@ func _ready():
 	player_in_collision = false
 	showing = false
 	inAnimation = false
+	interact_symbol = $InteractSymbol
+	interact_symbol.hide()
 	
 func set_texts(given_texts):
 	texts = given_texts
@@ -44,10 +48,13 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.get_parent().name == "Player":
 		player_in_collision = true
+		interact_symbol.show()
+		
 
 func _on_body_exited(body):
 	if body.get_parent().name == "Player":
 		player_in_collision = false
+		interact_symbol.hide()
 
 func start_dialogue():
 	get_tree().paused = true

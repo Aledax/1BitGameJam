@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjybg6y6a516"]
+[gd_scene load_steps=4 format=3 uid="uid://c0m30d21tbern"]
 
 [ext_resource type="Texture2D" uid="uid://ial31oflcy78" path="res://art/environment/boxes/large_box.png" id="1_cm7xu"]
 [ext_resource type="Script" path="res://scripts/large_box.gd" id="1_r82ee"]

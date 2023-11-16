@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=16 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -7,11 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://clckcr4rfv68v" path="res://scenes/tilemap.tscn" id="3_igu0m"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
-[ext_resource type="PackedScene" path="res://scenes/small_box.tscn" id="8_b67pu"]
+[ext_resource type="PackedScene" uid="uid://bbbvsjm1jx66i" path="res://scenes/small_box.tscn" id="8_b67pu"]
 [ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
-[ext_resource type="PackedScene" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
+[ext_resource type="PackedScene" uid="uid://66ahyu0h22c8" path="res://scenes/require_item.tscn" id="13_u2pjx"]
+[ext_resource type="Texture2D" uid="uid://dcqsyw3n4ska7" path="res://art/Items/test_vent.png" id="14_xy7wo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
 shader = ExtResource("2_w2ymm")
@@ -55,7 +57,7 @@ position = Vector2(-379, -58)
 position = Vector2(155, -176)
 
 [node name="SmallBox" parent="." instance=ExtResource("8_b67pu")]
-position = Vector2(-386, -120)
+position = Vector2(-317, -59)
 
 [node name="LargeBox" parent="." instance=ExtResource("10_qv3ie")]
 position = Vector2(-170, -67)
@@ -70,4 +72,13 @@ position = Vector2(-359, -53)
 item_name = "Wrench"
 item_sprite = ExtResource("12_b6f7b")
 
-[connection signal="body_entered" from="Wrench" to="Player" method="_on_item_body_entered"]
+[node name="require_item" parent="." node_paths=PackedStringArray("required_item") instance=ExtResource("13_u2pjx")]
+position = Vector2(-405, -65)
+_name = "Vent"
+_sprite = ExtResource("14_xy7wo")
+required_item = NodePath("../Wrench")
+
+[node name="Wrench2" parent="." instance=ExtResource("11_dc0en")]
+position = Vector2(-361, -89)
+item_name = "Wrench"
+item_sprite = ExtResource("12_b6f7b")

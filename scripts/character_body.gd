@@ -52,11 +52,11 @@ func _physics_process(delta):
 	else:
 		velocity.x *= 0.25
 		
-#	# Face direction of movement
-#	if horizontal_movement == -1:
-#		set_scale(Vector2(1,1))
-#	elif horizontal_movement == 1:
-#		set_scale(Vector2(-1,1))
+	# Face direction of movement
+	if horizontal_movement == -1:
+		$CharacterSprites.set_scale(Vector2(2,2))
+	elif horizontal_movement == 1:
+		$CharacterSprites.set_scale(Vector2(-2,2))
 
 	
 	# Airborne delay
