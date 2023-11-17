@@ -6,8 +6,6 @@ const npc_jump_event = "_npc_jump_event"
 const npc_switch_dialogue_event = "_npc_switch_dialogue_event"
 
 const kousa_beach_start = 45
-const wattle_restaurant_start = 0
-const sorrel_lookout_start = 0
 const wattle_restaurant_start = 30
 const sorrel_restaurant_start = 50
 const sorrel_lookout_start = 140
@@ -41,10 +39,6 @@ func _ready():
 	schedule_workshop_to_launchpad(wattle_launchpad_start + 38, "wattle")
 
 	# Sorrel
-	# schedule_event("NPCs", npc_move_event, sorrel_lookout_start + 0, ["sorrel", 250])
-	# schedule_restaurant_to_elevator(sorrel_lookout_start + 5, "sorrel")
-	schedule_elevator_to_workshop(5, "sorrel")
-	schedule_workshop_to_launchpad(9, "sorrel")
 	schedule_event("NPCs", npc_move_event, sorrel_restaurant_start + 0, ["sorrel", 10])
 	schedule_sorrel_to_fountain(sorrel_restaurant_start + 4, "sorrel")
 	schedule_fountain_to_restaurant(sorrel_restaurant_start + 26.5, "sorrel")
