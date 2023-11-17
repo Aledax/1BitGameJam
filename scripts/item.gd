@@ -20,8 +20,8 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_pressed("interact") && in_collision && !picked_up:
 		pick_up()
-	if Input.is_action_just_pressed("drop_item") && picked_up:
-		drop_item()
+#	if Input.is_action_just_pressed("drop_item") && picked_up:
+#		drop_item()
 
 func _on_body_entered(body):
 	if body.get_parent().name == "Player":
@@ -36,14 +36,11 @@ func _on_body_exited(body):
 		interact_symbol.hide()
 
 func pick_up():
-	if player_node.holding_item: return
 	get_parent().remove_child(self)
-	player_node.get_children()[0].add_child(self)
-	player_node.holding_item = true
-	player_node.current_item = self
+	player_node.add_item(self)
 	picked_up = true
 	interact_symbol.hide()
-	self.position = Vector2(0, -26)
+	self.position = Vector2(0, player_node.get_item_count()*-26)
 	
 func drop_item():
 	picked_up = false
@@ -51,9 +48,8 @@ func drop_item():
 	var root = get_tree().get_root()
 	get_parent().remove_child(self)
 	root.add_child(self)
-	player_node.holding_item = false
-	player_node.current_item = null
 	interact_symbol.show()
-	global_position = temp + Vector2(0, 24)
+	global_position = temp + Vector2(0, 32)
 	
+
 	

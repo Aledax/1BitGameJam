@@ -34,7 +34,7 @@ func _on_body_exited(body):
 		interact_symbol.hide()
 		
 func check_for_item():
-	if player_node.current_item == required_item:
+	if required_item in player_node.current_items:
 		print("You have the item~")
 		correct_item_brought.emit()
 	else:

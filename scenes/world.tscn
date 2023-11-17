@@ -5,10 +5,10 @@
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_xhps8"]
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
-[ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
-[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
-[ext_resource type="PackedScene" uid="uid://c13crhkfu4600" path="res://scenes/item.tscn" id="11_dc0en"]
+[ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
+[ext_resource type="PackedScene" uid="uid://bbbvsjm1jx66i" path="res://scenes/small_box.tscn" id="8_b67pu"]
+[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
 [ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 
@@ -56,40 +56,30 @@ position = Vector2(-434, -1054)
 position = Vector2(-436, -1016)
 
 [node name="SmallBox5" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(143, -1596)
+position = Vector2(180, -1593)
 
 [node name="SmallBox6" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(213, -2354)
+position = Vector2(258, -2509)
 
 [node name="LargeBox2" parent="Boxes" instance=ExtResource("10_qv3ie")]
-position = Vector2(239, -2359)
+position = Vector2(224, -2515)
 
 [node name="SmallBox7" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(243, -2389)
+position = Vector2(237, -2543)
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="NPC" parent="NPCs" instance=ExtResource("7_o702o")]
+position = Vector2(99, -93)
+npc_name = "sorrel"
+
+[node name="NPC2" parent="NPCs" instance=ExtResource("7_o702o")]
+position = Vector2(417, -1071)
+npc_name = "kousa"
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(-900, -39)
-
-[node name="Sorrel" parent="." instance=ExtResource("7_81xkr")]
-position = Vector2(111, -62)
-npc_name = "sorrel"
-texts = {
-"default": ["Wait like 5 more seconds..."],
-"test": PackedStringArray("Thank you for saving me!")
-}
-
-[node name="Kousa" parent="." instance=ExtResource("7_81xkr")]
-position = Vector2(403, -236)
-npc_name = "kousa"
-
-[node name="Alder" parent="." instance=ExtResource("7_81xkr")]
-position = Vector2(181, -56)
-npc_name = "alder"
-
-[node name="Wattle" parent="." instance=ExtResource("7_81xkr")]
-position = Vector2(-14, -62)
-npc_name = "wattle"
+position = Vector2(109, -322)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
@@ -102,13 +92,4 @@ position = Vector2(-359, -53)
 item_name = "Wrench"
 item_sprite = ExtResource("12_b6f7b")
 
-[node name="require_item" parent="." node_paths=PackedStringArray("required_item") instance=ExtResource("13_u2pjx")]
-position = Vector2(-405, -65)
-_name = "Vent"
-_sprite = ExtResource("14_xy7wo")
-required_item = NodePath("../Wrench")
-
-[node name="Wrench2" parent="." instance=ExtResource("11_dc0en")]
-position = Vector2(-361, -89)
-item_name = "Wrench"
-item_sprite = ExtResource("12_b6f7b")
+[connection signal="body_entered" from="Wrench" to="Player" method="_on_item_body_entered"]

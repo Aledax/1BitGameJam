@@ -2,13 +2,11 @@ extends Node2D
 
 var character_body
 
-var current_item : Node2D = null
-var holding_item = false
+var current_items = []
 
 func _ready():
 	character_body = $CharacterBody
 	character_body.initialize_frames("player")
-	holding_item = false
 
 func _physics_process(_delta):
 	
@@ -23,4 +21,28 @@ func _physics_process(_delta):
 	# Vertical input
 	character_body.just_pressed_jump = Input.is_action_just_pressed("jump")
 	character_body.pressing_jump = Input.is_action_pressed("jump")
+	
+	# Drop item
+	if Input.is_action_just_pressed("drop_item") && !character_body.is_airborne:
+		drop_item()
+
+func add_item(item):
+	character_body.add_child(item)
+	current_items.append(item)
+	
+func drop_item():
+	if current_items.size() <= 0: return
+	var dropped = current_items[0]
+	current_items.pop_front()
+	update_item_positions()
+	dropped.drop_item()
+	
+	
+func update_item_positions():
+	for i in current_items.size():
+		current_items[i].position = Vector2(0, (1+i)*-26)
+	
+func get_item_count():
+	return current_items.size()
+	
 	

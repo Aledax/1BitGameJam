@@ -15,7 +15,7 @@ script = ExtResource("1_obdev")
 scale = Vector2(2, 2)
 
 [node name="InteractSymbol" type="Sprite2D" parent="."]
-position = Vector2(0, -24)
+position = Vector2(0, -40)
 scale = Vector2(2, 2)
 texture = ExtResource("2_3g77m")
 script = ExtResource("3_aaxls")

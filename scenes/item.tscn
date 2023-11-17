@@ -21,7 +21,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_r4g4j")
 
 [node name="InteractSymbol" type="Sprite2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, -40)
 scale = Vector2(2, 2)
 texture = ExtResource("3_l8773")
 script = ExtResource("4_lw4iq")
