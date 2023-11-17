@@ -31,7 +31,7 @@ var airborne_stopwatch = 0
 const gravity_d = 25
 const jump_initial_speed = 150
 const jump_min_hold = 0.1
-const jump_max_hold = 0.2
+@export var jump_max_hold = 0.2 # NPCs will have a max of 0.3
 var jump_stopwatch = 0
 var jumping = false
 

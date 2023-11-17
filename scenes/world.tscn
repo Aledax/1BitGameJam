@@ -6,8 +6,8 @@
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
-[ext_resource type="PackedScene" uid="uid://bbbvsjm1jx66i" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
+[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
@@ -78,7 +78,7 @@ position = Vector2(237, -2543)
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="sorrel" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(-567, -56)
+position = Vector2(0, -2015)
 npc_name = "sorrel"
 
 [node name="kousa" parent="NPCs" instance=ExtResource("7_o702o")]
@@ -86,7 +86,7 @@ position = Vector2(417, -1071)
 npc_name = "kousa"
 
 [node name="wattle" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(-628, -58)
+position = Vector2(250, -311)
 npc_name = "wattle"
 
 [node name="alder" parent="NPCs" instance=ExtResource("7_o702o")]
