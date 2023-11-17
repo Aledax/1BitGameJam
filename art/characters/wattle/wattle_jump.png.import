@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcvww067huoku"
-path="res://.godot/imported/idle.png-6a7d9cf4ef3caf7236df13eecadc9467.ctex"
+uid="uid://b00no0bpocfri"
+path="res://.godot/imported/wattle_jump.png-36887cf1dfc9199d95f932111ac94abc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/characters/player/idle.png"
-dest_files=["res://.godot/imported/idle.png-6a7d9cf4ef3caf7236df13eecadc9467.ctex"]
+source_file="res://art/characters/wattle/wattle_jump.png"
+dest_files=["res://.godot/imported/wattle_jump.png-36887cf1dfc9199d95f932111ac94abc.ctex"]
 
 [params]
 

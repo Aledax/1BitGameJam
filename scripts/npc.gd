@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var npc_name = "npctest"
+@export var npc_name : String
 @export var texts: Dictionary
 
 var character_body
@@ -29,7 +29,7 @@ func _physics_process(delta):
 		character_body.just_pressed_jump = false
 
 func _npc_move_event(npc_name, target_x):
-	if get_parent().name != npc_name: return
+	if self.npc_name != npc_name: return
 	
 	self.target_x = target_x
 	if target_x < character_body.global_position.x:
@@ -38,7 +38,7 @@ func _npc_move_event(npc_name, target_x):
 		character_body.horizontal_movement = 1
 
 func _npc_jump_event(npc_name, hold_time):
-	if get_parent().name != npc_name: return
+	if self.npc_name != npc_name: return
 	
 	character_body.just_pressed_jump = true
 	character_body.pressing_jump = true
@@ -46,6 +46,6 @@ func _npc_jump_event(npc_name, hold_time):
 	jump_timer = hold_time
 
 func _npc_switch_dialogue_event(npc_name, dialogue_key):
-	if get_parent().name != npc_name: return
+	if self.npc_name != npc_name: return
 	
 	text_interactible.set_dialogue(dialogue_key)

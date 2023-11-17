@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://clckcr4rfv68v" path="res://scenes/tilemap.tscn" id="3_igu0m"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
+[ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_81xkr"]
 [ext_resource type="PackedScene" uid="uid://bbbvsjm1jx66i" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
 [ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
-[ext_resource type="PackedScene" uid="uid://66ahyu0h22c8" path="res://scenes/require_item.tscn" id="13_u2pjx"]
+[ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="13_u2pjx"]
 [ext_resource type="Texture2D" uid="uid://dcqsyw3n4ska7" path="res://art/Items/test_vent.png" id="14_xy7wo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
@@ -53,14 +53,31 @@ position = Vector2(496, 400)
 process_mode = 1
 position = Vector2(-379, -58)
 
-[node name="Npctest" parent="." instance=ExtResource("9_2rdoe")]
-position = Vector2(155, -176)
+[node name="Sorrel" parent="." instance=ExtResource("7_81xkr")]
+position = Vector2(111, -62)
+npc_name = "sorrel"
+texts = {
+"default": ["Wait like 5 more seconds..."],
+"test": PackedStringArray("Thank you for saving me!")
+}
+
+[node name="Kousa" parent="." instance=ExtResource("7_81xkr")]
+position = Vector2(68, -59)
+npc_name = "kousa"
+
+[node name="Alder" parent="." instance=ExtResource("7_81xkr")]
+position = Vector2(181, -56)
+npc_name = "alder"
+
+[node name="Wattle" parent="." instance=ExtResource("7_81xkr")]
+position = Vector2(-14, -62)
+npc_name = "wattle"
 
 [node name="SmallBox" parent="." instance=ExtResource("8_b67pu")]
 position = Vector2(-317, -59)
 
 [node name="LargeBox" parent="." instance=ExtResource("10_qv3ie")]
-position = Vector2(-170, -67)
+position = Vector2(-36, -167)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2

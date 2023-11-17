@@ -8,9 +8,9 @@ const npc_switch_dialogue_event = "_npc_switch_dialogue_event"
 func _ready():
 	schedule_event("Ocean", ocean_rise_event, 60, [5])
 	
-	schedule_event("NPCs", npc_move_event, 1, ["Npctest", -50])
-	schedule_event("NPCs", npc_jump_event, 2, ["Npctest", 0.1])
-	schedule_event("NPCs", npc_switch_dialogue_event, 5, ["Npctest", "newdialoguetest"])
+	schedule_event("NPCs", npc_move_event, 1, ["sorrel", -50])
+	schedule_event("NPCs", npc_jump_event, 2, ["sorrel", 0.1])
+	schedule_event("NPCs", npc_switch_dialogue_event, 5, ["sorrel", "test"])
 
 func schedule_event(event_group, event_name, time_start, event_args):
 	print("Event: ", event_name, " will be called in ", time_start, " seconds")
@@ -24,3 +24,7 @@ func schedule_event(event_group, event_name, time_start, event_args):
 		get_tree().callv("call_group", call_group_args)
 		print(event_name, " activated!"))
 	timer.start()
+
+
+func _on_require_item_correct_item_brought():
+	pass # Replace with function body.

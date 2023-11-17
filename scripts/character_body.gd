@@ -35,28 +35,42 @@ const jump_max_hold = 0.2
 var jump_stopwatch = 0
 var jumping = false
 
+var sprites
+var npc_name : String
+
 func initialize_frames(character_name):
-	print(character_name)
-	$CharacterSprites.sprite_frames.add_animation(character_name + "_idle")
-	$CharacterSprites.sprite_frames.add_frame(
-		character_name + "_idle", load("res://art/characters/" + character_name + "/idle.png"))
-	$CharacterSprites.animation = character_name + "_idle"
+	sprites = $CharacterSprites
+	npc_name = character_name
+	sprites.animation = npc_name + "_idle"
+	sprites.play()
+#	$CharacterSprites.sprite_frames.add_animation(character_name + "_idle")
+#	$CharacterSprites.sprite_frames.add_frame(
+#		character_name + "_idle", load("res://art/characters/" + character_name + "/idle.png"))
+#	$CharacterSprites.animation = character_name + "_idle"
 
 func _physics_process(delta):
-	
 	# Horizontal movement
 	if horizontal_movement == -1:
+		sprites.animation = npc_name + "_walk"
 		velocity.x = max(-horizontal_max_speed * delta, velocity.x - horizontal_acceleration * delta)
 	elif horizontal_movement == 1:
+		sprites.animation = npc_name + "_walk"
 		velocity.x = min(horizontal_max_speed * delta, velocity.x + horizontal_acceleration * delta)
 	else:
+		sprites.animation = npc_name + "_idle"
 		velocity.x *= 0.25
-		
+	
+	if is_airborne:
+		if jumping:
+			sprites.animation = npc_name + "_jump"
+		else:
+			sprites.animation = npc_name + "_fall"
+	
 	# Face direction of movement
 	if horizontal_movement == -1:
-		$CharacterSprites.set_scale(Vector2(2,2))
-	elif horizontal_movement == 1:
 		$CharacterSprites.set_scale(Vector2(-2,2))
+	elif horizontal_movement == 1:
+		$CharacterSprites.set_scale(Vector2(2,2))
 
 	
 	# Airborne delay

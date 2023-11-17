@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://66ahyu0h22c8"]
+[gd_scene load_steps=5 format=3 uid="uid://cghp8psda6lil"]
 
 [ext_resource type="Script" path="res://require_item.gd" id="1_obdev"]
 [ext_resource type="Texture2D" uid="uid://dquxuovtdswod" path="res://art/Interactible_Symbol.png" id="2_3g77m"]
@@ -25,4 +25,3 @@ shape = SubResource("RectangleShape2D_o2pvo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="correct_item_brought" from="." to="." method="delete_self"]

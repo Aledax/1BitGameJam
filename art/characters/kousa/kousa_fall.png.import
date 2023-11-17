@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcvww067huoku"
-path="res://.godot/imported/idle.png-6a7d9cf4ef3caf7236df13eecadc9467.ctex"
+uid="uid://bp3r5g2uocbhj"
+path="res://.godot/imported/kousa_fall.png-cfe4862de3e1307a1065324e4937f5c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/characters/player/idle.png"
-dest_files=["res://.godot/imported/idle.png-6a7d9cf4ef3caf7236df13eecadc9467.ctex"]
+source_file="res://art/characters/kousa/kousa_fall.png"
+dest_files=["res://.godot/imported/kousa_fall.png-cfe4862de3e1307a1065324e4937f5c2.ctex"]
 
 [params]
 
