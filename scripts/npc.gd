@@ -1,7 +1,8 @@
 extends Node2D
 
 @export var npc_name : String
-@export var texts: Dictionary
+@export var texts = {"":[[""]]}
+@export var desired_item : Node2D
 
 var character_body
 var text_interactible
@@ -15,6 +16,8 @@ func _ready():
 	character_body.initialize_frames(npc_name)
 	text_interactible = $CharacterBody/textInteractible
 	text_interactible.set_texts(texts)
+	text_interactible.set_npc_name(npc_name)
+	text_interactible.set_desired_item(desired_item)
 
 func _physics_process(delta):
 	if (character_body.horizontal_movement == -1 and character_body.global_position.x <= target_x) or (character_body.horizontal_movement == 1 and character_body.global_position.x >= target_x):

@@ -91,17 +91,31 @@ position = Vector2(237, -2543)
 
 [node name="NPCs" type="Node2D" parent="."]
 
-[node name="sorrel" parent="NPCs" instance=ExtResource("7_o702o")]
+[node name="sorrel" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(302, -414)
 npc_name = "sorrel"
+texts = {
+"default": [PackedStringArray("Default", ""), PackedStringArray("Yay", "Its", "Working")],
+"got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
+}
+desired_item = NodePath("../../Items/HouseKey")
 
-[node name="kousa" parent="NPCs" instance=ExtResource("7_o702o")]
+[node name="kousa" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(361, -1065)
 npc_name = "kousa"
+texts = {
+"default": [PackedStringArray("Hello"), PackedStringArray("Hi this is working"), PackedStringArray("gvafgdga")]
+}
+desired_item = NodePath("../../Items/Wrench")
 
-[node name="wattle" parent="NPCs" instance=ExtResource("7_o702o")]
+[node name="wattle" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(250, -311)
 npc_name = "wattle"
+texts = {
+"default": [PackedStringArray("Hi ", "Whats up"), PackedStringArray("Bruhhh")],
+"got_boat": [PackedStringArray("Thanks for saving me")]
+}
+desired_item = NodePath("../../Items/ToyBoat")
 
 [node name="alder" parent="NPCs" instance=ExtResource("7_o702o")]
 position = Vector2(538, -2191)
@@ -109,7 +123,7 @@ npc_name = "alder"
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(118, -1385)
+position = Vector2(-895, -79)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
@@ -122,11 +136,15 @@ scale = Vector2(2, 2)
 position = Vector2(248, -600)
 item_name = "key"
 item_sprite = ExtResource("11_77n8m")
+npc_affected_name = "sorrel"
+npc_affected_dialogue_key = "got_key"
 
 [node name="Wrench" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(-476, -1244)
+position = Vector2(255, -1053)
 item_name = "wrench"
 item_sprite = ExtResource("12_b6f7b")
+npc_affected_name = "kousa"
+npc_affected_dialogue_key = "got_wrench"
 
 [node name="Note" parent="Items" instance=ExtResource("11_dc0en")]
 position = Vector2(457, -2297)
@@ -137,6 +155,8 @@ item_sprite = ExtResource("13_1b3di")
 position = Vector2(279, -600)
 item_name = "toyboat"
 item_sprite = ExtResource("14_pu3t3")
+npc_affected_name = "wattle"
+npc_affected_dialogue_key = "got_boat"
 
 [node name="ItemLocks" type="Node2D" parent="."]
 

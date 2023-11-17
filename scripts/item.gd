@@ -10,7 +10,7 @@ var picked_up = false
 var player_node : Node2D = null
 var interact_symbol
 
-signal picked_up_item(npc_name, dialogue_key)
+#signal picked_up_item(npc_name, dialogue_key)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,7 +46,7 @@ func pick_up():
 	picked_up = true
 	interact_symbol.hide()
 	self.position = Vector2(0, player_node.get_item_count()*-26)
-	picked_up_item.emit(npc_affected_name, npc_affected_dialogue_key)
+#	picked_up_item.emit(npc_affected_name, npc_affected_dialogue_key)
 	
 #func drop_item():
 #	picked_up = false

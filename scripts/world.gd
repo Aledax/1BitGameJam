@@ -11,7 +11,9 @@ const sorrel_restaurant_start = 50
 const sorrel_lookout_start = 140
 const restaurant_cavein = 155
 const wattle_launchpad_start = 180
-const alder_workshop_start = 60
+const alder_workshop_start = 180
+const alder_lookout_start = alder_workshop_start + 15 + 120
+const alder_lookout_to_workshop_start = alder_lookout_start + 17 + 30
 
 func _ready():
 	schedule_event("Ocean", ocean_rise_event, 120, [5])
@@ -54,16 +56,13 @@ func _ready():
 	schedule_event("NPCs", npc_jump_event, alder_workshop_start + 6, ["alder", 0.2])
 	schedule_elevator_to_workshop(alder_workshop_start + 6.5, "alder")
 	schedule_event("NPCs", npc_move_event, alder_workshop_start + 12, ["alder", -475])
-	schedule_event("NPCs", npc_move_event, alder_workshop_start + 15, ["alder", 0]) # wait for longer
-	schedule_event("NPCs", npc_jump_event, alder_workshop_start + 20, ["alder", 0.2])
-	schedule_elevator_to_lookout(alder_workshop_start + 23, "alder")
-	schedule_event("NPCs", npc_move_event, alder_workshop_start + 32, ["alder", 0]) # wait for longer
-	schedule_event("NPCs", npc_jump_event, alder_workshop_start + 40.5, ["alder", 0.2])
-	schedule_elevator_to_workshop(alder_workshop_start + 41.5, "alder")
-	schedule_event("NPCs", npc_move_event, alder_workshop_start + 47, ["alder", -475])
-	# If alder saved:
-	schedule_event("NPCs", npc_move_event, alder_workshop_start + 55, ["alder", -250])
-	schedule_workshop_to_launchpad(alder_workshop_start + 58, "alder")
+	schedule_event("NPCs", npc_move_event, alder_lookout_start + 0, ["alder", 0]) # workshop to elevator
+	schedule_event("NPCs", npc_jump_event, alder_lookout_start + 5, ["alder", 0.2])
+	schedule_elevator_to_lookout(alder_lookout_start + 8, "alder")
+	schedule_event("NPCs", npc_move_event, alder_lookout_to_workshop_start + 0, ["alder", 0]) # lookout to elevator
+	schedule_event("NPCs", npc_jump_event, alder_lookout_to_workshop_start + 8.5, ["alder", 0.2])
+	schedule_elevator_to_workshop(alder_lookout_to_workshop_start + 9.5, "alder")
+	schedule_event("NPCs", npc_move_event, alder_lookout_to_workshop_start + 15, ["alder", -475])
 	
 func schedule_sorrel_to_fountain(time, npc_name): # Assumes x = 10, outside Sorrel's house, from the right
 	schedule_event("NPCs", npc_jump_event, time + 0, [npc_name, 0.2])
@@ -206,11 +205,22 @@ func save_kousa():
 	schedule_elevator_to_workshop(67, "kousa")
 	schedule_workshop_to_launchpad(72, "kousa")
 
+func save(npc):
+	if npc == "kousa":
+		save_kousa()
+	else:
+		save_wattle()
+		
+
 func save_wattle():
 	schedule_event("NPCs", npc_move_event, 1, ["wattle", 16])
+	
+func save_alder():
+	schedule_event("NPCs", npc_move_event, 1, ["alder", -250])
+	schedule_workshop_to_launchpad(4, "alder")
 
 func schedule_event(event_group, event_name, time_start, event_args):
-	print("Event: ", event_name, " will be called in ", time_start, " seconds")
+#	print("Event: ", event_name, " will be called in ", time_start, " seconds")
 	var timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true 
