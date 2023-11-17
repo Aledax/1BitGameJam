@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=27 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -6,8 +6,8 @@
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
-[ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://bbbvsjm1jx66i" path="res://scenes/small_box.tscn" id="8_b67pu"]
+[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
@@ -29,11 +29,8 @@ shader = ExtResource("2_w2ymm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvbit"]
 size = Vector2(2, 50)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_moide"]
-friction = 0.0
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bpdmb"]
-friction = 0.4
+friction = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icsv7"]
 
@@ -92,7 +89,7 @@ position = Vector2(237, -2543)
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="sorrel" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(0, -2015)
+position = Vector2(-567, -56)
 npc_name = "sorrel"
 
 [node name="kousa" parent="NPCs" instance=ExtResource("7_o702o")]
@@ -100,7 +97,7 @@ position = Vector2(417, -1071)
 npc_name = "kousa"
 
 [node name="wattle" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(250, -311)
+position = Vector2(-628, -58)
 npc_name = "wattle"
 
 [node name="alder" parent="NPCs" instance=ExtResource("7_o702o")]
@@ -164,21 +161,6 @@ required_item = NodePath("../../Items/Wrench")
 position = Vector2(0, -61.07)
 script = ExtResource("17_yp3em")
 
-[node name="Sprite2D" type="Sprite2D" parent="RestaurantRoof"]
-position = Vector2(312, -1082.93)
-scale = Vector2(2, 2)
-texture = ExtResource("22_agswe")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="RestaurantRoof/Sprite2D"]
-collision_layer = 32768
-collision_mask = 0
-physics_material_override = SubResource("PhysicsMaterial_moide")
-gravity_scale = 0.0
-freeze = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RestaurantRoof/Sprite2D/RigidBody2D"]
-polygon = PackedVector2Array(-0.5, 5.50006, 7.5, -0.499939, 12, -11.9999, 12, 11.0001, -12, 11.0001)
-
 [node name="Tile" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(326, -1069)
@@ -232,7 +214,7 @@ texture = ExtResource("18_vvr74")
 
 [node name="Tile4" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
-position = Vector2(310, -1085)
+position = Vector2(310, -1069)
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -249,7 +231,7 @@ texture = ExtResource("17_juoxn")
 
 [node name="Tile5" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
-position = Vector2(310, -1073)
+position = Vector2(310, -1089)
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -327,5 +309,10 @@ polygon = PackedVector2Array(-6, 10.0699, 10, -5.93005, 10, 10.0699)
 position = Vector2(2, 6.06995)
 scale = Vector2(2, 2)
 texture = ExtResource("20_l6tsc")
+
+[node name="Sprite2D" type="Sprite2D" parent="RestaurantRoof"]
+position = Vector2(312, -1082.93)
+scale = Vector2(2, 2)
+texture = ExtResource("22_agswe")
 
 [connection signal="correct_item_brought" from="ItemLocks/HouseLock" to="ItemLocks/HouseLock" method="delete_self"]
