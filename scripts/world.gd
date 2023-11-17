@@ -8,6 +8,11 @@ const npc_switch_dialogue_event = "_npc_switch_dialogue_event"
 const kousa_beach_start = 45
 const wattle_restaurant_start = 0
 const sorrel_lookout_start = 0
+const wattle_restaurant_start = 30
+const sorrel_restaurant_start = 50
+const sorrel_lookout_start = 140
+const restaurant_cavein = 155
+const wattle_launchpad_start = 180
 const alder_workshop_start = 60
 
 func _ready():
@@ -28,11 +33,27 @@ func _ready():
 	schedule_event("NPCs", npc_move_event, wattle_restaurant_start + 28, ["wattle", 470])
 	schedule_event("NPCs", npc_jump_event, wattle_restaurant_start + 31, ["wattle", 0.2])
 
+	schedule_event("NPCs", npc_move_event, wattle_launchpad_start + 0, ["wattle", 270])
+	schedule_event("NPCs", npc_jump_event, wattle_launchpad_start + 1.5, ["wattle", 0.1])
+	schedule_event("NPCs", npc_move_event, wattle_launchpad_start + 3, ["wattle", 250])
+	schedule_restaurant_to_elevator(wattle_launchpad_start + 4, "wattle")
+	schedule_elevator_to_workshop(wattle_launchpad_start + 31, "wattle")
+	schedule_workshop_to_launchpad(wattle_launchpad_start + 38, "wattle")
+
 	# Sorrel
 	# schedule_event("NPCs", npc_move_event, sorrel_lookout_start + 0, ["sorrel", 250])
 	# schedule_restaurant_to_elevator(sorrel_lookout_start + 5, "sorrel")
 	schedule_elevator_to_workshop(5, "sorrel")
 	schedule_workshop_to_launchpad(9, "sorrel")
+	schedule_event("NPCs", npc_move_event, sorrel_restaurant_start + 0, ["sorrel", 10])
+	schedule_sorrel_to_fountain(sorrel_restaurant_start + 4, "sorrel")
+	schedule_fountain_to_restaurant(sorrel_restaurant_start + 26.5, "sorrel")
+	schedule_event("NPCs", npc_move_event, sorrel_restaurant_start + 33, ["sorrel", 440])
+
+	schedule_event("NPCs", npc_move_event, sorrel_lookout_start + 0, ["sorrel", 250])
+	schedule_restaurant_to_elevator(sorrel_lookout_start + 3, "sorrel")
+	schedule_elevator_to_lookout(sorrel_lookout_start + 37, "sorrel")
+
 	
 	# Alder
 	schedule_event("NPCs", npc_move_event, alder_workshop_start + 0, ["alder", 0])
@@ -49,7 +70,7 @@ func _ready():
 	# If alder saved:
 	schedule_event("NPCs", npc_move_event, alder_workshop_start + 55, ["alder", -250])
 	schedule_workshop_to_launchpad(alder_workshop_start + 58, "alder")
-
+	
 func schedule_sorrel_to_fountain(time, npc_name): # Assumes x = 10, outside Sorrel's house, from the right
 	schedule_event("NPCs", npc_jump_event, time + 0, [npc_name, 0.2])
 	schedule_event("NPCs", npc_move_event, time + 0, [npc_name, -150])
@@ -75,6 +96,11 @@ func schedule_sorrel_to_fountain(time, npc_name): # Assumes x = 10, outside Sorr
 	schedule_event("NPCs", npc_move_event, time + 18, [npc_name, -150])
 	schedule_event("NPCs", npc_jump_event, time + 18, [npc_name, 0.1])
 	schedule_event("NPCs", npc_jump_event, time + 18.9, [npc_name, 0.2])
+
+func schedule_fountain_to_restaurant(time, npc_name): # Assumes x = -150, at fountain, from the left
+	schedule_event("NPCs", npc_move_event, time + 0, [npc_name, 270])
+	schedule_event("NPCs", npc_jump_event, time + 3, [npc_name, 0.1])
+	schedule_event("NPCs", npc_move_event, time + 5, [npc_name, 250])
 
 func schedule_restaurant_to_elevator(time, npc_name): # Assumes x = 250, outside restaurant, from the right
 	schedule_event("NPCs", npc_move_event, time + 0, [npc_name, 120])
@@ -160,6 +186,34 @@ func schedule_workshop_to_launchpad(time, npc_name): # Assumes x = -250, ouside 
 	schedule_event("NPCs", npc_jump_event, time + 7.5, [npc_name, 0.2])
 	schedule_event("NPCs", npc_jump_event, time + 8, [npc_name, 0.2])
 	schedule_event("NPCs", npc_move_event, time + 8, [npc_name, 48])
+
+func save_kousa():
+	schedule_event("NPCs", npc_move_event, 1, ["kousa", 0])
+	schedule_event("NPCs", npc_jump_event, 1.8, ["kousa", 0.1])
+	schedule_event("NPCs", npc_jump_event, 3.3, ["kousa", 0.1])
+	schedule_event("NPCs", npc_jump_event, 3.9, ["kousa", 0.1])
+	schedule_event("NPCs", npc_move_event, 5, ["kousa", -48])
+	schedule_event("NPCs", npc_jump_event, 5, ["kousa", 0.2])
+	schedule_event("NPCs", npc_move_event, 6, ["kousa", 48])
+	schedule_event("NPCs", npc_jump_event, 6.2, ["kousa", 0.2])
+	schedule_event("NPCs", npc_jump_event, 6.7, ["kousa", 0.2])
+	schedule_event("NPCs", npc_move_event, 7.5, ["kousa", -64])
+	schedule_event("NPCs", npc_jump_event, 7.3, ["kousa", 0.2])
+	schedule_event("NPCs", npc_jump_event, 7.7, ["kousa", 0.2])
+	schedule_event("NPCs", npc_jump_event, 8.3, ["kousa", 0.1])
+	schedule_event("NPCs", npc_move_event, 9, ["kousa", 20])
+	schedule_event("NPCs", npc_jump_event, 9, ["kousa", 0.2])
+	schedule_event("NPCs", npc_jump_event, 9.5, ["kousa", 0.2])
+	schedule_event("NPCs", npc_move_event, 11, ["kousa", 10])
+
+	schedule_sorrel_to_fountain(11.5, "kousa")
+	schedule_fountain_to_restaurant(34, "kousa")
+	schedule_restaurant_to_elevator(40, "kousa")
+	schedule_elevator_to_workshop(67, "kousa")
+	schedule_workshop_to_launchpad(72, "kousa")
+
+func save_wattle():
+	schedule_event("NPCs", npc_move_event, 1, ["wattle", 16])
 
 func schedule_event(event_group, event_name, time_start, event_args):
 	print("Event: ", event_name, " will be called in ", time_start, " seconds")
