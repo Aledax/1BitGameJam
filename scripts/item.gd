@@ -43,7 +43,7 @@ func pick_up():
 	player_node.current_item = self
 	picked_up = true
 	interact_symbol.hide()
-	self.position = Vector2(0, -24)
+	self.position = Vector2(0, -26)
 	
 func drop_item():
 	picked_up = false

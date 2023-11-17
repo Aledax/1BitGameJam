@@ -1,57 +1,75 @@
-[gd_scene load_steps=16 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=13 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_xhps8"]
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
-[ext_resource type="PackedScene" uid="uid://clckcr4rfv68v" path="res://scenes/tilemap.tscn" id="3_igu0m"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
-[ext_resource type="PackedScene" uid="uid://32nsi8hdnoit" path="res://scenes/auto_tile_test.tscn" id="6_vnjve"]
-[ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_81xkr"]
-[ext_resource type="PackedScene" uid="uid://bbbvsjm1jx66i" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
-[ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
+[ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
+[ext_resource type="PackedScene" uid="uid://cyyxokoi2dp6o" path="res://scenes/npctest.tscn" id="9_2rdoe"]
+[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://c13crhkfu4600" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
-[ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="13_u2pjx"]
-[ext_resource type="Texture2D" uid="uid://dcqsyw3n4ska7" path="res://art/Items/test_vent.png" id="14_xy7wo"]
+[ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ytt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhjhs"]
 shader = ExtResource("2_w2ymm")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_xhps8")
 
-[node name="RainForeground" parent="." instance=ExtResource("1_b2hkm")]
-process_mode = 3
+[node name="ColorMaskNode" type="CanvasLayer" parent="."]
 
-[node name="RainBackground" parent="." instance=ExtResource("1_b2hkm")]
-process_mode = 3
-scale = Vector2(0.5, 0.5)
-region_rect = Rect2(0, 100, 3200, 6400)
-
-[node name="ColorMaskLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorMask" type="ColorRect" parent="ColorMaskLayer"]
-material = SubResource("ShaderMaterial_q6ytt")
+[node name="ColorMask" type="ColorRect" parent="ColorMaskNode"]
+material = SubResource("ShaderMaterial_uhjhs")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="tilemap" parent="." instance=ExtResource("3_igu0m")]
-position = Vector2(-189, -73)
+[node name="RainForeground" parent="." instance=ExtResource("1_b2hkm")]
+process_mode = 3
+position = Vector2(0, -1600)
+region_rect = Rect2(0, 0, 3200, 6400)
 
-[node name="AutoTileTest" parent="." instance=ExtResource("6_vnjve")]
-position = Vector2(208, -208)
-scale = Vector2(2, 2)
+[node name="RainBackground" parent="." instance=ExtResource("1_b2hkm")]
+process_mode = 3
+position = Vector2(0, -1600)
+scale = Vector2(0.5, 0.5)
+region_rect = Rect2(0, 100, 6400, 9600)
 
-[node name="AutoTileTest2" parent="." instance=ExtResource("6_vnjve")]
-position = Vector2(496, 400)
+[node name="world_tile_maps" parent="." instance=ExtResource("13_nx3g3")]
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="SmallBox" parent="Boxes" instance=ExtResource("8_b67pu")]
+position = Vector2(-472, -84)
+
+[node name="SmallBox2" parent="Boxes" instance=ExtResource("8_b67pu")]
+position = Vector2(-399, -1009)
+
+[node name="SmallBox3" parent="Boxes" instance=ExtResource("8_b67pu")]
+position = Vector2(-434, -1054)
+
+[node name="LargeBox" parent="Boxes" instance=ExtResource("10_qv3ie")]
+position = Vector2(-436, -1016)
+
+[node name="SmallBox5" parent="Boxes" instance=ExtResource("8_b67pu")]
+position = Vector2(143, -1596)
+
+[node name="SmallBox6" parent="Boxes" instance=ExtResource("8_b67pu")]
+position = Vector2(213, -2354)
+
+[node name="LargeBox2" parent="Boxes" instance=ExtResource("10_qv3ie")]
+position = Vector2(239, -2359)
+
+[node name="SmallBox7" parent="Boxes" instance=ExtResource("8_b67pu")]
+position = Vector2(243, -2389)
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(-379, -58)
+position = Vector2(-900, -39)
 
 [node name="Sorrel" parent="." instance=ExtResource("7_81xkr")]
 position = Vector2(111, -62)
@@ -73,18 +91,13 @@ npc_name = "alder"
 position = Vector2(-14, -62)
 npc_name = "wattle"
 
-[node name="SmallBox" parent="." instance=ExtResource("8_b67pu")]
-position = Vector2(-317, -59)
-
-[node name="LargeBox" parent="." instance=ExtResource("10_qv3ie")]
-position = Vector2(-292, -241)
-
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
-position = Vector2(-500, 0)
+position = Vector2(-900, 0)
 scale = Vector2(2, 2)
 
 [node name="Wrench" parent="." instance=ExtResource("11_dc0en")]
+visible = false
 position = Vector2(-359, -53)
 item_name = "Wrench"
 item_sprite = ExtResource("12_b6f7b")
