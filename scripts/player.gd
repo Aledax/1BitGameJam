@@ -30,6 +30,11 @@ func add_item(item):
 	character_body.add_child(item)
 	current_items.append(item)
 	
+func delete_item(item):
+	current_items.erase(item)
+	item.queue_free()
+	update_item_positions()
+	
 #func drop_item():
 #	if current_items.size() <= 0: return
 #	var dropped = current_items[0]

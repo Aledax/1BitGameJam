@@ -37,6 +37,7 @@ func check_for_item():
 	if required_item in player_node.current_items:
 		print("You have the item~")
 		correct_item_brought.emit()
+		player_node.delete_item(required_item)
 	else:
 		print("You don't have the right item!")
 
