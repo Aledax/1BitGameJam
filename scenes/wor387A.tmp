@@ -161,11 +161,6 @@ required_item = NodePath("../../Items/Wrench")
 position = Vector2(0, -61.07)
 script = ExtResource("17_yp3em")
 
-[node name="Sprite2D" type="Sprite2D" parent="RestaurantRoof"]
-position = Vector2(312, -1082.93)
-scale = Vector2(2, 2)
-texture = ExtResource("22_agswe")
-
 [node name="Tile" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(326, -1069)
@@ -219,7 +214,7 @@ texture = ExtResource("18_vvr74")
 
 [node name="Tile4" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
-position = Vector2(310, -1085)
+position = Vector2(310, -1069)
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -236,7 +231,7 @@ texture = ExtResource("17_juoxn")
 
 [node name="Tile5" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
-position = Vector2(310, -1073)
+position = Vector2(310, -1089)
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -314,5 +309,10 @@ polygon = PackedVector2Array(-6, 10.0699, 10, -5.93005, 10, 10.0699)
 position = Vector2(2, 6.06995)
 scale = Vector2(2, 2)
 texture = ExtResource("20_l6tsc")
+
+[node name="Sprite2D" type="Sprite2D" parent="RestaurantRoof"]
+position = Vector2(312, -1082.93)
+scale = Vector2(2, 2)
+texture = ExtResource("22_agswe")
 
 [connection signal="correct_item_brought" from="ItemLocks/HouseLock" to="ItemLocks/HouseLock" method="delete_self"]
