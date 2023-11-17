@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://blsmlcqsabcqp"]
+[gd_scene load_steps=6 format=3 uid="uid://blsmlcqsabcqp"]
 
 [ext_resource type="Script" path="res://scripts/ocean.gd" id="1_p7y7x"]
 [ext_resource type="PackedScene" uid="uid://dtjkqcao3olds" path="res://scenes/boat.tscn" id="2_g0vul"]
 [ext_resource type="Texture2D" uid="uid://cycbngsk1l8nw" path="res://art/environment/ocean/ocean_bottom.png" id="2_tokyc"]
 [ext_resource type="Texture2D" uid="uid://rymoe4hsd7w2" path="res://art/environment/ocean/ocean_top.png" id="3_5x402"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_liyi0"]
+
 [node name="Ocean" type="CharacterBody2D" groups=["Ocean"]]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_p7y7x")
 
@@ -30,3 +32,14 @@ position = Vector2(0, 395)
 texture = ExtResource("3_5x402")
 region_enabled = true
 region_rect = Rect2(0, 0, 3200, 800)
+
+[node name="DeathBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="DeathBox" type="CollisionShape2D" parent="DeathBox"]
+position = Vector2(0, 17.795)
+scale = Vector2(160, 1)
+shape = SubResource("RectangleShape2D_liyi0")
+
+[connection signal="body_entered" from="DeathBox" to="." method="_on_death_box_body_entered"]
