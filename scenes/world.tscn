@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
 [ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="12_vyp78"]
 [ext_resource type="Texture2D" uid="uid://c30m3slmyrbxo" path="res://art/Items/Note.png" id="13_1b3di"]
-[ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
+[ext_resource type="PackedScene" uid="uid://cs8721x1c8tm2" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 [ext_resource type="Texture2D" uid="uid://bsghlvjyjup24" path="res://art/Items/LockedDoor.png" id="13_tw0oy"]
 [ext_resource type="Texture2D" uid="uid://d0qqywlhsj4ra" path="res://art/Items/ToyBoat.png" id="14_pu3t3"]
 
