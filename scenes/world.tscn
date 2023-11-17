@@ -6,12 +6,12 @@
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
-[ext_resource type="PackedScene" uid="uid://bbbvsjm1jx66i" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
+[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="12_vyp78"]
-[ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
+[ext_resource type="PackedScene" uid="uid://cs8721x1c8tm2" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 [ext_resource type="Texture2D" uid="uid://bsghlvjyjup24" path="res://art/Items/LockedDoor.png" id="13_tw0oy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uhjhs"]
@@ -75,7 +75,7 @@ position = Vector2(237, -2543)
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="sorrel" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(-567, -56)
+position = Vector2(0, -2015)
 npc_name = "sorrel"
 
 [node name="kousa" parent="NPCs" instance=ExtResource("7_o702o")]
@@ -83,7 +83,7 @@ position = Vector2(417, -1071)
 npc_name = "kousa"
 
 [node name="wattle" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(-628, -58)
+position = Vector2(250, -311)
 npc_name = "wattle"
 
 [node name="alder" parent="NPCs" instance=ExtResource("7_o702o")]
@@ -92,7 +92,7 @@ npc_name = "alder"
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(-901, -45)
+position = Vector2(148, -2050)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
@@ -107,7 +107,7 @@ item_name = "key"
 item_sprite = ExtResource("11_77n8m")
 
 [node name="Wrench" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(-574, -68)
+position = Vector2(-472, -74)
 
 [node name="ItemLocks" type="Node2D" parent="."]
 

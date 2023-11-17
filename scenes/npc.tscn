@@ -11,5 +11,7 @@ texts = {
 }
 
 [node name="CharacterBody" parent="." instance=ExtResource("2_j7bdf")]
+collision_mask = 27
+jump_max_hold = 0.3
 
 [node name="textInteractible" parent="CharacterBody" instance=ExtResource("3_egtkk")]
