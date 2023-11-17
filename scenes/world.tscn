@@ -95,7 +95,7 @@ npc_name = "alder"
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(240, -644)
+position = Vector2(-901, -45)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
