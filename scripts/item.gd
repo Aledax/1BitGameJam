@@ -42,14 +42,14 @@ func pick_up():
 	interact_symbol.hide()
 	self.position = Vector2(0, player_node.get_item_count()*-26)
 	
-func drop_item():
-	picked_up = false
-	var temp = global_position
-	var root = get_tree().get_root()
-	get_parent().remove_child(self)
-	root.add_child(self)
-	interact_symbol.show()
-	global_position = temp + Vector2(0, 32)
+#func drop_item():
+#	picked_up = false
+#	var temp = global_position
+#	var root = get_tree().get_root()
+#	get_parent().remove_child(self)
+#	root.add_child(self)
+#	interact_symbol.show()
+#	global_position = temp + Vector2(0, 32)
 	
 
 	

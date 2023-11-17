@@ -49,7 +49,7 @@ region_rect = Rect2(0, 100, 6400, 9600)
 [node name="Boxes" type="Node2D" parent="."]
 
 [node name="SmallBox" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(-520, -41)
+position = Vector2(-472, -84)
 
 [node name="SmallBox2" parent="Boxes" instance=ExtResource("8_b67pu")]
 position = Vector2(-399, -1009)
@@ -83,11 +83,10 @@ position = Vector2(417, -1071)
 npc_name = "kousa"
 
 [node name="wattle" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(-628, -58)
-npc_name = "wattle"
+position = Vector2(-636, -58)
 
 [node name="alder" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(-680, -57)
+position = Vector2(-508, -51)
 npc_name = "alder"
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
