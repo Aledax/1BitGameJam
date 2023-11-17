@@ -18,9 +18,9 @@ func _ready():
 
 func _physics_process(_delta):
 	if position.y > 0:
-		velocity.y = -position.y
+		velocity.y = -position.y * 2
 	else:
-		velocity.y = -position.y * 10
+		velocity.y = -position.y * 25
 	
 	var moving = false
 	if Input.is_action_pressed("interact"):

@@ -38,6 +38,8 @@ var jumping = false
 var sprites
 var npc_name : String
 
+var alive = true
+
 func initialize_frames(character_name):
 	sprites = $CharacterSprites
 	npc_name = character_name
@@ -49,6 +51,8 @@ func initialize_frames(character_name):
 #	$CharacterSprites.animation = character_name + "_idle"
 
 func _physics_process(delta):
+	if not alive: return
+	
 	# Horizontal movement
 	if horizontal_movement == -1:
 		sprites.animation = npc_name + "_walk"
@@ -102,17 +106,26 @@ func _physics_process(delta):
 		velocity.y += gravity_d
 	
 	# Collisions
+	var is_on_boat = false
+	
 	move_and_slide()
 	for i in get_slide_collision_count():
 		
 		var collision = get_slide_collision(i)
 		var normal = collision.get_normal()
+		var collider = collision.get_collider()
+		var name = collider.name
 		
-		if collision.get_collider().has_method("collide_player"):
-			collision.get_collider().collide_player()
+		if collider.has_method("collide_player"):
+			collider.collide_player()
 		
-		if collision.get_collider().has_method("pushed_by_player") and abs(normal.x) > abs(normal.y):
-			collision.get_collider().pushed_by_player(normal.x < 0)
+		if collider.has_method("pushed_by_player") and abs(normal.x) > abs(normal.y):
+			collider.pushed_by_player(normal.x < 0)
+		
+		if name == "Boat" and abs(normal.y) > abs(normal.x):
+			is_on_boat = true
+	
+	set_collision_mask_value(4, not is_on_boat)
 	
 	# Exported variables
 	if velocity.x < 0:
@@ -124,3 +137,8 @@ func _physics_process(delta):
 	
 	is_airborne = (airborne_stopwatch > airborne_delay)
 
+func kill():
+	alive = false
+	print(npc_name + " died! rest in pepperoni ;-;")
+	
+	# Activate death animation, and show a game over message in case of player

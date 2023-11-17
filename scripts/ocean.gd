@@ -11,3 +11,7 @@ func _physics_process(delta):
 func _ocean_rise_event(speed):
 	print("RISE!")
 	velocity.y = -speed
+
+func _on_death_box_body_entered(body):
+	if body.name == "CharacterBody":
+		body.kill()
