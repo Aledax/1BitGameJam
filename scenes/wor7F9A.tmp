@@ -92,11 +92,11 @@ position = Vector2(237, -2543)
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="sorrel" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(302, -414)
+position = Vector2(0, -2015)
 npc_name = "sorrel"
 
 [node name="kousa" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(361, -1065)
+position = Vector2(400, -48)
 npc_name = "kousa"
 
 [node name="wattle" parent="NPCs" instance=ExtResource("7_o702o")]
@@ -109,7 +109,7 @@ npc_name = "alder"
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(118, -1385)
+position = Vector2(249, -80)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
