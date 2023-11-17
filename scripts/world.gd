@@ -8,6 +8,7 @@ const npc_switch_dialogue_event = "_npc_switch_dialogue_event"
 const kousa_beach_start = 45
 const wattle_restaurant_start = 0
 const sorrel_lookout_start = 0
+const alder_workshop_start = 60
 
 func _ready():
 	schedule_event("Ocean", ocean_rise_event, 120, [5])
@@ -32,6 +33,22 @@ func _ready():
 	# schedule_restaurant_to_elevator(sorrel_lookout_start + 5, "sorrel")
 	schedule_elevator_to_workshop(5, "sorrel")
 	schedule_workshop_to_launchpad(9, "sorrel")
+	
+	# Alder
+	schedule_event("NPCs", npc_move_event, alder_workshop_start + 0, ["alder", 0])
+	schedule_event("NPCs", npc_jump_event, alder_workshop_start + 6, ["alder", 0.2])
+	schedule_elevator_to_workshop(alder_workshop_start + 6.5, "alder")
+	schedule_event("NPCs", npc_move_event, alder_workshop_start + 12, ["alder", -475])
+	schedule_event("NPCs", npc_move_event, alder_workshop_start + 15, ["alder", 0]) # wait for longer
+	schedule_event("NPCs", npc_jump_event, alder_workshop_start + 20, ["alder", 0.2])
+	schedule_elevator_to_lookout(alder_workshop_start + 23, "alder")
+	schedule_event("NPCs", npc_move_event, alder_workshop_start + 32, ["alder", 0]) # wait for longer
+	schedule_event("NPCs", npc_jump_event, alder_workshop_start + 40.5, ["alder", 0.2])
+	schedule_elevator_to_workshop(alder_workshop_start + 41.5, "alder")
+	schedule_event("NPCs", npc_move_event, alder_workshop_start + 47, ["alder", -475])
+	# If alder saved:
+	schedule_event("NPCs", npc_move_event, alder_workshop_start + 55, ["alder", -250])
+	schedule_workshop_to_launchpad(alder_workshop_start + 58, "alder")
 
 func schedule_sorrel_to_fountain(time, npc_name): # Assumes x = 10, outside Sorrel's house, from the right
 	schedule_event("NPCs", npc_jump_event, time + 0, [npc_name, 0.2])
@@ -114,12 +131,12 @@ func schedule_restaurant_to_elevator(time, npc_name): # Assumes x = 250, outside
 func schedule_elevator_to_lookout(time, npc_name): # Assumes x = 0, at elevator top
 	schedule_event("NPCs", npc_move_event, time + 0, [npc_name, 900])
 	schedule_event("NPCs", npc_jump_event, time + 0, [npc_name, 0.2])
-	schedule_event("NPCs", npc_jump_event, time + 4.3, [npc_name, 0.1])
-	schedule_event("NPCs", npc_jump_event, time + 4.75, [npc_name, 0.1])
-	schedule_event("NPCs", npc_jump_event, time + 5.2, [npc_name, 0.1])
-	schedule_event("NPCs", npc_jump_event, time + 5.65, [npc_name, 0.1])
-	schedule_event("NPCs", npc_jump_event, time + 7.3, [npc_name, 0.1])
-	schedule_event("NPCs", npc_jump_event, time + 7.75, [npc_name, 0.1])
+	schedule_event("NPCs", npc_jump_event, time + 4.3 - 1, [npc_name, 0.1])
+	schedule_event("NPCs", npc_jump_event, time + 4.75 - 1, [npc_name, 0.1])
+	schedule_event("NPCs", npc_jump_event, time + 5.2 - 1, [npc_name, 0.1])
+	schedule_event("NPCs", npc_jump_event, time + 5.65 - 1, [npc_name, 0.1])
+	schedule_event("NPCs", npc_jump_event, time + 7.3 - 1, [npc_name, 0.1])
+	schedule_event("NPCs", npc_jump_event, time + 7.75 - 1, [npc_name, 0.1])
 
 func schedule_elevator_to_workshop(time, npc_name): # Assumes x = 0, at elevator top
 	schedule_event("NPCs", npc_move_event, time + 0, [npc_name, -270])
