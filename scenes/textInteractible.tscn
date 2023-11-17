@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/parent_text.gd" id="1_tjxpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wj715"]
-size = Vector2(26, 16)
+size = Vector2(8, 16)
 
 [node name="textInteractible" type="Node2D"]
 script = ExtResource("1_tjxpn")

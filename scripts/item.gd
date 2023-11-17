@@ -37,7 +37,7 @@ func pick_up():
 	player_node.holding_item = true
 	player_node.current_item = self
 	picked_up = true
-	self.position = Vector2(0, 0)
+	self.position = Vector2(0, -26)
 	
 func drop_item():
 	picked_up = false

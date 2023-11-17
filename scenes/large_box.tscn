@@ -7,6 +7,11 @@
 size = Vector2(16, 16)
 
 [node name="LargeBox" type="RigidBody2D"]
+collision_layer = 32
+collision_mask = 53
+max_contacts_reported = 1
+contact_monitor = true
+can_sleep = false
 script = ExtResource("1_r82ee")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

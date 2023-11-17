@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://snv5la6sign3" path="res://scenes/character_body.tscn" id="2_g4k5o"]
 
 [node name="Player" type="Node2D"]
+z_index = 2
 script = ExtResource("1_lqy2d")
 
 [node name="CharacterBody" parent="." instance=ExtResource("2_g4k5o")]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2qj48ciff5xj"]
+[gd_scene load_steps=4 format=3 uid="uid://c13crhkfu4600"]
 
-[ext_resource type="Script" path="res://scenes/item.gd" id="1_ptgj6"]
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_07csy"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="2_r4g4j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjjg8"]
@@ -8,7 +8,7 @@
 [node name="item" type="Area2D"]
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("1_ptgj6")
+script = ExtResource("1_07csy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kjjg8")

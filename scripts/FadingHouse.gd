@@ -8,7 +8,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	# can be set to fade later if we want / if we end up not fading move this to 
 	# on_body_entered/exited for efficiency
 	if player_inside:
