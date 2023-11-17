@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cghp8psda6lil"]
 
-[ext_resource type="Script" path="res://require_item.gd" id="1_obdev"]
+[ext_resource type="Script" path="res://scripts/require_item.gd" id="1_obdev"]
 [ext_resource type="Texture2D" uid="uid://dquxuovtdswod" path="res://art/Interactible_Symbol.png" id="2_3g77m"]
 [ext_resource type="Script" path="res://scripts/interact_symbol.gd" id="3_aaxls"]
 

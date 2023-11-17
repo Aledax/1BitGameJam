@@ -62,7 +62,7 @@ texts = {
 }
 
 [node name="Kousa" parent="." instance=ExtResource("7_81xkr")]
-position = Vector2(68, -59)
+position = Vector2(403, -236)
 npc_name = "kousa"
 
 [node name="Alder" parent="." instance=ExtResource("7_81xkr")]
@@ -77,7 +77,7 @@ npc_name = "wattle"
 position = Vector2(-317, -59)
 
 [node name="LargeBox" parent="." instance=ExtResource("10_qv3ie")]
-position = Vector2(-36, -167)
+position = Vector2(-292, -241)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
