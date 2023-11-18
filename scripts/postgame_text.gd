@@ -32,24 +32,24 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func show_results():
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	$Label.show()
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.0).timeout
 	if kousa_saved:
 		$Kousa.show()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	if wattle_saved:
 		$Wattle.show()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	if alder_saved:
 		$Alder.show()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	if sorrel_saved:
 		$Sorrel.show()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	if !(kousa_saved || wattle_saved || alder_saved || sorrel_saved):
 		$Nobody.show()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	$E.show()
 	done_showing = true
 	
