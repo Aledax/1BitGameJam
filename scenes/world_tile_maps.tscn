@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs8721x1c8tm2"]
+[gd_scene load_steps=7 format=3 uid="uid://qbl6s2wxjqyh"]
 
 [ext_resource type="TileSet" uid="uid://bxuyex31wei33" path="res://art/environment/tilemap.tres" id="1_suuud"]
 [ext_resource type="Script" path="res://scripts/FadingHouse.gd" id="2_pfydd"]
