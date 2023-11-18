@@ -12,9 +12,13 @@ var right_activated = false
 var horizontal_max_speed = 50.0
 var horizontal_acceleration = 5.0
 
+var audio_player
+
 func _ready():
 	interface_left_sprite = get_node("InterfaceLeft/Sprite2D")
 	interface_right_sprite = get_node("InterfaceRight/Sprite2D")
+	
+	audio_player = $AudioPlayer
 
 func _physics_process(_delta):
 	if position.y > 0:
@@ -31,6 +35,9 @@ func _physics_process(_delta):
 		moving = true
 	if not moving:
 		velocity.x *= 0.95
+		audio_player.volume_db = max(-20, audio_player.volume_db - 0.75)
+	else:
+		audio_player.volume_db = min(0, audio_player.volume_db + 0.75)
 	
 	move_and_slide()
 	for i in get_slide_collision_count():

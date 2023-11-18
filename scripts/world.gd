@@ -19,7 +19,21 @@ const outlook_collapse = 395
 
 var previous_time = 0
 
+var shader_material
+var inverted_timer = 0
+const inverted_duration = 0.3
+
+var audio
+
 func _ready():
+	# Shader
+	shader_material = $ColorMaskNode/ColorMask.get_material()
+	shader_material.set_shader_parameter("inverted", false)
+	
+	# Audio
+	audio = $Audio
+	
+	# Ocean
 	schedule_event("Ocean", ocean_rise_event, 150, [8])
 	
 	# Kousa
@@ -53,7 +67,6 @@ func _ready():
 	schedule_event("NPCs", npc_move_event, sorrel_lookout_start + 0, ["sorrel", 250])
 	schedule_restaurant_to_elevator(sorrel_lookout_start + 3, "sorrel")
 	schedule_elevator_to_lookout(sorrel_lookout_start + 37, "sorrel")
-
 	
 	# Alder
 	schedule_event("NPCs", npc_move_event, alder_workshop_start + 0, ["alder", 0])
@@ -243,11 +256,17 @@ func schedule_event(event_group, event_name, time_start, event_args):
 		print(event_name, " activated!"))
 	timer.start()
 
-
-func _on_require_item_correct_item_brought():
-	pass # Replace with function body.
+func _character_died(name):
+	inverted_timer = inverted_duration
+	audio.get_node("ThunderPlayer").play()
+	
+	if name == "player":
+		print("Game over!")
 	
 func _physics_process(delta):
+	inverted_timer = max(0, inverted_timer - delta)
+	shader_material.set_shader_parameter("inverted", inverted_timer != 0 and not (inverted_timer > 0.05 and inverted_timer < 0.15))
+	
 	var curTime = previous_time + delta
 	if int(curTime / 10) != int(previous_time / 10):
 		print("Time: " + str(int(curTime / 10) * 10))
