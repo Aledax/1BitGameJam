@@ -36,10 +36,10 @@ func set_npc_name(given_name):
 func set_dialogue(dialogue_key):
 	if texts.has(dialogue_key):
 		self.dialogue_key = dialogue_key
-		text_index = 0
 	else:
-		print("text interactible does not contain key: " + dialogue_key)
+		print("WARNING: INCORRECT DIALOGUE KEY SET: " + char_name + " DOES NOT HAVE KEY " + dialogue_key)
 		self.dialogue_key = "default"
+	text_index = 0
 
 func set_desired_item(desired_item):
 	self.desired_item = desired_item

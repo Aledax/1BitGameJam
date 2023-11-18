@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
 [ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
 [ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="12_vyp78"]
 [ext_resource type="Texture2D" uid="uid://c30m3slmyrbxo" path="res://art/Items/Note.png" id="13_1b3di"]
-[ext_resource type="PackedScene" uid="uid://cs8721x1c8tm2" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
+[ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 [ext_resource type="Texture2D" uid="uid://bsghlvjyjup24" path="res://art/Items/LockedDoor.png" id="13_tw0oy"]
 [ext_resource type="Texture2D" uid="uid://d0qqywlhsj4ra" path="res://art/Items/ToyBoat.png" id="14_pu3t3"]
 [ext_resource type="Texture2D" uid="uid://cjh1tewn3l4dc" path="res://art/environment/RestaurantRoof/tile3.png" id="17_juoxn"]
@@ -157,16 +157,27 @@ position = Vector2(-547, -51)
 position = Vector2(302, -414)
 npc_name = "sorrel"
 texts = {
-"default": [PackedStringArray("Default", ""), PackedStringArray("Yay", "Its", "Working")],
-"got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
+"after_bell": [PackedStringArray("…it’s happening.", "…", "I’m going to go to the lookout, Willow.", "Make sure to come see me one more time, okay?", "I beg you to be careful.")],
+"after_saved": [PackedStringArray("What-", "Willow?", "You’re- here? Wh- how?", "Your boat…", "I don’t believe it."), PackedStringArray("I have no idea how you did it… but thank you, Willow.", "Should we head to the launchpad? Perhaps Alder got it working?", "It’s our only hope now.")],
+"at_lookout": [PackedStringArray("I’m so glad you came.", "It’s raining so heavily, I can hardly see anything from here anymore…", "I can hardly comprehend it.", "I can’t believe we were doomed from the start.", "Everything we’ve built…", "It’ll be gone.", "My heart aches thinking about the buildings down below, already lost to the ocean depths."), PackedStringArray("Do you think Alder’s rocket will work?", "…", "Maybe I should be more hopeful.", "I… I’m sorry for being so negative.", "Even if the rocket doesn’t work, I suppose it’d be better to try and embrace the few moments we have left.", "…", "I’m so proud of you, Willow.", "You’ve done so much for all of us."), PackedStringArray("I’ll come to the launchpad soon, okay?", "I want to spend just a few more moments here, at my favorite spot in the village. To think.", "I’ll be ready soon.")],
+"at_restaurant": [PackedStringArray("There are so many memories here…", "That roof looks like it’s going to collapse any moment. I can’t believe it’s still holding up.", "This was one of the first buildings Kousa built… back when they were completely clueless.", "They’ve come a long way. It’s hard to believe that almost everything here was built by them."), PackedStringArray("I’m glad Wattle’s here.", "I believe Alder should be in his workshop. They’re desperately trying to get some sort of rocket working.", "Considering the elevator incident, though… I just don’t know if they’re fit for matters concerning vertical transportation.", "They ARE a genius, though. Don’t get me wrong.", "After all, they made your boat!"), PackedStringArray("I’m not sure where Kousa is, though… I thought for sure they’d be here.", "I hope I didn’t miss them.")],
+"at_rocket": [PackedStringArray("Unbelievable… the rocket looks like it’s actually ready to take off.", "Let’s hurry inside.", "Haha… this is surreal!")],
+"default": [PackedStringArray("Willow…", "I’m so relieved to see you.", "The ocean… it’s going to start rising any minute. I can feel it.", "I… can’t believe it’s happening…", "And so soon…", "What are you going to do?"), PackedStringArray("Hi, Willow.", "I’m reading through my works one last time.", "Reading all of these again… I’m overwhelmed with memories.", "The good times at the [restaurant name]...", "Falling in love…", "And, of course, seeing you grow up, Willow."), PackedStringArray("After I say farewell to my books, I’m going to visit the [restaurant name].", "I hope I’ll get to see everyone before…", "…", "You should come too, Willow.")],
+"walking_to_lookout": [PackedStringArray("...")],
+"walking_to_restaurant": [PackedStringArray("I’m headed to the [restaurant name].", "Why don’t you come along?")]
 }
 
 [node name="kousa" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(361, -1065)
 npc_name = "kousa"
 texts = {
-"default": [PackedStringArray("Hello"), PackedStringArray("Hi this is working"), PackedStringArray("gvafgdga")],
-"got_note": [PackedStringArray("...", "The hell is this?", "Imma give that guy a piece of my mind lmao")]
+"after_bell": [PackedStringArray("Well… here it comes.", "I’m… ready.", "Hey, Will, will you join me?", "Well, it’s been pretty awesome knowing you, bud.")],
+"at_rocket": [PackedStringArray("You know, Will, I had no idea… that I would be convinced into coming back up.", "I guess it just suddenly seemed like there might be a little more in life to experience.", "Thanks, WIllow.", "…", "That rocket looks sick… I had no idea Alder was capable of something like this.", "Especially given how that elevator turned out.")],
+"at_shoreline": [PackedStringArray("Look who it is!", "Good to see ya, Will.", "…", "You know, you never know how you’ll act in a situation like this until you’re really in it. Like, REALLY in it.", "I’m surprised at how calm I am.", "…", "Either that, or I’m just in shock.", "…", "How are you handling it?", "…"), PackedStringArray("See this plant here?", "I could go on and on about its lifecycle, what conditions it grows best in, what every part of it tastes like…", "Heh, don’t worry, I’ll spare you the boring details!", "I’ve always been the only one that cared about this stuff anyway.", "Alder likes to ask about them, though. Always confused me. Thought they were a technology kinda person.", "I don’t mind, though. They seem fun. Always excited about something… always with something interesting to say.", "…", "You know, Willow…", "There were times I wished I could have talked with them about more than just plants.", "But that’s life, you know? Haha!")],
+"default": [PackedStringArray("Yo, Will.", "What’s up?", "…", "The storm? Yeah, I know.", "…", "You know, at first, I was worried… but I think I’ve gotten over it.", "I’ve lived a good life, I think.", "Like, what left is there to do, you know?", "…"), PackedStringArray("Hey, why don’t I make you one last drink before the end of time?", "I’ll put it on your tab."), PackedStringArray("You know, I think I’m gonna head down to the shoreline.", "That’s where my love for gardening came from.", "I’ll let the sea wash over me, and become one with the island, and let my consciousness drift away with the waves.", "That sounds cool, right? Haha!")],
+"get_letter": [PackedStringArray("Yo, Will!", "Hm? You want me to read this?", "Well, alrighty, then. Did you wri- uh…", "…", "…", "…", "They… think of me like this? For real?", "…", "It’s… kind of gross. But…", "…", "…I think I’m going to go back up.", "Yeah, yeah, I know…", "Hey, get that gross smirk off your face!")],
+"walking_to_rocket": [PackedStringArray("Do NOT get any ideas! I just… suddenly feel the need to talk to Alder.")],
+"walking_to_shoreline": [PackedStringArray("Yo, Will.", "I’m headed to the shoreline.", "If you wanna come chill for a bit, that’d be sick.", "If not, it was nice knowing you, bud. I’ll see ya on the other side.")]
 }
 desired_item = NodePath("../../Items/Note")
 
@@ -174,8 +185,14 @@ desired_item = NodePath("../../Items/Note")
 position = Vector2(250, -311)
 npc_name = "wattle"
 texts = {
-"default": [PackedStringArray("Hi ", "Whats up"), PackedStringArray("Bruhhh")],
-"got_boat": [PackedStringArray("Thanks for saving me")]
+"after_bell": [PackedStringArray("Hey, what was that bell noise?", "…", "The water is rising?", "…", "I-I NEED to find my boat!", "I’ll keep searching the restaurant! I spend a lot of time here, so it’s probably here!", "…Right?"), PackedStringArray("Boat… please come out… I want to find you before the water reaches me…", "…what will happen when the water reaches me?", "Will it keep rising forever and ever?", "…")],
+"at_fountain": [PackedStringArray("Look at the boat, Willow!", "I’m imagining me riding it.", "Not on our planet, though. Somewhere new and unexplored!", "I am riding the boat through a river, in a dark and mysterious place,", "…with a big blue ringed planet in the sky,", "…and with tons of trees, tunnels, and terror!")],
+"at_restaurant": [PackedStringArray("Booooat, where are youuuu?", "Hi!", "I’m still looking for my boat…", "Once I find it, I’ll take it to the fountain outside.", "Everyone seems so sad, I’ll be sad too if I don’t have my boat to play with…"), PackedStringArray("Maybe you can help me find my boat?", "Hmmm, can you check…", "…everywhere? Yeah, everywhere!", "…Except my home! I’m POSITIVE it’s not there.")],
+"at_rocket": [PackedStringArray("What is THAT??", "Did Alder make that, too?", "…", "It looks super cool!", "Can I look inside? Please?"), PackedStringArray("I’ve never climbed the elevator before, but I was so scared by the water, I did it!", "Why did the water cover up our home, though?", "Will I see my home again?", "Is everyone else okay?")],
+"default": [PackedStringArray("Hi!", "Willow, everyone’s talking about the rain! up", "Apparently there’s waaaay more now than people have ever seen!", "But why is everyone sad?", "Rain is awesome! It makes me feel fresh!", "If people keep being sad, I’m going to be sad, too…"), PackedStringArray("That boat Alder made for you is super cool!", "I even made a toy one!", "I don’t remember where I put it, though…", "I’m absolutely SURE I didn’t leave it at home.", "I will go check the restaurant!")],
+"get_toy": [PackedStringArray("WOW! You found it! Thanks, Willow!", "I’m going to the fountain! You should come too!")],
+"walking_to_restaurant": [PackedStringArray("I’m gonna go find my toy boat!")],
+"walking_to_rocket": [PackedStringArray("I saw the water, WIllow! It’s getting higher, so I’m running away!", "Do you think it will keep rising?")]
 }
 desired_item = NodePath("../../Items/ToyBoat")
 
@@ -183,8 +200,15 @@ desired_item = NodePath("../../Items/ToyBoat")
 position = Vector2(538, -2191)
 npc_name = "alder"
 texts = {
-"default": ["Sample Dialgoue"],
-"got_wrench": [PackedStringArray("My wrench!", "thanks :3")]
+"at_lookout": [PackedStringArray("I’m looking for my wrench…", "Have you seen it anywhere?")],
+"at_workshop": [PackedStringArray("I can work on the generator without the wrench, but it’s pitiful how much slower I am.", "What’s that? How can a simple wrench be so effective at solving my problems?", "I have no idea!")],
+"at_workshop_2": [PackedStringArray("I observed something amazing recently, Willow. Using my trusty telescope, out at the lookout point..", "Believe it or not, there are more planets out there. Tons, it turns out!", "And I may spend most of my time way up high, but I’m observant. I’ve known for a while that this planet was going to flood itself soon.", "And so I thought, what the heck, let’s build a rocket!", "It’s a tad more difficult than an elevator or a boat, though…", "But I’m SO close! I just know it! Ugh, I can’t believe I lost my wrench now, of all times!"), PackedStringArray("Since I’m feeling so hysterical, Willow, I feel like I might as well get something off my chest.", "I’ve had a -uh, a thing-", "…for Kousa.", "For a while. Like, years. I guess I’ve never had the chance to tell them.", "No… I’ve just never had the guts.", "So, uh, yeah. Whaddaya think of that?!", "…"), PackedStringArray("…", "Maybe there’s no point in getting so caught up about the wrench.", "The water’s already rising. The wrench could be submerged already, for all I know.", "…", "I’m going to do this with my bare hands!!", "I can DO this!", "Then all of us can escape…", "And Kousa will finally be impressed by something I’ve made!", "Um, I mean, the saving part is more important, of course…", "…", "Don’t you dare say anything to Kousa, alright? Alright! Alright…"), PackedStringArray("Hey - maybe you should round everyone up. Tell them to meet at the launchpad.", "I wish I had time to talk to people, but the truth is, this heavy storm came earlier than I anticipated. I’ve been trying to prepare the generator and the rocket ever since.", "…I really hope the water hasn’t caught up to them yet.", "I’ll get this thing up and running, and scramble up to meet you guys.", "Go get them, will you?")],
+"before_death": [PackedStringArray("WILLOW!", "I’m less than a minute away from figuring this damn thing out! I know it! But the water’s even closer than that!", "Go, Willow! To the launchpad! Once the rocket lights up, get everyone inside and get out of here!", "If I don’t make it in time, don’t wait for me! It’s better you all leave safely than to risk the rocket flooding!")],
+"default": [PackedStringArray("Hiya, Willow! Don’t mind me, I’m just looking for something.", "What is it? Wrench! My wrench. I need my wrench to fix the generator!", "The one for my rocket. Not the one for the elevator. That’s a lost cause and everybody knows it."), PackedStringArray("I’d love to chat, but as I’m sure you’re well aware, the tide’s going to start rising at any moment now.", "People don’t believe in me, but I do! The rocket can save us. And I need my wrench. Blast, where is it…", "I swear, with that wrench, I could fix the generator in a jiffy.")],
+"get_wrench": [PackedStringArray("NO WAY! You actually found it? Where?", "...", "Kousa’s house? Oh…", "This is a sign… are Kousa and I…", "…meant to be?", "…", "Never mind that! Let’s get this thing energized!", "Hiya! *clang*", "…", "Voila! With a single strike of my wrench, this baby is up and running!", "It’s going to work! This is really going to work, isn’t it??", "Come on, let’s go to the launchpad!")],
+"walking_to_lookout": [PackedStringArray("I’m checking the lookout point in case I left the wrench there.")],
+"walking_to_rocket": [PackedStringArray("This is really going to work, isn’t it…", "Of course, I always had faith! Never doubted myself for a second.")],
+"walking_to_workshop": [PackedStringArray("I couldn’t find the wrench anywhere…")]
 }
 desired_item = NodePath("../../Items/Wrench")
 
@@ -205,25 +229,25 @@ item_name = "key"
 item_sprite = ExtResource("11_77n8m")
 
 [node name="Wrench" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(-496, -1243)
+position = Vector2(-510, -1256)
 item_name = "wrench"
 item_sprite = ExtResource("12_b6f7b")
 npc_affected_name = "alder"
-npc_affected_dialogue_key = "got_wrench"
+npc_affected_dialogue_key = "get_wrench"
 
 [node name="Note" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(454, -2298)
+position = Vector2(447, -2314)
 item_name = "Note"
 item_sprite = ExtResource("13_1b3di")
 npc_affected_name = "kousa"
-npc_affected_dialogue_key = "got_note"
+npc_affected_dialogue_key = "get_letter"
 
 [node name="ToyBoat" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(293, -601)
+position = Vector2(400, -616)
 item_name = "toyboat"
 item_sprite = ExtResource("14_pu3t3")
 npc_affected_name = "wattle"
-npc_affected_dialogue_key = "got_boat"
+npc_affected_dialogue_key = "get_toy"
 
 [node name="ItemLocks" type="Node2D" parent="."]
 
@@ -573,6 +597,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("28_012g2")
 
 [node name="Audio" type="Node2D" parent="."]
+process_mode = 3
 
 [node name="ThunderPlayer" type="AudioStreamPlayer" parent="Audio"]
 process_mode = 3

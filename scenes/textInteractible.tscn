@@ -29,11 +29,13 @@ shape = SubResource("RectangleShape2D_wj715")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
 modulate = Color(0, 0, 0, 1)
+z_index = 1
 position = Vector2(0, -40)
 scale = Vector2(1.10156, 0.421875)
 texture = ExtResource("1_71q17")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Area2D"]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -51,6 +53,7 @@ bbcode_enabled = true
 scroll_active = false
 
 [node name="InteractSymbol" type="Sprite2D" parent="Area2D"]
+process_mode = 1
 position = Vector2(0, -28)
 scale = Vector2(2, 2)
 texture = ExtResource("4_lhmwx")

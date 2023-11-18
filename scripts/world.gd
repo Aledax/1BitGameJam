@@ -17,6 +17,13 @@ const alder_lookout_start = alder_workshop_start + 60 # 15 + 120
 const alder_lookout_to_workshop_start = alder_lookout_start + 30 # 17 + 30
 const outlook_collapse = 395
 
+var kousa_timer 
+var wattle_timer
+var kousa_saved : bool = false
+var alder_saved : bool = false
+var sorrel_saved : bool = false
+var wattle_saved : bool = false
+
 var previous_time = 0
 
 var shader_material
@@ -37,6 +44,7 @@ func _ready():
 	schedule_event("Ocean", ocean_rise_event, 150, [8])
 	
 	# Kousa
+	schedule_event("NPCs", npc_switch_dialogue_event, kousa_beach_start, ["kousa", "walking_to_shoreline"])
 	schedule_event("NPCs", npc_move_event, kousa_beach_start + 0, ["kousa", -340])
 	schedule_event("NPCs", npc_move_event, kousa_beach_start + 9, ["kousa", -290])
 	schedule_event("NPCs", npc_move_event, kousa_beach_start + 10, ["kousa", -370])
@@ -44,21 +52,31 @@ func _ready():
 	schedule_event("NPCs", npc_move_event, kousa_beach_start + 17, ["kousa", -160])
 	schedule_event("NPCs", npc_move_event, kousa_beach_start + 19, ["kousa", 400])
 	schedule_event("NPCs", npc_jump_event, kousa_beach_start + 22.2, ["kousa", 0.1])
+	schedule_event("NPCs", npc_switch_dialogue_event, kousa_beach_start + 25, ["kousa", "at_shoreline"])
+	
+	kousa_timer = schedule_event("NPCs", npc_switch_dialogue_event, 150, ["kousa", "after_bell"])
 
 	# Wattle
+	schedule_event("NPCs", npc_switch_dialogue_event, wattle_restaurant_start, ["wattle", "walking_to_restaurant"])
 	schedule_event("NPCs", npc_move_event, wattle_restaurant_start + 0, ["wattle", 10])
 	schedule_sorrel_to_fountain(wattle_restaurant_start + 4, "wattle")
 	schedule_event("NPCs", npc_move_event, wattle_restaurant_start + 28, ["wattle", 470])
 	schedule_event("NPCs", npc_jump_event, wattle_restaurant_start + 31, ["wattle", 0.2])
-
+	schedule_event("NPCs", npc_switch_dialogue_event, wattle_restaurant_start + 36, ["wattle", "at_restaurant"])
+	
+	wattle_timer = schedule_event("NPCs", npc_switch_dialogue_event, 150, ["wattle", "after_bell"])
+	
+	schedule_event("NPCs", npc_switch_dialogue_event, wattle_launchpad_start, ["wattle", "walking_to_rocket"])
 	schedule_event("NPCs", npc_move_event, wattle_launchpad_start + 0, ["wattle", 270])
 	schedule_event("NPCs", npc_jump_event, wattle_launchpad_start + 1.5, ["wattle", 0.1])
 	schedule_event("NPCs", npc_move_event, wattle_launchpad_start + 3, ["wattle", 250])
 	schedule_restaurant_to_elevator(wattle_launchpad_start + 4, "wattle")
 	schedule_elevator_to_workshop(wattle_launchpad_start + 31, "wattle")
 	schedule_workshop_to_launchpad(wattle_launchpad_start + 38, "wattle")
+	schedule_event("NPCs", npc_switch_dialogue_event, wattle_launchpad_start + 52, ["wattle", "at_rocket"])
 
 	# Sorrel
+	schedule_event("NPCs", npc_switch_dialogue_event, sorrel_restaurant_start + 0, ["sorrel", "walking_to_restaurant"])
 	schedule_event("NPCs", npc_move_event, sorrel_restaurant_start + 0, ["sorrel", 10])
 	schedule_sorrel_to_fountain(sorrel_restaurant_start + 4, "sorrel")
 	schedule_fountain_to_restaurant(sorrel_restaurant_start + 26.5, "sorrel")
@@ -202,6 +220,7 @@ func schedule_workshop_to_launchpad(time, npc_name): # Assumes x = -250, ouside 
 	schedule_event("NPCs", npc_move_event, time + 8, [npc_name, 48])
 
 func save_kousa():
+	schedule_event("NPCs", npc_switch_dialogue_event, 1, ["kousa", "walking_to_rocket"])
 	schedule_event("NPCs", npc_move_event, 1, ["kousa", 0])
 	schedule_event("NPCs", npc_jump_event, 1.8, ["kousa", 0.1])
 	schedule_event("NPCs", npc_jump_event, 3.3, ["kousa", 0.1])
@@ -225,18 +244,27 @@ func save_kousa():
 	schedule_restaurant_to_elevator(40, "kousa")
 	schedule_elevator_to_workshop(67, "kousa")
 	schedule_workshop_to_launchpad(72, "kousa")
+	schedule_event("NPCs", npc_switch_dialogue_event, 84, ["kousa", "at_rocket"])
 
 func save(npc):
 	if npc == "kousa":
+		schedule_event("NPCs", npc_switch_dialogue_event, 0, ["kousa", "get_letter"])
+		kousa_saved = true
+		kousa_timer.stop()
 		save_kousa()
 	elif npc == "wattle":
+		schedule_event("NPCs", npc_switch_dialogue_event, 0, ["wattle", "get_toy"])
+		wattle_saved = true
+		wattle_timer.stop()
 		save_wattle()
 	elif npc == "alder":
+		alder_saved = true
 		save_alder()
 	else:
 		print("INVALID SAVE ATTEMPT")
 
 func save_wattle():
+	schedule_event("NPCs", npc_switch_dialogue_event, 1, ["wattle", "at_fountain"])
 	schedule_event("NPCs", npc_move_event, 1, ["wattle", 16])
 	
 func save_alder():
@@ -255,6 +283,7 @@ func schedule_event(event_group, event_name, time_start, event_args):
 		get_tree().callv("call_group", call_group_args)
 		print(event_name, " activated!"))
 	timer.start()
+	return timer
 
 func _character_died(name):
 	inverted_timer = inverted_duration
