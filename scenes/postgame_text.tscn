@@ -20,6 +20,7 @@ scale = Vector2(9.21094, 14.7292)
 texture = ExtResource("2_64t0u")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 256.0
 offset_top = 164.0
 offset_right = 896.0
@@ -35,6 +36,7 @@ text = "You saved:
 autowrap_mode = 3
 
 [node name="Kousa" type="Label" parent="."]
+layout_mode = 0
 offset_left = 256.0
 offset_top = 210.15
 offset_right = 896.0
@@ -50,6 +52,7 @@ text = "Kousa
 autowrap_mode = 3
 
 [node name="Wattle" type="Label" parent="."]
+layout_mode = 0
 offset_left = 256.0
 offset_top = 251.84
 offset_right = 896.0
@@ -64,6 +67,7 @@ text = "Wattle
 autowrap_mode = 3
 
 [node name="Alder" type="Label" parent="."]
+layout_mode = 0
 offset_left = 256.0
 offset_top = 294.56
 offset_right = 896.0
@@ -78,6 +82,7 @@ text = "Alder
 autowrap_mode = 3
 
 [node name="Sorrel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 256.0
 offset_top = 340.93
 offset_right = 896.0
@@ -92,6 +97,7 @@ text = "Sorrel
 autowrap_mode = 3
 
 [node name="Nobody" type="Label" parent="."]
+layout_mode = 0
 offset_left = 256.0
 offset_top = 384.595
 offset_right = 896.0
@@ -106,6 +112,7 @@ text = "... nobody
 autowrap_mode = 3
 
 [node name="E" type="Label" parent="."]
+layout_mode = 0
 offset_left = 773.0
 offset_top = 424.0
 offset_right = 1413.0

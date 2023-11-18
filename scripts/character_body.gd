@@ -46,7 +46,7 @@ var jump_player
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	world = get_tree().get_root().get_child(0)
+	world = get_tree().get_root().get_node("World")
 	
 	step_player = $StepPlayer
 	jump_player = $JumpPlayer
