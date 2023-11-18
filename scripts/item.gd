@@ -24,7 +24,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if Input.is_action_just_pressed("interact") && in_collision && !picked_up:
-		pick_up()
+		if item_name != "rocket":
+			pick_up()
+		else:
+			if get_tree().get_root().get_node("World/Generator/AnimatedSprite2D").animation == "running":
+				get_tree().get_root().get_node("World/Player").finish()
 #	if Input.is_action_just_pressed("drop_item") && picked_up:
 #		drop_item()
 

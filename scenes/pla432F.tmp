@@ -16,17 +16,14 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="Top" type="Node2D" parent="CharacterBody/Camera2D"]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CharacterBody/Camera2D/Top"]
-z_index = 10
 offset_left = -289.0
 offset_top = -366.0
 offset_right = 288.0
 offset_bottom = -167.0
 
 [node name="ColorRect2" type="ColorRect" parent="CharacterBody/Camera2D/Top"]
-z_index = 10
 offset_left = -289.0
 offset_top = -366.0
 offset_right = 288.0
@@ -34,25 +31,21 @@ offset_bottom = -171.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="CharacterBody/Camera2D/Top"]
-z_index = 10
 offset_left = -289.0
 offset_top = -366.0
 offset_right = 288.0
 offset_bottom = -175.0
 
 [node name="Bottom" type="Node2D" parent="CharacterBody/Camera2D"]
-visible = false
 rotation = 3.14159
 
 [node name="ColorRect" type="ColorRect" parent="CharacterBody/Camera2D/Bottom"]
-z_index = 10
 offset_left = -289.0
 offset_top = -366.0
 offset_right = 288.0
 offset_bottom = -167.0
 
 [node name="ColorRect2" type="ColorRect" parent="CharacterBody/Camera2D/Bottom"]
-z_index = 10
 offset_left = -289.0
 offset_top = -366.0
 offset_right = 288.0
@@ -60,8 +53,7 @@ offset_bottom = -171.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="CharacterBody/Camera2D/Bottom"]
-z_index = 10
 offset_left = -289.0
-offset_top = -583.0
+offset_top = -366.0
 offset_right = 288.0
 offset_bottom = -175.0

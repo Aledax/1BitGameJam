@@ -16,6 +16,7 @@ const alder_workshop_start = 90 # 180
 const alder_lookout_start = alder_workshop_start + 60 # 15 + 120
 const alder_lookout_to_workshop_start = alder_lookout_start + 30 # 17 + 30
 const outlook_collapse = 395
+const generator_activation = 410
 
 var kousa_timer 
 var wattle_timer
@@ -75,6 +76,7 @@ func _ready():
 	schedule_elevator_to_workshop(wattle_launchpad_start + 31, "wattle")
 	schedule_workshop_to_launchpad(wattle_launchpad_start + 38, "wattle")
 	schedule_event("NPCs", npc_switch_dialogue_event, wattle_launchpad_start + 52, ["wattle", "at_rocket"])
+	schedule_event("NPCs", npc_move_event, wattle_launchpad_start + 52, ["wattle", 120])
 
 	# Sorrel
 	schedule_event("NPCs", npc_switch_dialogue_event, sorrel_restaurant_start + 0, ["sorrel", "walking_to_restaurant"])
@@ -263,6 +265,7 @@ func save_kousa():
 	schedule_elevator_to_workshop(67, "kousa")
 	schedule_workshop_to_launchpad(72, "kousa")
 	schedule_event("NPCs", npc_switch_dialogue_event, 84, ["kousa", "at_rocket"])
+	schedule_event("NPCs", npc_move_event, 84, ["kousa", 180])
 
 func save(npc):
 	if npc == "kousa":
@@ -290,6 +293,11 @@ func save_alder():
 	schedule_event("NPCs", npc_switch_dialogue_event, 1, ["alder", "walking_to_rocket"])
 	schedule_event("NPCs", npc_move_event, 1, ["alder", -250])
 	schedule_workshop_to_launchpad(4, "alder")
+	schedule_event("NPCs", npc_move_event, 16, ["alder", 60])
+	
+	$Generator/AnimatedSprite2D.animation = "running"
+	$Generator/AnimatedSprite2D.play()
+	$Generator/AnimatedSprite2D/AudioPlayer.play()
 
 func schedule_event(event_group, event_name, time_start, event_args):
 #	print("Event: ", event_name, " will be called in ", time_start, " seconds")
@@ -319,4 +327,10 @@ func _physics_process(delta):
 	var curTime = previous_time + delta
 	if int(curTime / 10) != int(previous_time / 10):
 		print("Time: " + str(int(curTime / 10) * 10))
+		
+	if curTime >= generator_activation and previous_time < generator_activation:
+		$Generator/AnimatedSprite2D.animation = "running"
+		$Generator/AnimatedSprite2D.play()
+		$Generator/AnimatedSprite2D/AudioPlayer.play()
+		
 	previous_time = curTime

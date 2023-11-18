@@ -9,6 +9,7 @@ func _ready():
 func _collapse_event(name):
 	if name != self.name: return
 	
+	$AudioPlayer.play()
 	for tile in tiles:
 		if tile is PhysicsBody2D:
 #			await get_tree().create_timer(2).timeout
