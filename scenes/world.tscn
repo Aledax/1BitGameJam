@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
 [ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
 [ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="12_vyp78"]
 [ext_resource type="Texture2D" uid="uid://c30m3slmyrbxo" path="res://art/Items/Note.png" id="13_1b3di"]
-[ext_resource type="PackedScene" uid="uid://cs8721x1c8tm2" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
+[ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 [ext_resource type="Texture2D" uid="uid://bsghlvjyjup24" path="res://art/Items/LockedDoor.png" id="13_tw0oy"]
 [ext_resource type="Texture2D" uid="uid://d0qqywlhsj4ra" path="res://art/Items/ToyBoat.png" id="14_pu3t3"]
 [ext_resource type="Texture2D" uid="uid://cjh1tewn3l4dc" path="res://art/environment/RestaurantRoof/tile3.png" id="17_juoxn"]
@@ -151,6 +151,22 @@ texts = {
 "got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
 }
 
+[node name="sorrel2" parent="NPCs" instance=ExtResource("7_o702o")]
+position = Vector2(223, -616)
+npc_name = "sorrel"
+texts = {
+"default": [PackedStringArray("Default", ""), PackedStringArray("Yay", "Its", "Working")],
+"got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
+}
+
+[node name="sorrel3" parent="NPCs" instance=ExtResource("7_o702o")]
+position = Vector2(209, -611)
+npc_name = "sorrel"
+texts = {
+"default": [PackedStringArray("Default", ""), PackedStringArray("Yay", "Its", "Working")],
+"got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
+}
+
 [node name="kousa" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(361, -1065)
 npc_name = "kousa"
@@ -180,7 +196,7 @@ desired_item = NodePath("../../Items/Wrench")
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(-897, -49)
+position = Vector2(268, -733)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2

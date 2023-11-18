@@ -59,14 +59,17 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.get_parent().name == "Player":
 		player_node = body.get_parent()
+		if player_node.current_collision != null: return
 		player_in_collision = true
 		interact_symbol.show()
-		print(get_tree().get_root().get_child(0))
+		player_node.current_collision = self
 
 func _on_body_exited(body):
 	if body.get_parent().name == "Player":
+		if player_node.current_collision != self: return
 		player_in_collision = false
 		interact_symbol.hide()
+		player_node.current_collision = null
 
 func start_dialogue():
 	if desired_item != null:
