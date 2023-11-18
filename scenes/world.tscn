@@ -228,25 +228,25 @@ item_name = "key"
 item_sprite = ExtResource("11_77n8m")
 
 [node name="Wrench" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(-496, -1243)
+position = Vector2(-510, -1256)
 item_name = "wrench"
 item_sprite = ExtResource("12_b6f7b")
 npc_affected_name = "alder"
-npc_affected_dialogue_key = "got_wrench"
+npc_affected_dialogue_key = "get_wrench"
 
 [node name="Note" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(454, -2298)
+position = Vector2(447, -2314)
 item_name = "Note"
 item_sprite = ExtResource("13_1b3di")
 npc_affected_name = "kousa"
-npc_affected_dialogue_key = "got_note"
+npc_affected_dialogue_key = "get_letter"
 
 [node name="ToyBoat" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(293, -601)
+position = Vector2(400, -616)
 item_name = "toyboat"
 item_sprite = ExtResource("14_pu3t3")
 npc_affected_name = "wattle"
-npc_affected_dialogue_key = "got_boat"
+npc_affected_dialogue_key = "get_toy"
 
 [node name="ItemLocks" type="Node2D" parent="."]
 
