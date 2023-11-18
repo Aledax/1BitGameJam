@@ -5,13 +5,14 @@
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_xhps8"]
 [ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="2_w2ymm"]
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
+[ext_resource type="PackedScene" uid="uid://byku54wkgnbd" path="res://scenes/textInteractible.tscn" id="6_fug5p"]
 [ext_resource type="Texture2D" uid="uid://drpys1rfh2h5y" path="res://art/environment/generator.png" id="7_apyaj"]
 [ext_resource type="AudioStream" uid="uid://c0381h4x4hyrd" path="res://sfx/fountain.wav" id="7_ehff4"]
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
 [ext_resource type="Texture2D" uid="uid://cmvpvbyv5fhpf" path="res://art/rocket.png" id="7_qxefv"]
 [ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
 [ext_resource type="AudioStream" uid="uid://c2ocbuo6451mq" path="res://sfx/generator.wav" id="8_la7al"]
-[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="AudioStream" uid="uid://hfr6lfvb6kka" path="res://sfx/launch.wav" id="12_58ao5"]
@@ -285,6 +286,14 @@ scale = Vector2(2, 2)
 texture = ExtResource("23_eu7yp")
 
 [node name="world_tile_maps" parent="." instance=ExtResource("13_nx3g3")]
+
+[node name="Interactibles" type="Node2D" parent="."]
+
+[node name="textInteractible" parent="Interactibles" instance=ExtResource("6_fug5p")]
+position = Vector2(0, -83)
+texts = {
+"default": [PackedStringArray("working")]
+}
 
 [node name="Decor" type="Node2D" parent="."]
 

@@ -52,6 +52,8 @@ func _physics_process(delta):
 		elif finished_stopwatch < 13:
 			top.position.y = lerpf(top.position.y, 0, 0.1)
 			bottom.position.y = lerpf(bottom.position.y, 0, 0.1)
+		elif finished_stopwatch < 14:
+			get_tree().change_scene_to_file("res://scenes/postgame_text.tscn")
 		else:
 			bottom.position.y = lerpf(bottom.position.y, -350, 0.1)
 		

@@ -1,5 +1,5 @@
 extends Area2D
- 
+
 @export var item_name = ""
 @export var item_sprite : Texture = null
 
@@ -19,7 +19,6 @@ func _ready():
 	$Sprite2D.texture = item_sprite
 	interact_symbol = $InteractSymbol
 	interact_symbol.hide()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -61,6 +60,6 @@ func pick_up():
 #	root.add_child(self)
 #	interact_symbol.show()
 #	global_position = temp + Vector2(0, 32)
-	
 
-	
+
+
