@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://byku54wkgnbd"]
+[gd_scene load_steps=7 format=3 uid="uid://byku54wkgnbd"]
 
 [ext_resource type="Script" path="res://scripts/text_interactible.gd" id="1_2wbqj"]
+[ext_resource type="Texture2D" uid="uid://ckjaol77a5a4v" path="res://art/characters/icon.svg" id="1_71q17"]
 [ext_resource type="Script" path="res://scripts/parent_text.gd" id="1_tjxpn"]
-[ext_resource type="Texture2D" uid="uid://cwnux3l2kos4t" path="res://art/environment/textbox.png" id="4_gjxnd"]
 [ext_resource type="Texture2D" uid="uid://dquxuovtdswod" path="res://art/Interactible_Symbol.png" id="4_lhmwx"]
 [ext_resource type="Script" path="res://scripts/interact_symbol.gd" id="5_72ibi"]
-[ext_resource type="FontFile" uid="uid://cwc8df3ug2eft" path="res://fonts/Pixeltype.ttf" id="6_mx3ta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wj715"]
 size = Vector2(32, 24)
@@ -19,39 +18,46 @@ collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_2wbqj")
 
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(21, 19)
+scale = Vector2(0.328125, 0.296875)
+texture = ExtResource("1_71q17")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_wj715")
 
-[node name="InteractSymbol" type="Sprite2D" parent="Area2D"]
-position = Vector2(0, -28)
-scale = Vector2(2, 2)
-texture = ExtResource("4_lhmwx")
-script = ExtResource("5_72ibi")
-
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
-position = Vector2(0, -80)
-scale = Vector2(2, 2)
-texture = ExtResource("4_gjxnd")
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(0, -40)
+scale = Vector2(1.10156, 0.421875)
+texture = ExtResource("1_71q17")
 
-[node name="RichTextLabel" type="Label" parent="Area2D"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Area2D"]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -117.0
-offset_right = 690.0
-offset_bottom = 254.0
+offset_left = -58.0
+offset_top = -58.0
+offset_right = 442.0
+offset_bottom = 342.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.21, 0.21)
-auto_translate = false
-localize_numeral_system = false
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_mx3ta")
-theme_override_font_sizes/font_size = 84
-autowrap_mode = 3
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+scroll_active = false
+
+[node name="InteractSymbol" type="Sprite2D" parent="Area2D"]
+process_mode = 1
+position = Vector2(0, -28)
+scale = Vector2(2, 2)
+texture = ExtResource("4_lhmwx")
+script = ExtResource("5_72ibi")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

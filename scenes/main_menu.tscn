@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://cce56tc2s4753"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_16bnq"]
+[ext_resource type="FontFile" uid="uid://det3bst00mb0u" path="res://fonts/alagard.ttf" id="1_wf0ho"]
+[ext_resource type="Texture2D" uid="uid://cky7byoajyog4" path="res://art/menu/background.png" id="2_ucg44"]
+[ext_resource type="Shader" path="res://shaders/color_mask.gdshader" id="3_6rxva"]
+[ext_resource type="Texture2D" uid="uid://61eosnolvmmf" path="res://art/menu/button.png" id="3_lucoq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnpwg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74ovp"]
+shader = ExtResource("3_6rxva")
+shader_parameter/inverted = null
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_16bnq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0509804, 0.121569, 0.152941, 1)
+position = Vector2(575.5, 319.5)
+scale = Vector2(9.21094, 14.7292)
+texture = ExtResource("2_ucg44")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 400.0
+offset_right = 681.0
+offset_bottom = 460.0
+pivot_offset = Vector2(105, 30)
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_colors/font_pressed_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_colors/font_hover_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_colors/icon_normal_color = Color(0.258824, 0.509804, 0.541176, 0)
+theme_override_colors/icon_pressed_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_colors/icon_hover_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("1_wf0ho")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rnpwg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rnpwg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rnpwg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rnpwg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rnpwg")
+text = "Play"
+icon = ExtResource("3_lucoq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ColorMaskNode" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorMask" type="ColorRect" parent="ColorMaskNode"]
+material = SubResource("ShaderMaterial_74ovp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 160.0
+offset_right = 938.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("1_wf0ho")
+theme_override_font_sizes/font_size = 80
+text = "Game Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="PlayButton" to="." method="play_game"]

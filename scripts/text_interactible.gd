@@ -4,7 +4,7 @@ extends Area2D
 
 var desired_item : Node2D
 
-var texts = {"":[[""]]}
+var texts
 var text_index = 0
 var curr_index = 0
 var dialogue_key = ""
@@ -82,6 +82,7 @@ func start_dialogue():
 func showText():
 	await get_tree().create_timer(0.017).timeout
 	inAnimation = true
+	print(texts)
 	var curr_dialogue = texts[dialogue_key][text_index][curr_index]
 	$Sprite2D2.show()
 	$RichTextLabel.show()
