@@ -19,6 +19,7 @@ const outlook_collapse = 395
 
 var kousa_timer 
 var wattle_timer
+var alder_timer
 var kousa_saved : bool = false
 var alder_saved : bool = false
 var sorrel_saved : bool = false
@@ -81,23 +82,40 @@ func _ready():
 	schedule_sorrel_to_fountain(sorrel_restaurant_start + 4, "sorrel")
 	schedule_fountain_to_restaurant(sorrel_restaurant_start + 26.5, "sorrel")
 	schedule_event("NPCs", npc_move_event, sorrel_restaurant_start + 33, ["sorrel", 440])
+	schedule_event("NPCs", npc_switch_dialogue_event, sorrel_restaurant_start + 36, ["sorrel", "at_restaurant"])
+	
+	schedule_event("NPCs", npc_switch_dialogue_event, 150, ["sorrel", "after_bell"])
 
+	schedule_event("NPCs", npc_switch_dialogue_event, sorrel_lookout_start + 0, ["sorrel", "walking_to_lookout"])
 	schedule_event("NPCs", npc_move_event, sorrel_lookout_start + 0, ["sorrel", 250])
 	schedule_restaurant_to_elevator(sorrel_lookout_start + 3, "sorrel")
 	schedule_elevator_to_lookout(sorrel_lookout_start + 37, "sorrel")
+	schedule_event("NPCs", npc_switch_dialogue_event, sorrel_lookout_start + 55, ["sorrel", "at_lookout"])
+	
+	schedule_event("NPCs", npc_switch_dialogue_event, outlook_collapse + 1, ["sorrel", "after_saved"])
+#	schedule_event("NPCs", npc_switch_dialogue_event, outlook_collapse + 20, ["sorrel", "at_rocket"]) # adjust? unsure of how this sequence goes
 	
 	# Alder
+	schedule_event("NPCs", npc_switch_dialogue_event, alder_workshop_start, ["alder", "at_workshop"])
 	schedule_event("NPCs", npc_move_event, alder_workshop_start + 0, ["alder", 0])
 	schedule_event("NPCs", npc_jump_event, alder_workshop_start + 6, ["alder", 0.2])
 	schedule_elevator_to_workshop(alder_workshop_start + 6.5, "alder")
 	schedule_event("NPCs", npc_move_event, alder_workshop_start + 12, ["alder", -475])
-	schedule_event("NPCs", npc_move_event, alder_lookout_start + 0, ["alder", 0]) # workshop to elevator
+	
+	schedule_event("NPCs", npc_switch_dialogue_event, alder_lookout_start, ["alder", "walking_to_lookout"])
+	schedule_event("NPCs", npc_move_event, alder_lookout_start + 0, ["alder", 0]) 
 	schedule_event("NPCs", npc_jump_event, alder_lookout_start + 5, ["alder", 0.2])
 	schedule_elevator_to_lookout(alder_lookout_start + 8, "alder")
-	schedule_event("NPCs", npc_move_event, alder_lookout_to_workshop_start + 0, ["alder", 0]) # lookout to elevator
+	schedule_event("NPCs", npc_switch_dialogue_event, alder_lookout_start + 16, ["alder", "at_lookout"])
+	
+	schedule_event("NPCs", npc_switch_dialogue_event, alder_lookout_to_workshop_start, ["alder", "walking_to_workshop"])
+	schedule_event("NPCs", npc_move_event, alder_lookout_to_workshop_start + 0, ["alder", 0])
 	schedule_event("NPCs", npc_jump_event, alder_lookout_to_workshop_start + 8.5, ["alder", 0.2])
 	schedule_elevator_to_workshop(alder_lookout_to_workshop_start + 9.5, "alder")
 	schedule_event("NPCs", npc_move_event, alder_lookout_to_workshop_start + 15, ["alder", -475])
+	schedule_event("NPCs", npc_switch_dialogue_event, alder_lookout_to_workshop_start + 18, ["alder", "at_workshop"])
+	
+	alder_timer = schedule_event("NPCs", npc_switch_dialogue_event, outlook_collapse + 30, ["alder", "before_death"])
 	
 	# Collapsing blocks
 	schedule_event("Collapsible", collapse_event, restaurant_collapse, ["RestaurantRoof"])
@@ -258,6 +276,7 @@ func save(npc):
 		wattle_timer.stop()
 		save_wattle()
 	elif npc == "alder":
+		schedule_event("NPCs", npc_switch_dialogue_event, 0, ["alder", "get_wrench"])
 		alder_saved = true
 		save_alder()
 	else:
@@ -268,6 +287,7 @@ func save_wattle():
 	schedule_event("NPCs", npc_move_event, 1, ["wattle", 16])
 	
 func save_alder():
+	schedule_event("NPCs", npc_switch_dialogue_event, 1, ["alder", "walking_to_rocket"])
 	schedule_event("NPCs", npc_move_event, 1, ["alder", -250])
 	schedule_workshop_to_launchpad(4, "alder")
 
