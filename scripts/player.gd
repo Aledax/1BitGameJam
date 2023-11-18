@@ -3,6 +3,7 @@ extends Node2D
 var character_body
 
 var current_items = []
+var current_collision
 
 func _ready():
 	character_body = $CharacterBody
