@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=34 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -23,6 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://nrcwnpv63rn4" path="res://art/environment/RestaurantRoof/tile1.png" id="20_l6tsc"]
 [ext_resource type="Texture2D" uid="uid://cqdyo0xd1uxqy" path="res://art/environment/RestaurantRoof/leftovers.png" id="22_agswe"]
 [ext_resource type="Texture2D" uid="uid://duiomsb5pf3s" path="res://art/environment/tree.png" id="23_eu7yp"]
+[ext_resource type="Texture2D" uid="uid://cnt3e6i83cop4" path="res://art/environment/Outlook/tile1.png" id="24_tksn5"]
+[ext_resource type="Texture2D" uid="uid://c56wgpldww7kk" path="res://art/environment/Outlook/tile5.png" id="25_xxx15"]
+[ext_resource type="Texture2D" uid="uid://crtgtuvfdkahv" path="res://art/environment/Outlook/tile6.png" id="26_j8q5a"]
+[ext_resource type="Texture2D" uid="uid://b5vuatu854lgf" path="res://art/environment/Outlook/tile3png.png" id="27_3oab3"]
+[ext_resource type="Texture2D" uid="uid://buoacyra60hwb" path="res://art/environment/Outlook/tile2.png" id="28_012g2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uhjhs"]
 shader = ExtResource("2_w2ymm")
@@ -132,7 +137,7 @@ npc_name = "alder"
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(-62, -2056)
+position = Vector2(121, -1048)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
@@ -356,5 +361,163 @@ polygon = PackedVector2Array(-6, 10.0699, 10, -5.93005, 10, 10.0699)
 position = Vector2(2, 6.06995)
 scale = Vector2(2, 2)
 texture = ExtResource("20_l6tsc")
+
+[node name="Outlook" type="Node2D" parent="."]
+position = Vector2(963, -2177)
+script = ExtResource("18_3lwp5")
+apply_torque = 20
+
+[node name="Tile" type="RigidBody2D" parent="Outlook"]
+z_index = 1
+position = Vector2(-109, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile"]
+position = Vector2(2, 2.06995)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("24_tksn5")
+
+[node name="Tile2" type="RigidBody2D" parent="Outlook"]
+z_index = 2
+position = Vector2(-93, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile2"]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile2"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("25_xxx15")
+
+[node name="Tile3" type="RigidBody2D" parent="Outlook"]
+z_index = 2
+position = Vector2(-61, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile3"]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile3"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("26_j8q5a")
+
+[node name="Tile6" type="RigidBody2D" parent="Outlook"]
+z_index = 1
+position = Vector2(-157, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile6"]
+position = Vector2(2, 2.06995)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile6"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("27_3oab3")
+
+[node name="Tile8" type="RigidBody2D" parent="Outlook"]
+z_index = 2
+position = Vector2(-141, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile8"]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile8"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("25_xxx15")
+
+[node name="Tile9" type="RigidBody2D" parent="Outlook"]
+z_index = 2
+position = Vector2(-125, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile9"]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile9"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("26_j8q5a")
+
+[node name="Tile4" type="RigidBody2D" parent="Outlook"]
+z_index = 2
+position = Vector2(-77, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile4"]
+position = Vector2(2, 2.06995)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile4"]
+position = Vector2(2, 2.06995)
+scale = Vector2(2, 2)
+texture = ExtResource("27_3oab3")
+
+[node name="Tile5" type="RigidBody2D" parent="Outlook"]
+z_index = 2
+position = Vector2(-29, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile5"]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile5"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("24_tksn5")
+
+[node name="Tile7" type="RigidBody2D" parent="Outlook"]
+z_index = 2
+position = Vector2(-45, 71)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_bpdmb")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outlook/Tile7"]
+position = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_icsv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlook/Tile7"]
+position = Vector2(2, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("28_012g2")
 
 [connection signal="correct_item_brought" from="ItemLocks/HouseLock" to="ItemLocks/HouseLock" method="delete_self"]
