@@ -184,8 +184,14 @@ desired_item = NodePath("../../Items/Note")
 position = Vector2(250, -311)
 npc_name = "wattle"
 texts = {
-"default": [PackedStringArray("Hi ", "Whats up"), PackedStringArray("Bruhhh")],
-"got_boat": [PackedStringArray("Thanks for saving me")]
+"after_bell": [PackedStringArray("Hey, what was that bell noise?", "…", "The water is rising?", "…", "I-I NEED to find my boat!", "I’ll keep searching the restaurant! I spend a lot of time here, so it’s probably here!", "…Right?"), PackedStringArray("Boat… please come out… I want to find you before the water reaches me…", "…what will happen when the water reaches me?", "Will it keep rising forever and ever?", "…")],
+"at_fountain": [PackedStringArray("Look at the boat, Willow!", "I’m imagining me riding it.", "Not on our planet, though. Somewhere new and unexplored!", "I am riding the boat through a river, in a dark and mysterious place,", "…with a big blue ringed planet in the sky,", "…and with tons of trees, tunnels, and terror!")],
+"at_restaurant": [PackedStringArray("Booooat, where are youuuu?", "Hi!", "I’m still looking for my boat…", "Once I find it, I’ll take it to the fountain outside.", "Everyone seems so sad, I’ll be sad too if I don’t have my boat to play with…"), PackedStringArray("Maybe you can help me find my boat?", "Hmmm, can you check…", "…everywhere? Yeah, everywhere!", "…Except my home! I’m POSITIVE it’s not there.")],
+"at_rocket": [PackedStringArray("What is THAT??", "Did Alder make that, too?", "…", "It looks super cool!", "Can I look inside? Please?"), PackedStringArray("I’ve never climbed the elevator before, but I was so scared by the water, I did it!", "Why did the water cover up our home, though?", "Will I see my home again?", "Is everyone else okay?")],
+"default": [PackedStringArray("Hi!", "Willow, everyone’s talking about the rain! up", "Apparently there’s waaaay more now than people have ever seen!", "But why is everyone sad?", "Rain is awesome! It makes me feel fresh!", "If people keep being sad, I’m going to be sad, too…"), PackedStringArray("That boat Alder made for you is super cool!", "I even made a toy one!", "I don’t remember where I put it, though…", "I’m absolutely SURE I didn’t leave it at home.", "I will go check the restaurant!")],
+"get_toy": [PackedStringArray("WOW! You found it! Thanks, Willow!", "I’m going to the fountain! You should come too!")],
+"walking_to_restaurant": [PackedStringArray("I’m gonna go find my toy boat!")],
+"walking_to_rocket": [PackedStringArray("I saw the water, WIllow! It’s getting higher, so I’m running away!", "Do you think it will keep rising?")]
 }
 desired_item = NodePath("../../Items/ToyBoat")
 
@@ -193,8 +199,15 @@ desired_item = NodePath("../../Items/ToyBoat")
 position = Vector2(538, -2191)
 npc_name = "alder"
 texts = {
-"default": ["Sample Dialgoue"],
-"got_wrench": [PackedStringArray("My wrench!", "thanks :3")]
+"at_lookout": [PackedStringArray("I’m looking for my wrench…", "Have you seen it anywhere?")],
+"at_workshop": [PackedStringArray("I can work on the generator without the wrench, but it’s pitiful how much slower I am.", "What’s that? How can a simple wrench be so effective at solving my problems?", "I have no idea!")],
+"at_workshop_2": [PackedStringArray("I observed something amazing recently, Willow. Using my trusty telescope, out at the lookout point..", "Believe it or not, there are more planets out there. Tons, it turns out!", "And I may spend most of my time way up high, but I’m observant. I’ve known for a while that this planet was going to flood itself soon.", "And so I thought, what the heck, let’s build a rocket!", "It’s a tad more difficult than an elevator or a boat, though…", "But I’m SO close! I just know it! Ugh, I can’t believe I lost my wrench now, of all times!"), PackedStringArray("Since I’m feeling so hysterical, Willow, I feel like I might as well get something off my chest.", "I’ve had a -uh, a thing-", "…for Kousa.", "For a while. Like, years. I guess I’ve never had the chance to tell them.", "No… I’ve just never had the guts.", "So, uh, yeah. Whaddaya think of that?!", "…"), PackedStringArray("…", "Maybe there’s no point in getting so caught up about the wrench.", "The water’s already rising. The wrench could be submerged already, for all I know.", "…", "I’m going to do this with my bare hands!!", "I can DO this!", "Then all of us can escape…", "And Kousa will finally be impressed by something I’ve made!", "Um, I mean, the saving part is more important, of course…", "…", "Don’t you dare say anything to Kousa, alright? Alright! Alright…"), PackedStringArray("Hey - maybe you should round everyone up. Tell them to meet at the launchpad.", "I wish I had time to talk to people, but the truth is, this heavy storm came earlier than I anticipated. I’ve been trying to prepare the generator and the rocket ever since.", "…I really hope the water hasn’t caught up to them yet.", "I’ll get this thing up and running, and scramble up to meet you guys.", "Go get them, will you?")],
+"before_death": [PackedStringArray("WILLOW!", "I’m less than a minute away from figuring this damn thing out! I know it! But the water’s even closer than that!", "Go, Willow! To the launchpad! Once the rocket lights up, get everyone inside and get out of here!", "If I don’t make it in time, don’t wait for me! It’s better you all leave safely than to risk the rocket flooding!")],
+"default": [PackedStringArray("Hiya, Willow! Don’t mind me, I’m just looking for something.", "What is it? Wrench! My wrench. I need my wrench to fix the generator!", "The one for my rocket. Not the one for the elevator. That’s a lost cause and everybody knows it."), PackedStringArray("I’d love to chat, but as I’m sure you’re well aware, the tide’s going to start rising at any moment now.", "People don’t believe in me, but I do! The rocket can save us. And I need my wrench. Blast, where is it…", "I swear, with that wrench, I could fix the generator in a jiffy.")],
+"get_wrench": [PackedStringArray("NO WAY! You actually found it? Where?", "...", "Kousa’s house? Oh…", "This is a sign… are Kousa and I…", "…meant to be?", "…", "Never mind that! Let’s get this thing energized!", "Hiya! *clang*", "…", "Voila! With a single strike of my wrench, this baby is up and running!", "It’s going to work! This is really going to work, isn’t it??", "Come on, let’s go to the launchpad!")],
+"walking_to_lookout": [PackedStringArray("I’m checking the lookout point in case I left the wrench there.")],
+"walking_to_rocket": [PackedStringArray("This is really going to work, isn’t it…", "Of course, I always had faith! Never doubted myself for a second.")],
+"walking_to_workshop": [PackedStringArray("I couldn’t find the wrench anywhere…")]
 }
 desired_item = NodePath("../../Items/Wrench")
 
