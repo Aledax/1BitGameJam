@@ -17,7 +17,6 @@ var interact_symbol
 var player_node : Node2D
 
 func _ready():
-	print(char_name)
 	dialogue_key = "default"
 	$Sprite2D2.hide()
 	$RichTextLabel.hide()
@@ -72,7 +71,7 @@ func _on_body_exited(body):
 func start_dialogue():
 	if desired_item != null:
 		if desired_item.npc_affected_name == char_name && desired_item in player_node.current_items:
-				item_given()
+			item_given()
 	get_tree().paused = true
 	curr_index = 0
 	showText()

@@ -7,17 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
 [ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
 [ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="12_vyp78"]
 [ext_resource type="Texture2D" uid="uid://c30m3slmyrbxo" path="res://art/Items/Note.png" id="13_1b3di"]
-[ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
+[ext_resource type="PackedScene" uid="uid://cs8721x1c8tm2" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 [ext_resource type="Texture2D" uid="uid://bsghlvjyjup24" path="res://art/Items/LockedDoor.png" id="13_tw0oy"]
 [ext_resource type="Texture2D" uid="uid://d0qqywlhsj4ra" path="res://art/Items/ToyBoat.png" id="14_pu3t3"]
 [ext_resource type="Texture2D" uid="uid://cjh1tewn3l4dc" path="res://art/environment/RestaurantRoof/tile3.png" id="17_juoxn"]
-[ext_resource type="Script" path="res://restaurant_collapse.gd" id="18_3lwp5"]
+[ext_resource type="Script" path="res://collapsible.gd" id="18_mi2w1"]
 [ext_resource type="Texture2D" uid="uid://da4kv6trfmtf2" path="res://art/environment/RestaurantRoof/tile4.png" id="18_vvr74"]
 [ext_resource type="Texture2D" uid="uid://bkuqxfrsqiau6" path="res://art/environment/RestaurantRoof/tile2.png" id="19_ktfby"]
 [ext_resource type="Texture2D" uid="uid://nrcwnpv63rn4" path="res://art/environment/RestaurantRoof/tile1.png" id="20_l6tsc"]
@@ -81,19 +81,38 @@ texture = ExtResource("23_eu7yp")
 
 [node name="world_tile_maps" parent="." instance=ExtResource("13_nx3g3")]
 
+[node name="Decor" type="Node2D" parent="."]
+
+[node name="Bench 1" type="Sprite2D" parent="Decor"]
+position = Vector2(-348, -400)
+scale = Vector2(2, 2)
+texture = ExtResource("29_ypv3l")
+
+[node name="Bench 2" type="Sprite2D" parent="Decor"]
+position = Vector2(116, -1008)
+scale = Vector2(2, 2)
+texture = ExtResource("29_ypv3l")
+
+[node name="Bench 3" type="Sprite2D" parent="Decor"]
+position = Vector2(-132, -1007)
+scale = Vector2(-2, 2)
+texture = ExtResource("30_kuhy4")
+
+[node name="Fountain" type="Sprite2D" parent="Decor"]
+position = Vector2(-11, -1056)
+scale = Vector2(2, 2)
+texture = ExtResource("31_3414k")
+
 [node name="Boxes" type="Node2D" parent="."]
 
 [node name="SmallBox" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(-520, -41)
-
-[node name="SmallBox2" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(-399, -1009)
+position = Vector2(-605, -44)
 
 [node name="SmallBox3" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(-434, -1054)
+position = Vector2(-361, -1003)
 
 [node name="LargeBox" parent="Boxes" instance=ExtResource("10_qv3ie")]
-position = Vector2(-436, -1016)
+position = Vector2(-465, -1009)
 
 [node name="SmallBox5" parent="Boxes" instance=ExtResource("8_b67pu")]
 position = Vector2(180, -1593)
@@ -107,24 +126,39 @@ position = Vector2(224, -2515)
 [node name="SmallBox7" parent="Boxes" instance=ExtResource("8_b67pu")]
 position = Vector2(237, -2543)
 
+[node name="LargeBox3" parent="Boxes" instance=ExtResource("10_qv3ie")]
+position = Vector2(-430, -1010)
+
+[node name="LargeBox4" parent="Boxes" instance=ExtResource("10_qv3ie")]
+position = Vector2(-453, -1044)
+
+[node name="SmallBox4" parent="Boxes" instance=ExtResource("8_b67pu")]
+position = Vector2(-457, -1070)
+
+[node name="SmallBox8" parent="Boxes" instance=ExtResource("8_b67pu")]
+position = Vector2(-424, -1037)
+
+[node name="LargeBox5" parent="Boxes" instance=ExtResource("10_qv3ie")]
+position = Vector2(-547, -51)
+
 [node name="NPCs" type="Node2D" parent="."]
 
-[node name="sorrel" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
+[node name="sorrel" parent="NPCs" instance=ExtResource("7_o702o")]
 position = Vector2(302, -414)
 npc_name = "sorrel"
 texts = {
 "default": [PackedStringArray("Default", ""), PackedStringArray("Yay", "Its", "Working")],
 "got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
 }
-desired_item = NodePath("../../Items/HouseKey")
 
 [node name="kousa" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(361, -1065)
 npc_name = "kousa"
 texts = {
-"default": [PackedStringArray("Hello"), PackedStringArray("Hi this is working"), PackedStringArray("gvafgdga")]
+"default": [PackedStringArray("Hello"), PackedStringArray("Hi this is working"), PackedStringArray("gvafgdga")],
+"got_note": [PackedStringArray("...", "The hell is this?", "Imma give that guy a piece of my mind lmao")]
 }
-desired_item = NodePath("../../Items/Wrench")
+desired_item = NodePath("../../Items/Note")
 
 [node name="wattle" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(250, -311)
@@ -135,13 +169,18 @@ texts = {
 }
 desired_item = NodePath("../../Items/ToyBoat")
 
-[node name="alder" parent="NPCs" instance=ExtResource("7_o702o")]
+[node name="alder" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(538, -2191)
 npc_name = "alder"
+texts = {
+"default": ["Sample Dialgoue"],
+"got_wrench": [PackedStringArray("My wrench!", "thanks :3")]
+}
+desired_item = NodePath("../../Items/Wrench")
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(-197, -1052)
+position = Vector2(-897, -49)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
@@ -154,23 +193,23 @@ scale = Vector2(2, 2)
 position = Vector2(248, -600)
 item_name = "key"
 item_sprite = ExtResource("11_77n8m")
-npc_affected_name = "sorrel"
-npc_affected_dialogue_key = "got_key"
 
 [node name="Wrench" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(255, -1053)
+position = Vector2(-496, -1243)
 item_name = "wrench"
 item_sprite = ExtResource("12_b6f7b")
-npc_affected_name = "kousa"
+npc_affected_name = "alder"
 npc_affected_dialogue_key = "got_wrench"
 
 [node name="Note" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(457, -2297)
+position = Vector2(454, -2298)
 item_name = "Note"
 item_sprite = ExtResource("13_1b3di")
+npc_affected_name = "kousa"
+npc_affected_dialogue_key = "got_note"
 
 [node name="ToyBoat" parent="Items" instance=ExtResource("11_dc0en")]
-position = Vector2(279, -600)
+position = Vector2(293, -601)
 item_name = "toyboat"
 item_sprite = ExtResource("14_pu3t3")
 npc_affected_name = "wattle"
@@ -198,9 +237,9 @@ shape = SubResource("RectangleShape2D_jvbit")
 position = Vector2(71, -2510)
 required_item = NodePath("../../Items/Wrench")
 
-[node name="RestaurantRoof" type="Node2D" parent="."]
+[node name="RestaurantRoof" type="Node2D" parent="." groups=["Collapsible"]]
 position = Vector2(0, -61.07)
-script = ExtResource("18_3lwp5")
+script = ExtResource("18_mi2w1")
 
 [node name="Sprite2D" type="Sprite2D" parent="RestaurantRoof"]
 position = Vector2(312, -1082.93)
@@ -366,15 +405,14 @@ position = Vector2(2, 6.06995)
 scale = Vector2(2, 2)
 texture = ExtResource("20_l6tsc")
 
-[node name="Outlook" type="Node2D" parent="."]
+[node name="Outlook" type="Node2D" parent="." groups=["Collapsible"]]
 position = Vector2(963, -2177)
-script = ExtResource("18_3lwp5")
+script = ExtResource("18_mi2w1")
 apply_torque = 20
 
 [node name="Tile" type="RigidBody2D" parent="Outlook"]
 z_index = 1
 position = Vector2(-109, 71)
-collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -391,7 +429,7 @@ texture = ExtResource("24_tksn5")
 [node name="Tile2" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-93, 71)
-collision_mask = 5
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -408,7 +446,7 @@ texture = ExtResource("25_xxx15")
 [node name="Tile3" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-61, 71)
-collision_mask = 5
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -425,7 +463,7 @@ texture = ExtResource("26_j8q5a")
 [node name="Tile6" type="RigidBody2D" parent="Outlook"]
 z_index = 1
 position = Vector2(-157, 71)
-collision_mask = 5
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -442,7 +480,7 @@ texture = ExtResource("27_3oab3")
 [node name="Tile8" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-141, 71)
-collision_mask = 5
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -459,7 +497,7 @@ texture = ExtResource("25_xxx15")
 [node name="Tile9" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-125, 71)
-collision_mask = 5
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -476,7 +514,7 @@ texture = ExtResource("26_j8q5a")
 [node name="Tile4" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-77, 71)
-collision_mask = 5
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -493,7 +531,7 @@ texture = ExtResource("27_3oab3")
 [node name="Tile5" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-29, 71)
-collision_mask = 5
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -510,7 +548,7 @@ texture = ExtResource("24_tksn5")
 [node name="Tile7" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-45, 71)
-collision_mask = 5
+collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -523,27 +561,5 @@ shape = SubResource("RectangleShape2D_icsv7")
 position = Vector2(2, 2)
 scale = Vector2(2, 2)
 texture = ExtResource("28_012g2")
-
-[node name="Decor" type="Node2D" parent="."]
-
-[node name="Bench 1" type="Sprite2D" parent="Decor"]
-position = Vector2(-348, -400)
-scale = Vector2(2, 2)
-texture = ExtResource("29_ypv3l")
-
-[node name="Bench 2" type="Sprite2D" parent="Decor"]
-position = Vector2(116, -1008)
-scale = Vector2(2, 2)
-texture = ExtResource("29_ypv3l")
-
-[node name="Bench 3" type="Sprite2D" parent="Decor"]
-position = Vector2(-132, -1007)
-scale = Vector2(-2, 2)
-texture = ExtResource("30_kuhy4")
-
-[node name="Fountain" type="Sprite2D" parent="Decor"]
-position = Vector2(-11, -1056)
-scale = Vector2(2, 2)
-texture = ExtResource("31_3414k")
 
 [connection signal="correct_item_brought" from="ItemLocks/HouseLock" to="ItemLocks/HouseLock" method="delete_self"]

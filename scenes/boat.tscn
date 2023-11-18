@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://gdv4brhugvjk" path="res://art/environment/boat/interface_off.png" id="2_6mmft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo1sb"]
+size = Vector2(10, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylqb8"]
 
@@ -24,6 +25,7 @@ collision_mask = 4
 texture = ExtResource("2_6mmft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterfaceLeft"]
+position = Vector2(0, 4)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_uo1sb")
 
@@ -36,6 +38,7 @@ collision_mask = 4
 texture = ExtResource("2_6mmft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterfaceRight"]
+position = Vector2(0, 4)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_uo1sb")
 

@@ -16,6 +16,7 @@ script = ExtResource("1_p7y7x")
 z_index = 3
 
 [node name="LeftWaves" type="Sprite2D" parent="."]
+process_mode = 3
 z_index = 4
 texture_filter = 1
 texture_repeat = 2
@@ -25,6 +26,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 3200, 800)
 
 [node name="RightWaves" type="Sprite2D" parent="."]
+process_mode = 3
 z_index = 4
 texture_filter = 1
 texture_repeat = 2

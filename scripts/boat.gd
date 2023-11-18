@@ -23,13 +23,12 @@ func _physics_process(_delta):
 		velocity.y = -position.y * 25
 	
 	var moving = false
-	if Input.is_action_pressed("interact"):
-		if left_activated:
-			velocity.x = max(-horizontal_max_speed, velocity.x - horizontal_acceleration)
-			moving = true
-		if right_activated:
-			velocity.x = min(horizontal_max_speed, velocity.x + horizontal_acceleration)
-			moving = true
+	if left_activated:
+		velocity.x = max(-horizontal_max_speed, velocity.x - horizontal_acceleration)
+		moving = true
+	if right_activated:
+		velocity.x = min(horizontal_max_speed, velocity.x + horizontal_acceleration)
+		moving = true
 	if not moving:
 		velocity.x *= 0.95
 	

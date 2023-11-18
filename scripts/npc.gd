@@ -18,6 +18,9 @@ func _ready():
 	text_interactible.set_texts(texts)
 	text_interactible.set_npc_name(npc_name)
 	text_interactible.set_desired_item(desired_item)
+	
+	if name == "sorrel":
+		character_body.set_collision_mask_value(5, true)
 
 func _physics_process(delta):
 	if (character_body.horizontal_movement == -1 and character_body.global_position.x <= target_x) or (character_body.horizontal_movement == 1 and character_body.global_position.x >= target_x):
