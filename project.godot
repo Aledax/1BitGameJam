@@ -15,6 +15,10 @@ run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://art/characters/icon.svg"
 
+[autoload]
+
+World="*res://scripts/world.gd"
+
 [input]
 
 ui_accept={

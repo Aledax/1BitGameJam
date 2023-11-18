@@ -23,7 +23,7 @@ var wattle_timer
 var alder_timer
 var kousa_saved : bool = false
 var alder_saved : bool = false
-var sorrel_saved : bool = false
+var sorrel_saved : bool = true
 var wattle_saved : bool = false
 
 var previous_time = 0
@@ -319,6 +319,14 @@ func _character_died(name):
 	
 	if name == "player":
 		print("Game over!")
+	elif name == "kousa":
+		kousa_saved = false
+	elif name == "alder":
+		alder_saved = false
+	elif name == "sorrel":
+		sorrel_saved = false
+	elif name == "wattle":
+		wattle_saved = false
 	
 func _physics_process(delta):
 	inverted_timer = max(0, inverted_timer - delta)
