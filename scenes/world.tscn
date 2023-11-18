@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=71 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -18,17 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
 [ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="12_vyp78"]
 [ext_resource type="Texture2D" uid="uid://c30m3slmyrbxo" path="res://art/Items/Note.png" id="13_1b3di"]
-[ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
+[ext_resource type="PackedScene" uid="uid://cs8721x1c8tm2" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 [ext_resource type="Texture2D" uid="uid://bsghlvjyjup24" path="res://art/Items/LockedDoor.png" id="13_tw0oy"]
 [ext_resource type="Texture2D" uid="uid://d0qqywlhsj4ra" path="res://art/Items/ToyBoat.png" id="14_pu3t3"]
 [ext_resource type="Texture2D" uid="uid://cjh1tewn3l4dc" path="res://art/environment/RestaurantRoof/tile3.png" id="17_juoxn"]
 [ext_resource type="Script" path="res://collapsible.gd" id="18_mi2w1"]
+[ext_resource type="PackedScene" uid="uid://byku54wkgnbd" path="res://scenes/textInteractible.tscn" id="18_mth7i"]
 [ext_resource type="Texture2D" uid="uid://da4kv6trfmtf2" path="res://art/environment/RestaurantRoof/tile4.png" id="18_vvr74"]
 [ext_resource type="Texture2D" uid="uid://bkuqxfrsqiau6" path="res://art/environment/RestaurantRoof/tile2.png" id="19_ktfby"]
 [ext_resource type="Texture2D" uid="uid://nrcwnpv63rn4" path="res://art/environment/RestaurantRoof/tile1.png" id="20_l6tsc"]
 [ext_resource type="Texture2D" uid="uid://cqdyo0xd1uxqy" path="res://art/environment/RestaurantRoof/leftovers.png" id="22_agswe"]
 [ext_resource type="Texture2D" uid="uid://duiomsb5pf3s" path="res://art/environment/tree.png" id="23_eu7yp"]
 [ext_resource type="Texture2D" uid="uid://cnt3e6i83cop4" path="res://art/environment/Outlook/tile1.png" id="24_tksn5"]
+[ext_resource type="AudioStream" uid="uid://bjv7f6ddkxclp" path="res://sfx/unlock.wav" id="25_5pldm"]
 [ext_resource type="Texture2D" uid="uid://c56wgpldww7kk" path="res://art/environment/Outlook/tile5.png" id="25_xxx15"]
 [ext_resource type="Texture2D" uid="uid://crtgtuvfdkahv" path="res://art/environment/Outlook/tile6.png" id="26_j8q5a"]
 [ext_resource type="Texture2D" uid="uid://b5vuatu854lgf" path="res://art/environment/Outlook/tile3png.png" id="27_3oab3"]
@@ -246,6 +248,9 @@ friction = 0.4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icsv7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0f7p"]
+size = Vector2(20, 6000)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_xhps8")
 
@@ -431,6 +436,127 @@ z_index = 2
 position = Vector2(-1000, 0)
 scale = Vector2(2, 2)
 
+[node name="Signs" type="Node2D" parent="."]
+
+[node name="textInteractible" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-656, -49)
+texts = {
+"default": [PackedStringArray("Willow\'s fishing harbor", "DO NOT take the boat, our village needs it for food!")]
+}
+
+[node name="textInteractible2" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-440, -75)
+texts = {
+"default": [PackedStringArray("The Fishing Hut")]
+}
+
+[node name="textInteractible3" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(0, -81)
+texts = {
+"default": [PackedStringArray("To Village")]
+}
+
+[node name="textInteractible4" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(119, -301)
+texts = {
+"default": [PackedStringArray("Home of Sorrel and Willow.", "Welcome!")]
+}
+
+[node name="textInteractible5" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(495, -605)
+texts = {
+"default": [PackedStringArray("Wattle\'s super awesome room!")]
+}
+
+[node name="textInteractible6" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-226, -397)
+texts = {
+"default": [PackedStringArray("Lower Outlook", "Fountain is up above")]
+}
+
+[node name="textInteractible7" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-159, -1005)
+texts = {
+"default": [PackedStringArray("The Fountain")]
+}
+
+[node name="textInteractible8" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-357, -1116)
+texts = {
+"default": [PackedStringArray("Kousa\'s Home")]
+}
+
+[node name="textInteractible9" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(271, -1053)
+texts = {
+"default": [PackedStringArray("Welcome to Cod Cove!", "Cod - $5", "2 Cod - $10", "3 Cod - $15", "4 Cod - $20", "...")]
+}
+
+[node name="textInteractible10" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(95, -1341)
+texts = {
+"default": [PackedStringArray("DANGER!", "This elevator is non-functional.", "Ascend at your own risk!", "- Alder")]
+}
+
+[node name="textInteractible11" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-250, -2077)
+texts = {
+"default": [PackedStringArray("Alder\'s Workshop")]
+}
+
+[node name="textInteractible12" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(405, -2190)
+texts = {
+"default": [PackedStringArray("Home of Alder")]
+}
+
+[node name="textInteractible13" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(35, -78)
+texts = {
+"default": [PackedStringArray("It\'s a bell.")]
+}
+
+[node name="textInteractible14" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(220, -382)
+texts = {
+"default": [PackedStringArray("Some of Sorrel\'s books and journals.", "They probably took years to write.")]
+}
+
+[node name="textInteractible15" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-392, -397)
+texts = {
+"default": [PackedStringArray("A decent looking bench.", "This seems like a resonable place to contemplate life.")]
+}
+
+[node name="textInteractible16" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-11, -1006)
+texts = {
+"default": [PackedStringArray("The village\'s fountain.", "It helps gives the place a sense of belonging.")]
+}
+
+[node name="textInteractible17" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-688, -1118)
+texts = {
+"default": [PackedStringArray("Some of Kousa\'s plants.", "There\'s a surprising amount of variety.")]
+}
+
 [node name="Items" type="Node2D" parent="."]
 
 [node name="HouseKey" parent="Items" instance=ExtResource("11_dc0en")]
@@ -476,6 +602,11 @@ freeze = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemLocks/HouseLock/RigidBody2D"]
 position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_jvbit")
+
+[node name="UnlockPlayer" type="AudioStreamPlayer2D" parent="ItemLocks/HouseLock"]
+stream = ExtResource("25_5pldm")
+volume_db = 5.0
+max_distance = 500.0
 
 [node name="RestaurantRoof" type="Node2D" parent="." groups=["Collapsible"]]
 position = Vector2(0, -61.07)
@@ -826,5 +957,19 @@ volume_db = -15.0
 process_mode = 3
 stream = ExtResource("31_o0lot")
 autoplay = true
+
+[node name="Border" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+position = Vector2(-1100, 0)
+shape = SubResource("RectangleShape2D_v0f7p")
+
+[node name="Border2" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border2"]
+position = Vector2(1100, 0)
+shape = SubResource("RectangleShape2D_v0f7p")
 
 [connection signal="correct_item_brought" from="ItemLocks/HouseLock" to="ItemLocks/HouseLock" method="delete_self"]

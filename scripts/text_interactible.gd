@@ -74,6 +74,7 @@ func _on_body_exited(body):
 func start_dialogue():
 	if desired_item != null:
 		if desired_item.npc_affected_name == char_name && desired_item in player_node.current_items:
+			$AudioPlayer.play()
 			item_given()
 	get_tree().paused = true
 	curr_index = 0

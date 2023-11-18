@@ -36,6 +36,7 @@ func _on_body_exited(body):
 func check_for_item():
 	if required_item in player_node.current_items:
 		print("You have the item~")
+		$UnlockPlayer.play()
 		correct_item_brought.emit()
 		player_node.delete_item(required_item)
 	else:
