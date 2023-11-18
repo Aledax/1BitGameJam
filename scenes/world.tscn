@@ -158,22 +158,6 @@ texts = {
 "got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
 }
 
-[node name="sorrel2" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(223, -616)
-npc_name = "sorrel"
-texts = {
-"default": [PackedStringArray("Default", ""), PackedStringArray("Yay", "Its", "Working")],
-"got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
-}
-
-[node name="sorrel3" parent="NPCs" instance=ExtResource("7_o702o")]
-position = Vector2(209, -611)
-npc_name = "sorrel"
-texts = {
-"default": [PackedStringArray("Default", ""), PackedStringArray("Yay", "Its", "Working")],
-"got_key": [PackedStringArray("Thanks for the key!"), PackedStringArray("How about...", "YOU LEAV ME ALONE!")]
-}
-
 [node name="kousa" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
 position = Vector2(361, -1065)
 npc_name = "kousa"
@@ -203,7 +187,7 @@ desired_item = NodePath("../../Items/Wrench")
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(268, -733)
+position = Vector2(-900, -32)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2

@@ -39,6 +39,10 @@ var sprites
 var npc_name : String
 
 var alive = true
+var world
+
+func _ready():
+	world = get_tree().get_root().get_child(0)
 
 func initialize_frames(character_name):
 	sprites = $CharacterSprites
@@ -140,5 +144,4 @@ func _physics_process(delta):
 func kill():
 	alive = false
 	print(npc_name + " died! rest in pepperoni ;-;")
-	
-	# Activate death animation, and show a game over message in case of player
+	world._character_died(npc_name)

@@ -9,9 +9,17 @@ const vec4 light_color = vec4(0.259, 0.51, 0.541, 1);
 void fragment() {
 	vec4 original_color = texture(screen_texture, SCREEN_UV);
 	
-	if ((original_color == vec4(0, 0, 0, 1) && !inverted) || (original_color == vec4(1, 1, 1, 0) && inverted)) {
-		COLOR = light_color;
+	if (!inverted) {
+		if (original_color == vec4(0, 0, 0, 1)) {
+			COLOR = light_color;
+		} else {
+			COLOR = dark_color;
+		}
 	} else {
-		COLOR = dark_color;
+		if (original_color == vec4(0, 0, 0, 1)) {
+			COLOR = dark_color;
+		} else {
+			COLOR = light_color;
+		}
 	}
 }
