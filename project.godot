@@ -17,7 +17,7 @@ config/icon="res://art/characters/icon.svg"
 
 [autoload]
 
-World="*res://scripts/world.gd"
+SavedState="*res://scripts/saved_state.gd"
 
 [input]
 

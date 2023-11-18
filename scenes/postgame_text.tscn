@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dup3hsa2rvip8"]
+[gd_scene load_steps=4 format=3 uid="uid://bl2tb4dndxdfr"]
 
 [ext_resource type="Script" path="res://scripts/postgame_text.gd" id="1_rjuu5"]
+[ext_resource type="Texture2D" uid="uid://cky7byoajyog4" path="res://art/menu/background.png" id="2_64t0u"]
+[ext_resource type="FontFile" uid="uid://det3bst00mb0u" path="res://fonts/alagard.ttf" id="3_7hr5y"]
 
 [node name="postgame_text" type="Control"]
 layout_mode = 3
@@ -10,3 +12,108 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rjuu5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0509804, 0.121569, 0.152941, 1)
+position = Vector2(575.5, 319.5)
+scale = Vector2(9.21094, 14.7292)
+texture = ExtResource("2_64t0u")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 164.0
+offset_right = 896.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("3_7hr5y")
+theme_override_font_sizes/font_size = 48
+text = "You saved:
+
+
+
+"
+autowrap_mode = 3
+
+[node name="Kousa" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 210.15
+offset_right = 896.0
+offset_bottom = 530.15
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("3_7hr5y")
+theme_override_font_sizes/font_size = 48
+text = "Kousa
+
+
+
+"
+autowrap_mode = 3
+
+[node name="Wattle" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 251.84
+offset_right = 896.0
+offset_bottom = 571.841
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("3_7hr5y")
+theme_override_font_sizes/font_size = 48
+text = "Wattle
+
+
+"
+autowrap_mode = 3
+
+[node name="Alder" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 294.56
+offset_right = 896.0
+offset_bottom = 614.56
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("3_7hr5y")
+theme_override_font_sizes/font_size = 48
+text = "Alder
+
+
+"
+autowrap_mode = 3
+
+[node name="Sorrel" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 340.93
+offset_right = 896.0
+offset_bottom = 660.93
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("3_7hr5y")
+theme_override_font_sizes/font_size = 48
+text = "Sorrel
+
+
+"
+autowrap_mode = 3
+
+[node name="Nobody" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 384.595
+offset_right = 896.0
+offset_bottom = 704.595
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("3_7hr5y")
+theme_override_font_sizes/font_size = 48
+text = "... nobody
+
+
+"
+autowrap_mode = 3
+
+[node name="E" type="Label" parent="."]
+offset_left = 773.0
+offset_top = 424.0
+offset_right = 1413.0
+offset_bottom = 744.0
+theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
+theme_override_fonts/font = ExtResource("3_7hr5y")
+theme_override_font_sizes/font_size = 84
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

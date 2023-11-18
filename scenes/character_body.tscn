@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://snv5la6sign3"]
+[gd_scene load_steps=56 format=3 uid="uid://snv5la6sign3"]
 
 [ext_resource type="Script" path="res://scripts/character_body.gd" id="1_y0v03"]
 [ext_resource type="Texture2D" uid="uid://htbp0s8raomg" path="res://art/characters/alder/alder_fall.png" id="2_cuxsw"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://bkxx4fba41j4m" path="res://art/characters/wattle/wattle_idle-Sheet.png" id="19_ksj1s"]
 [ext_resource type="Texture2D" uid="uid://b00no0bpocfri" path="res://art/characters/wattle/wattle_jump.png" id="20_tjrxg"]
 [ext_resource type="Texture2D" uid="uid://x4kxn2ysgoqq" path="res://art/characters/wattle/wattle_walk-Sheet.png" id="21_iy1n6"]
+[ext_resource type="AudioStream" uid="uid://dqxmh4c1qd186" path="res://sfx/step_grass.wav" id="22_hl7b5"]
+[ext_resource type="AudioStream" uid="uid://bmdbd6ja6attg" path="res://sfx/jump.wav" id="23_l5888"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blf1t"]
 atlas = ExtResource("3_hbg4b")
@@ -371,7 +373,7 @@ size = Vector2(8, 28)
 [node name="CharacterBody" type="CharacterBody2D"]
 process_mode = 1
 collision_layer = 4
-collision_mask = 32827
+collision_mask = 59
 platform_floor_layers = 4294967263
 script = ExtResource("1_y0v03")
 
@@ -384,3 +386,20 @@ animation = &"wattle_idle"
 [node name="CharacterCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_vdo0g")
+
+[node name="StepPlayer" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("22_hl7b5")
+volume_db = -3.0
+pitch_scale = 0.7
+max_distance = 500.0
+max_polyphony = 2
+
+[node name="JumpPlayer" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("23_l5888")
+volume_db = -1.0
+max_distance = 500.0
+
+[connection signal="animation_changed" from="CharacterSprites" to="." method="_on_character_sprites_animation_changed"]
+[connection signal="frame_changed" from="CharacterSprites" to="." method="_on_character_sprites_frame_changed"]

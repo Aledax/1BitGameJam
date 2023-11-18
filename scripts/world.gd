@@ -26,6 +26,8 @@ var alder_saved : bool = false
 var sorrel_saved : bool = true
 var wattle_saved : bool = false
 
+var saved_state
+
 var previous_time = 0
 
 var shader_material
@@ -35,6 +37,8 @@ const inverted_duration = 0.3
 var audio
 
 func _ready():
+	saved_state = get_node("/root/SavedState")
+	
 	# Shader
 	shader_material = $ColorMaskNode/ColorMask.get_material()
 	shader_material.set_shader_parameter("inverted", false)
@@ -271,16 +275,19 @@ func save(npc):
 	if npc == "kousa":
 		schedule_event("NPCs", npc_switch_dialogue_event, 0, ["kousa", "get_letter"])
 		kousa_saved = true
+		saved_state.kousa_saved = true
 		kousa_timer.stop()
 		save_kousa()
 	elif npc == "wattle":
 		schedule_event("NPCs", npc_switch_dialogue_event, 0, ["wattle", "get_toy"])
 		wattle_saved = true
+		saved_state.kousa_saved = true
 		wattle_timer.stop()
 		save_wattle()
 	elif npc == "alder":
 		schedule_event("NPCs", npc_switch_dialogue_event, 0, ["alder", "get_wrench"])
 		alder_saved = true
+		saved_state.alder_saved = true
 		save_alder()
 	else:
 		print("INVALID SAVE ATTEMPT")
