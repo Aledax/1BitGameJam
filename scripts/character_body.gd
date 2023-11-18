@@ -41,8 +41,15 @@ var npc_name : String
 var alive = true
 var world
 
+var step_player
+var jump_player
+var rng = RandomNumberGenerator.new()
+
 func _ready():
 	world = get_tree().get_root().get_child(0)
+	
+	step_player = $StepPlayer
+	jump_player = $JumpPlayer
 
 func initialize_frames(character_name):
 	sprites = $CharacterSprites
@@ -58,21 +65,24 @@ func _physics_process(delta):
 	if not alive: return
 	
 	# Horizontal movement
+	var animation
 	if horizontal_movement == -1:
-		sprites.animation = npc_name + "_walk"
+		animation = npc_name + "_walk"
 		velocity.x = max(-horizontal_max_speed * delta, velocity.x - horizontal_acceleration * delta)
 	elif horizontal_movement == 1:
-		sprites.animation = npc_name + "_walk"
+		animation = npc_name + "_walk"
 		velocity.x = min(horizontal_max_speed * delta, velocity.x + horizontal_acceleration * delta)
 	else:
-		sprites.animation = npc_name + "_idle"
+		animation = npc_name + "_idle"
 		velocity.x *= 0.25
 	
 	if is_airborne:
 		if jumping:
-			sprites.animation = npc_name + "_jump"
+			animation = npc_name + "_jump"
 		else:
-			sprites.animation = npc_name + "_fall"
+			animation = npc_name + "_fall"
+			
+	sprites.animation = animation
 	
 	# Face direction of movement
 	if horizontal_movement == -1:
@@ -89,6 +99,7 @@ func _physics_process(delta):
 	
 	# Jumping
 	if just_pressed_jump && airborne_stopwatch <= airborne_delay:
+		play_sound(jump_player, 0.3)
 		jump_stopwatch = 0
 		jumping = true
 		airborne_stopwatch += airborne_delay # Prevent double jump
@@ -131,17 +142,25 @@ func _physics_process(delta):
 	
 	set_collision_mask_value(4, not is_on_boat)
 	
-	# Exported variables
-	if velocity.x < 0:
-		horizontal_movement = -1
-	elif velocity.x > 0:
-		horizontal_movement = 1
-	else:
-		horizontal_movement = 0
-	
+	# Exported variables	
 	is_airborne = (airborne_stopwatch > airborne_delay)
 
 func kill():
 	alive = false
 	print(npc_name + " died! rest in pepperoni ;-;")
 	world._character_died(npc_name)
+
+func _on_character_sprites_frame_changed():
+	if (horizontal_movement == 0 or is_airborne): return
+	
+	match sprites.get_frame():
+		0, 2:
+			play_sound(step_player, 0.2)
+
+func _on_character_sprites_animation_changed():
+	if sprites.animation == npc_name + "_walk":
+		play_sound(step_player, 0.2)
+
+func play_sound(player, pitch_variation):
+	player.pitch_scale = rng.randf_range(1 - pitch_variation, 1 + pitch_variation)
+	player.play()

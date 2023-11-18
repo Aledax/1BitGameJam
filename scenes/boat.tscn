@@ -49,6 +49,7 @@ scale = Vector2(2.4, 0.4)
 shape = SubResource("RectangleShape2D_ylqb8")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("4_25ols")
 volume_db = -20.0
 autoplay = true
