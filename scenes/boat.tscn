@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtjkqcao3olds"]
+[gd_scene load_steps=7 format=3 uid="uid://dtjkqcao3olds"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_8n5wd"]
 [ext_resource type="Texture2D" uid="uid://bdricdis1tyc1" path="res://art/environment/boat/base.png" id="1_o7wlq"]
 [ext_resource type="Texture2D" uid="uid://gdv4brhugvjk" path="res://art/environment/boat/interface_off.png" id="2_6mmft"]
+[ext_resource type="AudioStream" uid="uid://ofmx2id1u01y" path="res://sfx/boat.wav" id="4_25ols"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo1sb"]
 size = Vector2(10, 5)
@@ -46,6 +47,11 @@ shape = SubResource("RectangleShape2D_uo1sb")
 position = Vector2(0, -4)
 scale = Vector2(2.4, 0.4)
 shape = SubResource("RectangleShape2D_ylqb8")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_25ols")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_entered" from="InterfaceLeft" to="." method="_on_interface_left_body_entered"]
 [connection signal="body_exited" from="InterfaceLeft" to="." method="_on_interface_left_body_exited"]
