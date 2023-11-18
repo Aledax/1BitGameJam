@@ -46,6 +46,7 @@ func pick_up():
 	picked_up = true
 	interact_symbol.hide()
 	self.position = Vector2(0, player_node.get_item_count()*-26)
+	$PickupPlayer.play()
 #	picked_up_item.emit(npc_affected_name, npc_affected_dialogue_key)
 	
 #func drop_item():

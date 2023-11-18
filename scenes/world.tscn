@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dumikbijboqau"]
+[gd_scene load_steps=41 format=3 uid="uid://dumikbijboqau"]
 
 [ext_resource type="PackedScene" uid="uid://blsmlcqsabcqp" path="res://scenes/ocean.tscn" id="1_515n2"]
 [ext_resource type="PackedScene" uid="uid://ddqolw7q5dgvk" path="res://scenes/rain.tscn" id="1_b2hkm"]
@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://c4kib2keda0di" path="res://scenes/player.tscn" id="4_abvef"]
 [ext_resource type="PackedScene" uid="uid://clyvv37jglrgd" path="res://scenes/npc.tscn" id="7_o702o"]
 [ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
-[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="Texture2D" uid="uid://lchhvit1yvb5" path="res://art/Items/test_wrench.png" id="12_b6f7b"]
 [ext_resource type="PackedScene" uid="uid://cghp8psda6lil" path="res://scenes/require_item.tscn" id="12_vyp78"]
 [ext_resource type="Texture2D" uid="uid://c30m3slmyrbxo" path="res://art/Items/Note.png" id="13_1b3di"]
-[ext_resource type="PackedScene" uid="uid://qbl6s2wxjqyh" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
+[ext_resource type="PackedScene" uid="uid://cs8721x1c8tm2" path="res://scenes/world_tile_maps.tscn" id="13_nx3g3"]
 [ext_resource type="Texture2D" uid="uid://bsghlvjyjup24" path="res://art/Items/LockedDoor.png" id="13_tw0oy"]
 [ext_resource type="Texture2D" uid="uid://d0qqywlhsj4ra" path="res://art/Items/ToyBoat.png" id="14_pu3t3"]
 [ext_resource type="Texture2D" uid="uid://cjh1tewn3l4dc" path="res://art/environment/RestaurantRoof/tile3.png" id="17_juoxn"]
@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://b4qrtdy08bk5p" path="res://sfx/thunder.wav" id="30_70xts"]
 [ext_resource type="Texture2D" uid="uid://bl8chw4aywkr" path="res://art/environment/Decor/foutain.png" id="31_3414k"]
 [ext_resource type="AudioStream" uid="uid://dx0f1kqx7yldn" path="res://sfx/rainloop2.wav" id="31_o0lot"]
+[ext_resource type="AudioStream" uid="uid://0nk4lt7aaxfi" path="res://sfx/Nomai Ruins.mp3" id="32_7ge4d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uhjhs"]
 shader = ExtResource("2_w2ymm")
@@ -161,9 +162,9 @@ texts = {
 "at_lookout": [PackedStringArray("I’m so glad you came.", "It’s raining so heavily, I can hardly see anything from here anymore…", "I can hardly comprehend it.", "I can’t believe we were doomed from the start.", "Everything we’ve built…", "It’ll be gone.", "My heart aches thinking about the buildings down below, already lost to the ocean depths."), PackedStringArray("Do you think Alder’s rocket will work?", "…", "Maybe I should be more hopeful.", "I… I’m sorry for being so negative.", "Even if the rocket doesn’t work, I suppose it’d be better to try and embrace the few moments we have left.", "…", "I’m so proud of you, Willow.", "You’ve done so much for all of us."), PackedStringArray("I’ll come to the launchpad soon, okay?", "I want to spend just a few more moments here, at my favorite spot in the village. To think.", "I’ll be ready soon.")],
 "at_restaurant": [PackedStringArray("There are so many memories here…", "That roof looks like it’s going to collapse any moment. I can’t believe it’s still holding up.", "This was one of the first buildings Kousa built… back when they were completely clueless.", "They’ve come a long way. It’s hard to believe that almost everything here was built by them."), PackedStringArray("I’m glad Wattle’s here.", "I believe Alder should be in his workshop. They’re desperately trying to get some sort of rocket working.", "Considering the elevator incident, though… I just don’t know if they’re fit for matters concerning vertical transportation.", "They ARE a genius, though. Don’t get me wrong.", "After all, they made your boat!"), PackedStringArray("I’m not sure where Kousa is, though… I thought for sure they’d be here.", "I hope I didn’t miss them.")],
 "at_rocket": [PackedStringArray("Unbelievable… the rocket looks like it’s actually ready to take off.", "Let’s hurry inside.", "Haha… this is surreal!")],
-"default": [PackedStringArray("Willow…", "I’m so relieved to see you.", "The ocean… it’s going to start rising any minute. I can feel it.", "I… can’t believe it’s happening…", "And so soon…", "What are you going to do?"), PackedStringArray("Hi, Willow.", "I’m reading through my works one last time.", "Reading all of these again… I’m overwhelmed with memories.", "The good times at the [restaurant name]...", "Falling in love…", "And, of course, seeing you grow up, Willow."), PackedStringArray("After I say farewell to my books, I’m going to visit the [restaurant name].", "I hope I’ll get to see everyone before…", "…", "You should come too, Willow.")],
+"default": [PackedStringArray("Willow…", "I’m so relieved to see you.", "The ocean… it’s going to start rising any minute. I can feel it.", "I… can’t believe it’s happening…", "And so soon…", "What are you going to do?"), PackedStringArray("Hi, Willow.", "I’m reading through my works one last time.", "Reading all of these again… I’m overwhelmed with memories.", "The good times at the Cod Cove...", "Falling in love…", "And, of course, seeing you grow up, Willow."), PackedStringArray("After I say farewell to my books, I’m going to visit the Cod Cove.", "I hope I’ll get to see everyone before…", "…", "You should come too, Willow.")],
 "walking_to_lookout": [PackedStringArray("...")],
-"walking_to_restaurant": [PackedStringArray("I’m headed to the [restaurant name].", "Why don’t you come along?")]
+"walking_to_restaurant": [PackedStringArray("I’m headed to the Cod Cove.", "Why don’t you come along?")]
 }
 
 [node name="kousa" parent="NPCs" node_paths=PackedStringArray("desired_item") instance=ExtResource("7_o702o")]
@@ -188,7 +189,7 @@ texts = {
 "at_fountain": [PackedStringArray("Look at the boat, Willow!", "I’m imagining me riding it.", "Not on our planet, though. Somewhere new and unexplored!", "I am riding the boat through a river, in a dark and mysterious place,", "…with a big blue ringed planet in the sky,", "…and with tons of trees, tunnels, and terror!")],
 "at_restaurant": [PackedStringArray("Booooat, where are youuuu?", "Hi!", "I’m still looking for my boat…", "Once I find it, I’ll take it to the fountain outside.", "Everyone seems so sad, I’ll be sad too if I don’t have my boat to play with…"), PackedStringArray("Maybe you can help me find my boat?", "Hmmm, can you check…", "…everywhere? Yeah, everywhere!", "…Except my home! I’m POSITIVE it’s not there.")],
 "at_rocket": [PackedStringArray("What is THAT??", "Did Alder make that, too?", "…", "It looks super cool!", "Can I look inside? Please?"), PackedStringArray("I’ve never climbed the elevator before, but I was so scared by the water, I did it!", "Why did the water cover up our home, though?", "Will I see my home again?", "Is everyone else okay?")],
-"default": [PackedStringArray("Hi!", "Willow, everyone’s talking about the rain! up", "Apparently there’s waaaay more now than people have ever seen!", "But why is everyone sad?", "Rain is awesome! It makes me feel fresh!", "If people keep being sad, I’m going to be sad, too…"), PackedStringArray("That boat Alder made for you is super cool!", "I even made a toy one!", "I don’t remember where I put it, though…", "I’m absolutely SURE I didn’t leave it at home.", "I will go check the restaurant!")],
+"default": [PackedStringArray("Hi!", "Willow, everyone’s talking about the rain!", "Apparently there’s waaaay more now than people have ever seen!", "But why is everyone sad?", "Rain is awesome! It makes me feel fresh!", "If people keep being sad, I’m going to be sad, too…"), PackedStringArray("That boat Alder made for you is super cool!", "I even made a toy one!", "I don’t remember where I put it, though…", "I’m absolutely SURE I didn’t leave it at home.", "I will go check the restaurant!")],
 "get_toy": [PackedStringArray("WOW! You found it! Thanks, Willow!", "I’m going to the fountain! You should come too!")],
 "walking_to_restaurant": [PackedStringArray("I’m gonna go find my toy boat!")],
 "walking_to_rocket": [PackedStringArray("I saw the water, WIllow! It’s getting higher, so I’m running away!", "Do you think it will keep rising?")]
@@ -213,7 +214,7 @@ desired_item = NodePath("../../Items/Wrench")
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(-900, -32)
+position = Vector2(95, -331)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
@@ -599,10 +600,19 @@ texture = ExtResource("28_012g2")
 process_mode = 3
 
 [node name="ThunderPlayer" type="AudioStreamPlayer" parent="Audio"]
+process_mode = 3
 stream = ExtResource("30_70xts")
+volume_db = -15.0
 
 [node name="RainPlayer" type="AudioStreamPlayer" parent="Audio"]
+process_mode = 3
 stream = ExtResource("31_o0lot")
+autoplay = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Audio"]
+process_mode = 3
+stream = ExtResource("32_7ge4d")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="correct_item_brought" from="ItemLocks/HouseLock" to="ItemLocks/HouseLock" method="delete_self"]
