@@ -438,7 +438,7 @@ desired_item = NodePath("../../Items/Wrench")
 
 [node name="Player" parent="." instance=ExtResource("4_abvef")]
 process_mode = 1
-position = Vector2(78, -2547)
+position = Vector2(-1000, -30)
 
 [node name="Ocean" parent="." instance=ExtResource("1_515n2")]
 z_index = 2
@@ -620,6 +620,7 @@ max_distance = 500.0
 [node name="RestaurantRoof" type="Node2D" parent="." groups=["Collapsible"]]
 position = Vector2(0, -61.07)
 script = ExtResource("18_mi2w1")
+has_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="RestaurantRoof"]
 position = Vector2(312, -1082.93)
@@ -639,7 +640,7 @@ polygon = PackedVector2Array(-0.5, 5.50006, 7.5, -0.499939, 12, -11.9999, 12, 11
 [node name="Tile" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 1
 position = Vector2(326, -1069)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -656,7 +657,7 @@ texture = ExtResource("17_juoxn")
 [node name="Tile2" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(326, -1089)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -673,7 +674,7 @@ texture = ExtResource("18_vvr74")
 [node name="Tile3" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(326, -1105)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -690,7 +691,7 @@ texture = ExtResource("18_vvr74")
 [node name="Tile4" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(310, -1085)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -707,7 +708,7 @@ texture = ExtResource("17_juoxn")
 [node name="Tile5" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(310, -1073)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -724,7 +725,7 @@ texture = ExtResource("18_vvr74")
 [node name="Tile7" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(294, -1069)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -741,7 +742,7 @@ texture = ExtResource("17_juoxn")
 [node name="corner1" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(278, -1069)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -756,7 +757,7 @@ polygon = PackedVector2Array(-6, 10.0699, 10, -5.93005, 10, 10.0699)
 [node name="corner2" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(294, -1089)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -772,7 +773,7 @@ texture = ExtResource("20_l6tsc")
 [node name="corner3" type="RigidBody2D" parent="RestaurantRoof"]
 z_index = 2
 position = Vector2(310, -1105)
-collision_mask = 5
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -799,6 +800,7 @@ apply_torque = 20
 [node name="Tile" type="RigidBody2D" parent="Outlook"]
 z_index = 1
 position = Vector2(-109, 71)
+collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
 
@@ -815,6 +817,7 @@ texture = ExtResource("24_tksn5")
 [node name="Tile2" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-93, 71)
+collision_layer = 5
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -832,6 +835,7 @@ texture = ExtResource("25_xxx15")
 [node name="Tile3" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-61, 71)
+collision_layer = 5
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -849,6 +853,7 @@ texture = ExtResource("26_j8q5a")
 [node name="Tile6" type="RigidBody2D" parent="Outlook"]
 z_index = 1
 position = Vector2(-157, 71)
+collision_layer = 5
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -866,6 +871,7 @@ texture = ExtResource("27_3oab3")
 [node name="Tile8" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-141, 71)
+collision_layer = 5
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -883,6 +889,7 @@ texture = ExtResource("25_xxx15")
 [node name="Tile9" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-125, 71)
+collision_layer = 5
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -900,6 +907,7 @@ texture = ExtResource("26_j8q5a")
 [node name="Tile4" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-77, 71)
+collision_layer = 5
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -917,6 +925,7 @@ texture = ExtResource("27_3oab3")
 [node name="Tile5" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-29, 71)
+collision_layer = 5
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0
@@ -934,6 +943,7 @@ texture = ExtResource("24_tksn5")
 [node name="Tile7" type="RigidBody2D" parent="Outlook"]
 z_index = 2
 position = Vector2(-45, 71)
+collision_layer = 5
 collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
 gravity_scale = 0.0

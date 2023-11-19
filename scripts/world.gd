@@ -316,7 +316,8 @@ func schedule_event(event_group, event_name, time_start, event_args):
 	timer.timeout.connect(func():
 		var call_group_args = [event_group, event_name] + event_args
 		get_tree().callv("call_group", call_group_args)
-		print(event_name, " activated!"))
+#		print(event_name, " activated!"))
+		)
 	timer.start()
 	return timer
 
@@ -329,12 +330,16 @@ func _character_died(name):
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
 	elif name == "kousa":
 		kousa_saved = false
+		saved_state.kousa_saved = false
 	elif name == "alder":
 		alder_saved = false
+		saved_state.alder_saved = false
 	elif name == "sorrel":
 		sorrel_saved = false
+		saved_state.sorrel_saved = false
 	elif name == "wattle":
 		wattle_saved = false
+		saved_state.wattle_saved = false
 	
 func _physics_process(delta):
 	inverted_timer = max(0, inverted_timer - delta)
