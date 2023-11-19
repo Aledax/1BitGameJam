@@ -25,6 +25,12 @@ func _ready():
 
 func _physics_process(delta):
 	
+	# Dev time change
+#	if Input.is_action_just_pressed("speed_up"):
+#		Engine.time_scale += 4
+#	if Input.is_action_just_pressed("regular"):
+#		Engine.time_scale = 1
+	
 	# Horizontal input
 	var horizontal_movement = 0
 	if Input.is_action_pressed("move_left"):
@@ -61,8 +67,9 @@ func _physics_process(delta):
 			var camera = $CharacterBody/Camera2D
 			camera.position_smoothing_enabled = false
 			character_body.remove_child(camera)
+			$CharacterBody.position.y -= 9999
+			$CharacterBody.alive = false
 			rocket.add_child(camera)
-			self.queue_free()
 			get_tree().get_root().get_node("World/NPCs").queue_free()
 		if finished_stopwatch_prev < 5 and finished_stopwatch >= 5:
 			rocket.get_node("AnimatedSprite2D").animation = "takeoff"
