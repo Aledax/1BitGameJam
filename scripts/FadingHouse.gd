@@ -5,6 +5,7 @@ var player_inside
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player_inside = false
+	AudioServer.set_bus_effect_enabled(1, 0, false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,9 +21,11 @@ func _on_body_entered(body):
 	if body.get_parent().name == "Player":
 		print("in")
 		player_inside = true
+		AudioServer.set_bus_effect_enabled(1, 0, true)
 
 func _on_body_exited(body):
 	if body.get_parent().name == "Player":
 		print("out")
 		player_inside = false
+		AudioServer.set_bus_effect_enabled(1, 0, false)
 

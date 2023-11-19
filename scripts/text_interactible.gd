@@ -83,7 +83,6 @@ func start_dialogue():
 func showText():
 	await get_tree().create_timer(0.017).timeout
 	inAnimation = true
-	print(texts)
 	var curr_dialogue = texts[dialogue_key][text_index][curr_index]
 	$Sprite2D2.show()
 	$RichTextLabel.show()
@@ -101,7 +100,7 @@ func showText():
 func item_given():
 	player_node.delete_item(desired_item)
 	set_dialogue(desired_item.npc_affected_dialogue_key)
-	var world = get_tree().get_root().get_child(0)
+	var world = get_tree().get_root().get_node("World")
 	world.save(char_name)
 
 func nextText():

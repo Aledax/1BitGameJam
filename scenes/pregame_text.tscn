@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bao8a7lswljia"]
+[gd_scene load_steps=5 format=3 uid="uid://bao8a7lswljia"]
 
 [ext_resource type="Script" path="res://scripts/pregame_text.gd" id="1_40r1t"]
 [ext_resource type="FontFile" uid="uid://det3bst00mb0u" path="res://fonts/alagard.ttf" id="2_8vbq8"]
 [ext_resource type="Texture2D" uid="uid://cky7byoajyog4" path="res://art/menu/background.png" id="2_dn7tl"]
+[ext_resource type="AudioStream" uid="uid://dx0f1kqx7yldn" path="res://sfx/rainloop2.wav" id="4_r446p"]
 
 [node name="pregame_text" type="Control"]
 layout_mode = 3
@@ -46,3 +47,9 @@ text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="RainPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_r446p")
+volume_db = -5.0
+autoplay = true

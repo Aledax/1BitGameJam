@@ -62,8 +62,8 @@ func _physics_process(delta):
 			camera.position_smoothing_enabled = false
 			character_body.remove_child(camera)
 			rocket.add_child(camera)
-			self.hide()
-			get_tree().get_root().get_node("World/NPCs").hide()
+			self.queue_free()
+			get_tree().get_root().get_node("World/NPCs").queue_free()
 		if finished_stopwatch_prev < 5 and finished_stopwatch >= 5:
 			rocket.get_node("AnimatedSprite2D").animation = "takeoff"
 			rocket.get_node("AnimatedSprite2D").play()

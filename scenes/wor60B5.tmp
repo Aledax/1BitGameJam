@@ -972,7 +972,6 @@ bus = &"In a Building"
 stream = ExtResource("40_1qe11")
 volume_db = -5.0
 autoplay = true
-bus = &"In a Building"
 
 [node name="Border" type="StaticBody2D" parent="."]
 collision_mask = 0

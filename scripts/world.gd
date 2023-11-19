@@ -325,7 +325,7 @@ func _character_died(name):
 	audio.get_node("ThunderPlayer").play()
 	
 	if name == "player":
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(4).timeout
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
 	elif name == "kousa":
 		kousa_saved = false
