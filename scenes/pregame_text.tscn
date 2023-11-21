@@ -31,7 +31,7 @@ theme_override_colors/font_color = Color(0.258824, 0.509804, 0.541176, 1)
 theme_override_fonts/font = ExtResource("2_8vbq8")
 theme_override_font_sizes/font_size = 48
 text = "A devastating storm rages in the night.             
-Recently back from your fishing expedition, you wonder if your companions are safe… "
+Recently back from your fishing expedition, you wonder if your companions are safe.."
 autowrap_mode = 3
 
 [node name="E" type="Label" parent="."]

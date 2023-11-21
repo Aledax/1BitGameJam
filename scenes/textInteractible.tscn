@@ -53,7 +53,7 @@ auto_translate = false
 localize_numeral_system = false
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_mx3ta")
-theme_override_font_sizes/font_size = 84
+theme_override_font_sizes/font_size = 108
 autowrap_mode = 3
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="Area2D"]

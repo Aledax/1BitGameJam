@@ -17,6 +17,8 @@ const alder_lookout_start = alder_workshop_start + 60 # 15 + 120
 const alder_lookout_to_workshop_start = alder_lookout_start + 30 # 17 + 30
 const outlook_collapse = 395
 const generator_activation = 410
+const ocean_rise = 150
+const bell_hits = [ocean_rise, ocean_rise + 1.8, ocean_rise + 3.6]
 
 var kousa_timer 
 var wattle_timer
@@ -47,7 +49,7 @@ func _ready():
 	audio = $Audio
 	
 	# Ocean
-	schedule_event("Ocean", ocean_rise_event, 150, [8])
+	schedule_event("Ocean", ocean_rise_event, ocean_rise, [8])
 	
 	# Kousa
 	schedule_event("NPCs", npc_switch_dialogue_event, kousa_beach_start, ["kousa", "walking_to_shoreline"])
@@ -353,5 +355,9 @@ func _physics_process(delta):
 		$Generator/AnimatedSprite2D.animation = "running"
 		$Generator/AnimatedSprite2D.play()
 		$Generator/AnimatedSprite2D/AudioPlayer.play()
+		
+	for bell_hit in bell_hits:
+		if curTime >= bell_hit and previous_time < bell_hit:
+			$Audio/BellPlayer.play()
 		
 	previous_time = curTime
