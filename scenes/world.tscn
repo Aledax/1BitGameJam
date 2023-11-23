@@ -288,14 +288,6 @@ texture = ExtResource("23_eu7yp")
 
 [node name="world_tile_maps" parent="." instance=ExtResource("13_nx3g3")]
 
-[node name="Interactibles" type="Node2D" parent="."]
-
-[node name="textInteractible" parent="Interactibles" instance=ExtResource("18_mth7i")]
-position = Vector2(0, -83)
-texts = {
-"default": [PackedStringArray("working")]
-}
-
 [node name="Decor" type="Node2D" parent="."]
 
 [node name="Fountain" type="AnimatedSprite2D" parent="Decor"]
@@ -383,7 +375,7 @@ position = Vector2(302, -414)
 npc_name = "sorrel"
 texts = {
 "after_bell": [PackedStringArray("..it’s happening.", "..", "I’m going to go to the lookout, Willow.", "Make sure to come see me one more time, okay?", "I beg you to be careful.")],
-"after_saved": [PackedStringArray("What-", "Willow?", "You’re- here? Wh- how?", "Your boat..", "I don’t believe it."), PackedStringArray("I have no idea how you did it… but thank you, Willow.", "Should we head to the launchpad? Perhaps Alder got it working?", "It’s our only hope now.")],
+"after_saved": [PackedStringArray("What-", "Willow?", "You’re- here? Wh- how?", "Your boat..", "I don’t believe it."), PackedStringArray("I have no idea how you did it.. but thank you, Willow.", "Should we head to the launchpad? Perhaps Alder got it working?", "It’s our only hope now.")],
 "at_lookout": [PackedStringArray("I’m so glad you came.", "It’s raining so heavily, I can hardly see anything from here anymore..", "I can hardly comprehend it.", "I can’t believe we were doomed from the start.", "Everything we’ve built..", "It’ll be gone.", "My heart aches thinking about the buildings down below, already lost to the ocean depths."), PackedStringArray("Do you think Alder’s rocket will work?", "..", "Maybe I should be more hopeful.", "I.. I’m sorry for being so negative.", "Even if the rocket doesn’t work, I suppose it’d be better to try and embrace the few moments we have left.", "..", "I’m so proud of you, Willow.", "You’ve done so much for all of us."), PackedStringArray("I’ll come to the launchpad soon, okay?", "I want to spend just a few more moments here, at my favorite spot in the village. To think.", "I’ll be ready soon.")],
 "at_restaurant": [PackedStringArray("There are so many memories here..", "That roof looks like it’s going to collapse any moment. I can’t believe it’s still holding up.", "This was one of the first buildings Kousa built… back when they were completely clueless.", "They’ve come a long way. It’s hard to believe that almost everything here was built by them."), PackedStringArray("I’m glad Wattle’s here.", "I believe Alder should be in his workshop. They’re desperately trying to get some sort of rocket working.", "Considering the elevator incident, though… I just don’t know if they’re fit for matters concerning vertical transportation.", "They ARE a genius, though. Don’t get me wrong.", "After all, they made your boat!"), PackedStringArray("I’m not sure where Kousa is, though… I thought for sure they’d be here.", "I hope I didn’t miss them.")],
 "at_rocket": [PackedStringArray("Unbelievable.. the rocket looks like it’s actually ready to take off.", "Let’s hurry inside.", "Haha.. this is surreal!")],
@@ -398,7 +390,7 @@ npc_name = "kousa"
 texts = {
 "after_bell": [PackedStringArray("Well.. here it comes.", "I’m.. ready.", "Hey, Will, will you join me?", "Well, it’s been pretty awesome knowing you, bud.")],
 "at_rocket": [PackedStringArray("You know, Will, I had no idea… that I would be convinced into coming back up.", "I guess it just suddenly seemed like there might be a little more in life to experience.", "Thanks, WIllow.", "..", "That rocket looks sick… I had no idea Alder was capable of something like this.", "Especially given how that elevator turned out.")],
-"at_shoreline": [PackedStringArray("Look who it is!", "Good to see ya, Will.", "..", "You know, you never know how you’ll act in a situation like this until you’re really in it. Like, REALLY in it.", "I’m surprised at how calm I am.", "..", "Either that, or I’m just in shock.", "..", "How are you handling it?", ".."), PackedStringArray("See this plant here?", "I could go on and on about its lifecycle, what conditions it grows best in, what every part of it tastes like..", "Heh, don’t worry, I’ll spare you the boring details!", "I’ve always been the only one that cared about this stuff anyway.", "Alder likes to ask about them, though. Always confused me. Thought they were a technology kinda person.", "I don’t mind, though. They seem fun. Always excited about something.. always with something interesting to say.", "..", "You know, Willow..", "There were times I wished I could have talked with them about more than just plants.", "But that’s life, you know? Haha!")],
+"at_shoreline": [PackedStringArray("Look who it is!", "Good to see ya, Will.", "..", "You know, you never know how you’ll act in a situation like this until you’re really in it. Like, REALLY in it.", "I’m surprised at how calm I am.", "..", "Either that, or I’m just in shock.", "..", "How are you handling it?", ".."), PackedStringArray("See this plant here?", "I could go on and on about its lifecycle, what conditions it grows best in, what every part of it tastes like..", "Heh, don’t worry, I’ll spare you the boring details!", "I’ve always been the only one that cared about this stuff anyway.", "Alder likes to ask about them, though. Always confused me. Thought they were a technology kinda person.", "I don’t mind, though. They seem fun. Always excited about something.. always with something interesting to say.", "..", "You know, Willow..", "There were times I wished I could have talked with them about more than just plants.", "But that’s life, you know? Haha!"), PackedStringArray("The other day, Will, I found something lying right on my doorstep.", "Can you guess what it was?", "It was..", "..a wrench.", "Yeah, kinda lame, I know.", "But I still found it interesting..", "Why would anyone want to gift someone a wrench, of all things?", "Anyhow, I just put it away in my attic.", "It might be weird, but there\'s still something about it I kinda like.", "You\'re welcome to take it, if you like!")],
 "default": [PackedStringArray("Yo, Will.", "What’s up?", "..", "The storm? Yeah, I know.", "..", "You know, at first, I was worried… but I think I’ve gotten over it.", "I’ve lived a good life, I think.", "Like, what left is there to do, you know?", ".."), PackedStringArray("Hey, why don’t I make you one last drink before the end of time?", "I’ll put it on your tab."), PackedStringArray("You know, I think I’m gonna head down to the shoreline.", "That’s where my love for gardening came from.", "I’ll let the sea wash over me, and become one with the island, and let my consciousness drift away with the waves.", "That sounds cool, right? Haha!")],
 "get_letter": [PackedStringArray("Yo, Will!", "Hm? You want me to read this?", "Well, alrighty, then. Did you wri- uh..", "..", "..", "..", "They.. think of me like this? For real?", "..", "It’s.. kind of gross. But..", "..", "..I think I’m going to go back up.", "Yeah, yeah, I know..", "Hey, get that gross smirk off your face!")],
 "walking_to_rocket": [PackedStringArray("Do NOT get any ideas! I just… suddenly feel the need to talk to Alder.")],
@@ -464,7 +456,7 @@ texts = {
 
 [node name="textInteractible3" parent="Signs" instance=ExtResource("18_mth7i")]
 z_index = 2
-position = Vector2(0, -81)
+position = Vector2(-9, -78)
 texts = {
 "default": [PackedStringArray("To Village")]
 }
@@ -534,7 +526,7 @@ texts = {
 
 [node name="textInteractible13" parent="Signs" instance=ExtResource("18_mth7i")]
 z_index = 2
-position = Vector2(35, -78)
+position = Vector2(44, -78)
 texts = {
 "default": [PackedStringArray("It\'s a bell.")]
 }
@@ -565,6 +557,13 @@ z_index = 2
 position = Vector2(-688, -1118)
 texts = {
 "default": [PackedStringArray("Some of Kousa\'s plants.", "There\'s a surprising amount of variety.")]
+}
+
+[node name="textInteractible18" parent="Signs" instance=ExtResource("18_mth7i")]
+z_index = 2
+position = Vector2(-480, -2079)
+texts = {
+"default": [PackedStringArray("Some kind of electrical generator.", "There\'s a note attached.. \"For Rocket\".")]
 }
 
 [node name="Items" type="Node2D" parent="."]
@@ -980,9 +979,11 @@ autoplay = true
 bus = &"In a Building"
 
 [node name="WindPlayer" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(823, -2174)
 stream = ExtResource("40_1qe11")
 volume_db = -5.0
 autoplay = true
+max_distance = 1000.0
 bus = &"In a Building"
 
 [node name="BellPlayer" type="AudioStreamPlayer" parent="Audio"]

@@ -18,7 +18,7 @@ func _ready():
 	picked_up = false
 	$Sprite2D.texture = item_sprite
 	interact_symbol = $InteractSymbol
-	interact_symbol.hide()
+	interact_symbol.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -35,13 +35,13 @@ func _on_body_entered(body):
 	if body.get_parent().name == "Player":
 		in_collision = true
 		player_node = body.get_parent()
-		if !picked_up:
-			interact_symbol.show()
+#		if !picked_up:
+#			interact_symbol.show()
 
 func _on_body_exited(body):
 	if body.get_parent().name == "Player":
 		in_collision = false
-		interact_symbol.hide()
+#		interact_symbol.hide()
 
 func pick_up():
 	get_parent().remove_child(self)

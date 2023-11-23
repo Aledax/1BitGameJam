@@ -121,9 +121,9 @@ func _ready():
 	schedule_event("NPCs", npc_jump_event, alder_lookout_to_workshop_start + 8.5, ["alder", 0.2])
 	schedule_elevator_to_workshop(alder_lookout_to_workshop_start + 9.5, "alder")
 	schedule_event("NPCs", npc_move_event, alder_lookout_to_workshop_start + 15, ["alder", -475])
-	schedule_event("NPCs", npc_switch_dialogue_event, alder_lookout_to_workshop_start + 18, ["alder", "at_workshop"])
+	schedule_event("NPCs", npc_switch_dialogue_event, alder_lookout_to_workshop_start + 18, ["alder", "at_workshop_2"])
 	
-	alder_timer = schedule_event("NPCs", npc_switch_dialogue_event, outlook_collapse + 30, ["alder", "before_death"])
+	alder_timer = schedule_event("NPCs", npc_switch_dialogue_event, outlook_collapse, ["alder", "before_death"])
 	
 	# Collapsing blocks
 	schedule_event("Collapsible", collapse_event, restaurant_collapse, ["RestaurantRoof"])
@@ -283,7 +283,7 @@ func save(npc):
 	elif npc == "wattle":
 		schedule_event("NPCs", npc_switch_dialogue_event, 0, ["wattle", "get_toy"])
 		wattle_saved = true
-		saved_state.kousa_saved = true
+		saved_state.wattle_saved = true
 		wattle_timer.stop()
 		save_wattle()
 	elif npc == "alder":

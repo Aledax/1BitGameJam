@@ -59,9 +59,9 @@ func _physics_process(delta):
 			top.position.y = lerpf(top.position.y, 0, 0.1)
 			bottom.position.y = lerpf(bottom.position.y, 0, 0.1)
 		elif finished_stopwatch < 14:
-			get_tree().change_scene_to_file("res://scenes/postgame_text.tscn")
-		else:
 			bottom.position.y = lerpf(bottom.position.y, -350, 0.1)
+		else:
+			get_tree().change_scene_to_file("res://scenes/postgame_text.tscn")
 		
 		if finished_stopwatch_prev < 1.5 and finished_stopwatch >= 1.5:
 			var camera = $CharacterBody/Camera2D
@@ -109,6 +109,7 @@ func get_item_count():
 	return current_items.size()
 	
 func finish():
+	rocket.get_node("item/InteractSymbol").hide()
 	finished = true
 	top.show()
 	bottom.show()
