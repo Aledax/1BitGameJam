@@ -10,4 +10,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	currx += 20*delta
-	position = position + Vector2(0, sin(currx/2))
+	position = position + 0.5 * Vector2(0, sin(currx/2))

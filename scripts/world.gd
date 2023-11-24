@@ -307,6 +307,7 @@ func save_alder():
 	$Generator/AnimatedSprite2D.animation = "running"
 	$Generator/AnimatedSprite2D.play()
 	$Generator/AnimatedSprite2D/AudioPlayer.play()
+	$Rocket/item/InteractSymbol.show()
 
 func schedule_event(event_group, event_name, time_start, event_args):
 #	print("Event: ", event_name, " will be called in ", time_start, " seconds")
@@ -355,6 +356,7 @@ func _physics_process(delta):
 		$Generator/AnimatedSprite2D.animation = "running"
 		$Generator/AnimatedSprite2D.play()
 		$Generator/AnimatedSprite2D/AudioPlayer.play()
+		$Rocket/item/InteractSymbol.show()
 		
 	for bell_hit in bell_hits:
 		if curTime >= bell_hit and previous_time < bell_hit:

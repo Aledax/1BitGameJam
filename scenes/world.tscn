@@ -345,13 +345,13 @@ position = Vector2(-465, -1009)
 position = Vector2(180, -1593)
 
 [node name="SmallBox6" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(258, -2509)
+position = Vector2(352, -2506)
 
 [node name="LargeBox2" parent="Boxes" instance=ExtResource("10_qv3ie")]
-position = Vector2(224, -2515)
+position = Vector2(222, -2515)
 
 [node name="SmallBox7" parent="Boxes" instance=ExtResource("8_b67pu")]
-position = Vector2(237, -2543)
+position = Vector2(264, -2508)
 
 [node name="LargeBox3" parent="Boxes" instance=ExtResource("10_qv3ie")]
 position = Vector2(-430, -1010)

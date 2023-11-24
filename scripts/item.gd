@@ -19,6 +19,7 @@ func _ready():
 	$Sprite2D.texture = item_sprite
 	interact_symbol = $InteractSymbol
 	interact_symbol.show()
+	if get_parent().name == "Rocket": interact_symbol.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
