@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cmvpvbyv5fhpf" path="res://art/rocket.png" id="7_qxefv"]
 [ext_resource type="PackedScene" uid="uid://cxafrx01flt0s" path="res://scenes/small_box.tscn" id="8_b67pu"]
 [ext_resource type="AudioStream" uid="uid://c2ocbuo6451mq" path="res://sfx/generator.wav" id="8_la7al"]
-[ext_resource type="PackedScene" uid="uid://cjybg6y6a516" path="res://scenes/large_box.tscn" id="10_qv3ie"]
+[ext_resource type="PackedScene" uid="uid://c0m30d21tbern" path="res://scenes/large_box.tscn" id="10_qv3ie"]
 [ext_resource type="Texture2D" uid="uid://cpykn1hrp1n35" path="res://art/Items/Key.png" id="11_77n8m"]
 [ext_resource type="PackedScene" uid="uid://d2qj48ciff5xj" path="res://scenes/item.tscn" id="11_dc0en"]
 [ext_resource type="AudioStream" uid="uid://hfr6lfvb6kka" path="res://sfx/launch.wav" id="12_58ao5"]
@@ -638,7 +638,6 @@ freeze = true
 polygon = PackedVector2Array(-0.5, 5.50006, 7.5, -0.499939, 12, -11.9999, 12, 11.0001, -12, 11.0001)
 
 [node name="Tile" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 1
 position = Vector2(326, -1069)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
@@ -655,7 +654,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("17_juoxn")
 
 [node name="Tile2" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 2
 position = Vector2(326, -1089)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
@@ -672,7 +670,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("18_vvr74")
 
 [node name="Tile3" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 2
 position = Vector2(326, -1105)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
@@ -689,7 +686,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("18_vvr74")
 
 [node name="Tile4" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 2
 position = Vector2(310, -1085)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
@@ -706,7 +702,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("17_juoxn")
 
 [node name="Tile5" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 2
 position = Vector2(310, -1073)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
@@ -723,7 +718,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("18_vvr74")
 
 [node name="Tile7" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 2
 position = Vector2(294, -1069)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
@@ -740,7 +734,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("17_juoxn")
 
 [node name="corner1" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 2
 position = Vector2(278, -1069)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
@@ -755,7 +748,6 @@ texture = ExtResource("19_ktfby")
 polygon = PackedVector2Array(-6, 10.0699, 10, -5.93005, 10, 10.0699)
 
 [node name="corner2" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 2
 position = Vector2(294, -1089)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
@@ -771,7 +763,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("20_l6tsc")
 
 [node name="corner3" type="RigidBody2D" parent="RestaurantRoof"]
-z_index = 2
 position = Vector2(310, -1105)
 collision_layer = 5
 physics_material_override = SubResource("PhysicsMaterial_bpdmb")
